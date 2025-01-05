@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./HotelSearch.css"; // Import the external CSS file
-import ResultPage from "./ResultPage"; // Import the result page component
+import ResultPage from "./DisplayPage"; // Import the result page component
 
 function HotelSearch() {
   const [checkIn, setCheckIn] = useState("");

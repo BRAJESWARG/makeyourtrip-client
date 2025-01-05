@@ -10,7 +10,6 @@ function Home() {
 
     useEffect(() => {
 
-        // axios.get(`https://fathomless-wildwood-68036.herokuapp.com/api/v1/TheSiren`).then(
         axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
             data => setYourTrip(data.data)
         )
