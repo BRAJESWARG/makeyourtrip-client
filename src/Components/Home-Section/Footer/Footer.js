@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="Footer-Container">
             <footer>
-                Brajeswar Ghosh | 2022 All Rights Reserved.
+                Brajeswar Ghosh | 2025 All Rights Reserved.
             </footer>
         </div >
     );

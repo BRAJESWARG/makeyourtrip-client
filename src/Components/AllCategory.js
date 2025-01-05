@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-// import { ArrayofBlogs } from './ArrayOfBlog/ArrayOfBlog';
-import Advertisement from './Home-Section/Advertisement/Advertisement';
-import TopPost from './TopPost';
+import { useParams } from 'react-router-dom';
+// import { ArrayofyourTrip } from './ArrayOfBlog/ArrayOfBlog';
 import axios from 'axios';
-
+import HotelSearch from './HotelSearch/HotelSearch';
 
 const AllCategory = () => {
 
-    // const [blogs] = useContext(ArrayofBlogs)
+    // const [yourTrip] = useContext(ArrayofyourTrip)
 
     const { cat } = useParams()
 
-    const [load, setLoad] = useState(true)
-    const[blogs, setBlogs] = useState([]);
-
+    const [yourTrip, setYourTrip] = useState([]);
+    console.log(yourTrip);
+    
     useEffect(() => {
 
         // axios.get(`https://fathomless-wildwood-68036.herokuapp.com/api/v1/TheSiren/${cat}`).then(
-        axios.get(`http://localhost:8040/api/v1/TheSiren`).then(
+        axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
 
-            data => setBlogs(data.data)
+            data => setYourTrip(data.data)
         )
 
-    },[cat])
+    }, [cat])
 
+    function RenderSearchComponent() {
+        if (cat === "Hotels") return <HotelSearch />;
+        // if (cat === "Flights") return <FlightSearch />;
+        // if (cat === "Trains") return <TrainSearch />;
+        // return <BusSearch />;
+        return "Nothimg"
+    };
     return (
 
         <div className='blogBody'>
@@ -32,37 +37,10 @@ const AllCategory = () => {
                 <p className='mainCategory'>{cat}</p>
                 <hr className='mainCategoryHr' />
 
-                {blogs.filter((value) => (load ? (value.ID <= '6') : (value.ID <= '8')) && value.Category === cat).map((val, index) => (
 
-                    <div>
-                        <Link to={`/article/${val.Category}/${val.ID}`}>
-
-                            <div key={index} className='blogContainer'>
-                                <img src={val.Image} className='blogImg' alt='' />
-                                <div className='blogContent'>
-                                    <p className='blogTitle'>{val.Title}</p>
-                                    <p className='blogDetail'>{val.Body.substring(0, 150)}...</p>
-                                    <p className='blogCategory'>{val.Category}</p>
-                                </div>
-                            </div>
-                        </Link>
-
-                        <hr className='blogLine' />
-                    </div>
-
-                ))}
-
-                <div className='btn'>
-                    <button onClick={() => setLoad(!load)} className='btn'>{(load ? "Load More" : "View Less")}</button>
-                </div>
+                <RenderSearchComponent />
 
             </div>
-
-            <div>
-                <TopPost blogs = { blogs } />
-                <Advertisement />
-            </div>
-
         </div>
     );
 
