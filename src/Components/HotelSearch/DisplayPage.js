@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HotelSearch.css"; // Use the same CSS file for styling
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function DisplayPage({ result }) {
 
@@ -18,7 +19,7 @@ function DisplayPage({ result }) {
   }, [])
 
   const DisplayHotels = () => {
-    if (adultsCount == 1 && childrenCount == 0) {
+    if (adultsCount === 1 && childrenCount === 0) {
 
       return (
         <div className="result-container">
@@ -34,24 +35,25 @@ function DisplayPage({ result }) {
           <div className="result-box">
             <h2>Data from Server:</h2>
             {yourTrip.filter((value) => (value.Adults === 1) && (value.Child === 0) && (value.Category === "Hotels")).map((val, index) => (
+              <Link to={`/article/${val.Category}/${val.ID}`}>
 
-              <div key={index} >
+                <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
-                <div className=''>
-                  <p className=''>{val.Title}</p>
-                  <p className=''>{val.Category} / {val.Date}</p>
+                  <img src={val.Image1} className='introImg1' alt="" />
+                  <div className=''>
+                    <p className=''>{val.Title}</p>
+                    <p className=''>{val.Category} / {val.Date}</p>
+                  </div>
                 </div>
-              </div>
-
+              </Link>
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in Hotel!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
         </div>
       )
 
-    } else if (adultsCount == 1 && childrenCount == 1) {
+    } else if (adultsCount === 1 && childrenCount === 1) {
 
       return (
         <div className="result-container">
@@ -70,7 +72,7 @@ function DisplayPage({ result }) {
 
               <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
+                <img src={val.Image1} className='introImg1' alt="" />
                 <div className=''>
                   <p className=''>{val.Title}</p>
                   <p className=''>{val.Category} / {val.Date}</p>
@@ -80,11 +82,11 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in Hotel!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
         </div>
       )
 
-    } else if (adultsCount == 1 && childrenCount == 2) {
+    } else if (adultsCount === 1 && childrenCount === 2) {
 
       return (
         <div className="result-container">
@@ -103,7 +105,7 @@ function DisplayPage({ result }) {
 
               <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
+                <img src={val.Image1} className='introImg1' alt="" />
                 <div className=''>
                   <p className=''>{val.Title}</p>
                   <p className=''>{val.Category} / {val.Date}</p>
@@ -113,11 +115,11 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in Hotel!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
         </div>
       )
 
-    } else if (adultsCount == 2 && childrenCount == 0) {
+    } else if (adultsCount === 2 && childrenCount === 0) {
 
       return (
         <div className="result-container">
@@ -136,7 +138,7 @@ function DisplayPage({ result }) {
 
               <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
+                <img src={val.Image1} className='introImg1' alt="" />
                 <div className=''>
                   <p className=''>{val.Title}</p>
                   <p className=''>{val.Category} / {val.Date}</p>
@@ -146,11 +148,11 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in Hotel!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
         </div>
       )
 
-    } else if (adultsCount == 2 && childrenCount == 1) {
+    } else if (adultsCount === 2 && childrenCount === 1) {
 
       return (
         <div className="result-container">
@@ -169,7 +171,7 @@ function DisplayPage({ result }) {
 
               <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
+                <img src={val.Image1} className='introImg1' alt="" />
                 <div className=''>
                   <p className=''>{val.Title}</p>
                   <p className=''>{val.Category} / {val.Date}</p>
@@ -183,14 +185,14 @@ function DisplayPage({ result }) {
         </div>
       )
 
-    } else if (adultsCount == 2 && childrenCount == 2) {
+    } else if (adultsCount === 2 && childrenCount === 2) {
 
       return (
         <div className="result-container">
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> { }</p>
+            <p><strong>Location:</strong> {result.location}</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -202,7 +204,7 @@ function DisplayPage({ result }) {
 
               <div key={index} >
 
-                <img src={val.Image} className='introImg1' alt="" />
+                <img src={val.Image1} className='introImg1' alt="" />
                 <div className=''>
                   <p className=''>{val.Title}</p>
                   <p className=''>{val.Category} / {val.Date}</p>
@@ -212,7 +214,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in Hotel!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
         </div>
       )
 

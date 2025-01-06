@@ -8,7 +8,7 @@ import Nav from "./Components/Nav/Nav.js";
 import Footer from './Components/Home-Section/Footer/Footer';
 import NotFound from "./Components/Home-Section/Not Found/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import HotelSearch from './Components/HotelSearch/HotelSearch.js';
+import Article from './Components/Article.js';
 
 
 function App() {
@@ -21,10 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          {
-            // <Route path="/hotelsearch" element={<HotelSearch />} />
-          }
           <Route path="/:cat" element={<AllCategory />} />
+          <Route path="/article/:cat/:Id" element={<Article />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
