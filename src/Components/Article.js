@@ -33,10 +33,12 @@ const Article = () => {
                     <div className='articleProfileBox'>
                     </div>
                     <img src={val.Image1} alt='' className='articleImg' />
-                <img src={val.Image1} alt='' text="First slide" />
+                    <img src={val.Image1} alt='' text="First slide" />
                     <ControlledCarousel yourTrip={yourTrip} />
                     <p>{val.Body}{val.Body}</p>
                     <p><BsHandThumbsUp />  <b>8.4k Like</b></p>
+                    <p>Rating: {val.Rating} </p>
+                    <p>Reviews: {val.Reviews} </p>
                     <hr />
                     <div className='articleProfileBox'>
                         <img src='https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX20574488.jpg' alt='' className='articleProfileImg' />

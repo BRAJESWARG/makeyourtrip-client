@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="Footer-Container">
             <footer>
-                Brajeswar Ghosh | 2025 All Rights Reserved.
+                Brajeswar Ghosh | {new Date().getFullYear()} All Rights Reserved.
             </footer>
         </div >
     );
