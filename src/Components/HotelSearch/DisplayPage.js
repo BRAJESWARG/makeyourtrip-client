@@ -35,7 +35,7 @@ function DisplayPage({ result }) {
           <div className="result-box">
             <h2>Data from Server:</h2>
             {yourTrip.filter((value) => (value.Adults === 1) && (value.Child === 0) && (value.Category === "Hotels")).map((val, index) => (
-              <Link to={`/article/${val.Category}/${val.ID}`}>
+              <Link target="_blank" to={`/article/${val.Category}/${val.ID}`}>
 
                 <div key={index} >
 
