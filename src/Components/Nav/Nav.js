@@ -9,6 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Logo from '../../Assets/shortlogo.png'
 
 function NavComponent() {
 
@@ -86,8 +87,8 @@ function NavComponent() {
     <Navbar className='Navbar' bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
-          <img src="https://assets.website-files.com/5a28947c0017c300013be837/5a28947c0017c300013be882_Webclip.png" height="30px" alt="logo" />
-          Proneck.
+          <img src={Logo} height="30px" alt="logo" />
+          VentureVibes
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -96,27 +97,12 @@ function NavComponent() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link to="/" className='NavCategory'>Home</Link>
+            <Nav.Link href="/" className='NavCategory'>Home</Nav.Link>
             {yourTrip.filter((value) => value.ID === '1').map((val, index) => (
 
-              <Link to={`/${val.Category}`} className='NavCategory' key={index} >{val.Category}</Link>
+              <Nav.Link href={`/${val.Category}`} className='NavCategory' key={index} >{val.Category}</Nav.Link>
 
-            ))}
-            <Nav.Link href="#action1">Product</Nav.Link>
-            <NavDropdown title="Solutions" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action2">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#action4">Company</Nav.Link>
-            <Nav.Link href="#action5" >
-              Pricing
-            </Nav.Link>
+            ))}            
           </Nav>
           <Form className="d-flex">
 
