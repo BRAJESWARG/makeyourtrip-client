@@ -9,7 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Logo from '../../Assets/shortlogo.png'
+import Logo from '../../Assets/v-logo.png'
 
 function NavComponent() {
 
