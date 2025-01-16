@@ -9,7 +9,8 @@ import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Logo from '../../Assets/v-logo.png'
+import Logo from '../../Assets/v-logo.png';
+import './Nav.css';
 
 function NavComponent() {
 
@@ -84,7 +85,7 @@ function NavComponent() {
   // }
 
   return (
-    <Navbar className='Navbar' bg="light" expand="lg">
+    <Navbar className='Navbar navContainer' bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
           <img src={Logo} height="30px" alt="logo" />
