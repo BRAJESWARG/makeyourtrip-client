@@ -5,7 +5,7 @@
 .background-bg {
   width: 100%;
   height: auto;
-  position: fixed;
+/*   position: fixed; */
   opacity: 1;
   background-repeat: no-repeat;
   z-index: -1;
