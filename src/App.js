@@ -9,6 +9,7 @@ import Footer from './Components/Home-Section/Footer/Footer';
 import NotFound from "./Components/Home-Section/Not Found/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Article from './Components/Article.js';
+import BackgroundBG from './Assets/header-bg.svg';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     // <DataBase>
     <Router>
       <div className="App">
+        <img src={BackgroundBG} className='background-bg' alt="background-bg" />
         <Nav />
         <br />
         <Routes>
