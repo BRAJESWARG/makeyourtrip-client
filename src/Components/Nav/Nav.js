@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 import Logo from '../../Assets/v-logo.png';
 import './Nav.css';
@@ -85,9 +85,9 @@ function NavComponent() {
   // }
 
   return (
-    <Navbar className='Navbar navContainer' bg="light" expand="lg">
+    <Navbar className='bg-body-tertiary navContainer' bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img src={Logo} height="30px" alt="logo" />
           VentureVibes
         </Navbar.Brand>
@@ -98,7 +98,7 @@ function NavComponent() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/" className='NavCategory'>Home</Nav.Link>
+            {/* <Nav.Link href="/" className='NavCategory'>Home</Nav.Link> */}
             {yourTrip.filter((value) => value.ID === '1').map((val, index) => (
 
               <Nav.Link href={`/${val.Category}`} className='NavCategory' key={index} >{val.Category}</Nav.Link>
