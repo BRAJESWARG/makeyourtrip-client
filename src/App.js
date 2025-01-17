@@ -17,8 +17,8 @@ function App() {
     // <DataBase>
     <Router>
       <div className="App">
-        <img src={BackgroundBG} className='background-bg' alt="background-bg" />
         <Nav />
+        <img src={BackgroundBG} className='background-bg' alt="background-bg" />
         <br />
         <Routes>
           <Route path="/" element={<Home />} />
