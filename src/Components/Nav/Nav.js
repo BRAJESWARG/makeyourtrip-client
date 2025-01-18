@@ -9,7 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
 // import { Link } from "react-router-dom";
 import axios from 'axios';
-import Logo from '../../Assets/v-logo.png';
+import Logo from '../../Assets/VentureVibes-logo.png';
 import './Nav.css';
 
 function NavComponent() {
@@ -23,6 +23,17 @@ function NavComponent() {
     )
 
   }, [])
+
+  const [isSolid, setIsSolid] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSolid(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const [show, setShow] = useState(false);
   const [thankYoushow, setThankYouShow] = useState(false);
@@ -61,7 +72,6 @@ function NavComponent() {
     console.log(formData)
     setDisplayData(!displayData)
   }
-  // const FinalStep = ({ data }) => {
 
   const handleDownload = (event) => {
     event.preventDefault()
@@ -85,11 +95,11 @@ function NavComponent() {
   // }
 
   return (
-    <Navbar className='bg-body-tertiary navContainer' bg="light" expand="lg">
+    // <nav className={`navbar ${isSolid ? 'solid' : 'transparent'}`}>
+    <Navbar className={`navContainer ${isSolid ? 'solid' : 'transparent'}`} expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">
-          <img src={Logo} height="30px" alt="logo" />
-          VentureVibes
+          <img src={Logo} height="200rem" alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -103,7 +113,7 @@ function NavComponent() {
 
               <Nav.Link href={`/${val.Category}`} className='NavCategory' key={index} >{val.Category}</Nav.Link>
 
-            ))}            
+            ))}
           </Nav>
           <Form className="d-flex">
 

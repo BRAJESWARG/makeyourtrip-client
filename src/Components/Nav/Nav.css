@@ -1,11 +1,28 @@
 .navContainer {
   font-size: 1rem;
-  height: auto;
+  /* height: auto; */
   width: 100%;
   position: fixed !important;
+  top: 0;
+  left: 0;
   opacity: 1;
   background-repeat: no-repeat;
-  z-index: 1;
+  transition: background-color whitesmoke 0.3s ease !important;
+
+  /* background: rgb(255, 255, 255); */
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 32px 0px 0px;
+  z-index: 900;
+  height: 5rem;
+
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  transition: background-color 0.3s ease;  */
+
 }
 
 .NavCategory {
@@ -21,6 +38,24 @@
 
 .navHr {
   text-decoration: underline !important;
-  /* background-color: whitesmoke; */
-  /* margin-top: 10px; */
+
+}
+
+
+/* .navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  transition: background-color 0.3s ease; 
+} */
+
+.transparent {
+  background-color: transparent;
+}
+
+.solid {
+  background-color: #f36969;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px 0px;
 }
