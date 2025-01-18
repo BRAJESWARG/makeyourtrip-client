@@ -8,21 +8,16 @@
   opacity: 1;
   background-repeat: no-repeat;
   transition: background-color whitesmoke 0.3s ease !important;
-
-  /* background: rgb(255, 255, 255); */
   -webkit-box-align: center;
   align-items: center;
   padding: 0px 32px 0px 0px;
   z-index: 900;
   height: 5rem;
 
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  transition: background-color 0.3s ease;  */
+}
 
+.CategoryComponents {
+  padding-left: 5rem !important;
 }
 
 .NavCategory {
@@ -64,6 +59,7 @@
 }
 
 .solid {
-  background-color: #f36969;
+  /* background-color: #f36969; */
+  background-color: whitesmoke;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px 0px;
 }

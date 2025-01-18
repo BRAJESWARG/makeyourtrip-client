@@ -7,15 +7,23 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
-import jsPDF from 'jspdf';
+// import jsPDF from 'jspdf';
 // import { Link } from "react-router-dom";
 // import axios from 'axios';
 import Logo from '../../Assets/VentureVibes-logo.png';
 import LogoFlight from '../../Assets/LogoFlight.png';
 import LogoHotel from '../../Assets/LogoHotel.png';
+import LogoTrain from '../../Assets/LogoTrain.png';
+import LogoBus from '../../Assets/LogoBus.png';
+import LogoCab from '../../Assets/LogoCab.png';
+import LogIN from '../LogIN&Register/LogIN';
+// import { makeStyles } from "@material-ui/core";
+// import TextField from "@material-ui/core/TextField";
+// import Button from "@material-ui/core/Button";
 
-function NavComponent() {
+const NavComponent = () => {
 
+  // https://codesandbox.io/p/sandbox/modal-dialog-signup-s7oxw?file=%2Fsrc%2FApp.js%3A20%2C26
   // const [yourTrip, setYourTrip] = useState([]);
 
   // useEffect(() => {
@@ -48,56 +56,70 @@ function NavComponent() {
     setThankYouShow(true)
   };
 
-  let [displayData, setDisplayData] = useState(false)
-  const [formData, setFormData] = useState(
-    {
-      firstName: "",
-      lastName: "",
-      email: "",
-      telephoneNumber: ""
+  // let [displayData, setDisplayData] = useState(false)
+  // const [formData, setFormData] = useState(
+  //   {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     telephoneNumber: ""
 
-    }
-  )
+  //   }
+  // )
 
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target
-    setFormData(prevFormData => {
-      return {
-        ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
-      }
-    })
-  }
+  // function handleChange(event) {
+  //   const { name, value, type, checked } = event.target
+  //   setFormData(prevFormData => {
+  //     return {
+  //       ...prevFormData,
+  //       [name]: type === "checkbox" ? checked : value
+  //     }
+  //   })
+  // }
 
-  function submitHandler(event) {
-    event.preventDefault()
-    console.log(formData)
-    setDisplayData(!displayData)
-  }
+  // function submitHandler(event) {
+  //   event.preventDefault()
+  //   console.log(formData)
+  //   setDisplayData(!displayData)
+  // }
 
-  const handleDownload = (event) => {
-    event.preventDefault()
-    var doc = new jsPDF();
-    doc.text(
-      10,
-      10,
-      "First Name: " + formData.firstName +
-      "Last Name: " + formData.lastName +
-      "Email: " + formData.email +
-      "Mobile No.: " + formData.telephoneNumber
+  // const handleDownload = (event) => {
+  //   event.preventDefault()
+  //   var doc = new jsPDF();
+  //   doc.text(
+  //     10,
+  //     10,
+  //     "First Name: " + formData.firstName +
+  //     "Last Name: " + formData.lastName +
+  //     "Email: " + formData.email +
+  //     "Mobile No.: " + formData.telephoneNumber
 
 
-    );
+  //   );
 
-    doc.save("form.pdf");
-  };
+  //   doc.save("form.pdf");
+  // };
 
   // const displayHandler = () => {
   //     setDisplayData((prev) => !prev)
   // }
 
+
+
+
+  // create state variables for each input
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(firstName, lastName, email, password);
+    handleClose();
+  };
+
   return (
-    // <nav className={`navbar ${isSolid ? 'solid' : 'transparent'}`}>
     <Navbar className={`navContainer ${isSolid ? 'solid' : 'transparent'}`} expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">
@@ -106,7 +128,7 @@ function NavComponent() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 CategoryComponents"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
@@ -121,18 +143,28 @@ function NavComponent() {
               // ))
             }
             <Nav.Link href='/Hotels' className='NavCategory' >
-              <img src={LogoHotel} height="32rem" alt="LogoHotel" />
+              <img src={LogoHotel} height="32rem" width='50rem' alt="LogoHotel" />
               Hotels
             </Nav.Link>
             <Nav.Link href='/Flights' className='NavCategory' >
-              <img src={LogoFlight} height="32rem" alt="LogoFlight" />
+              <img src={LogoFlight} height="32rem" width='60rem' alt="LogoFlight" />
               Flights
+            </Nav.Link>
+            <Nav.Link href='/Train' className='NavCategory' >
+              <img src={LogoTrain} height="32rem" width='60rem' alt="LogoTrain" />
+              Train
+            </Nav.Link>
+            <Nav.Link href='/Bus' className='NavCategory' >
+              <img src={LogoBus} height="32rem" width='60rem' alt="LogoBus" />
+              Bus
+            </Nav.Link>
+            <Nav.Link href='/Cab' className='NavCategory' >
+              <img src={LogoCab} height="32rem" width='60rem' alt="LogoCab" />
+              Cab
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
-
-            <Button variant="outline-success" className='login'>Login</Button>
-            <Button variant="outline-success primary" className='get-started' onClick={handleShow}>Get Started</Button>
+            <Button variant="outline-success primary contained" color="primary" className='get-started' onClick={handleShow}>Get Started</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
@@ -141,63 +173,113 @@ function NavComponent() {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title>Sign in</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form
-            onSubmit={submitHandler}
-          >
-
-            <div className="name-row">
-              <input
-                type="text"
-                required
-                placeholder="First Name"
-                onChange={handleChange}
-                name="firstName"
-                value={formData.firstName}
-              />
-              <input
-                type="text"
-                required
-                placeholder="Last Name"
-                onChange={handleChange}
-                name="lastName"
-                value={formData.lastName}
-              />
-            </div>
-
-            <div className="contact-row">
-              <input
-                type="email"
-                required
-                placeholder="Email Address"
-                onChange={handleChange}
-                name="email"
-                value={formData.email}
-              />
-
-              <input
-                type="Telephone Number"
-                placeholder="Telephone Number"
-                onChange={handleChange}
-                name="telephoneNumber"
-                value={formData.telephoneNumber}
-              />
-            </div>
-
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleThankYouShow} className="btn" type="submit">
-                Submit
-              </Button>
-            </Modal.Footer>
-          </form>
+          <LogIN />
         </Modal.Body>
+        {
+          // <Modal.Body>
+          //   <form className='' onSubmit={handleSubmit}>
+          //     <input
+          //       label="First Name"
+          //       variant="filled"
+          //       required
+          //       value={firstName}
+          //       onChange={(e) => setFirstName(e.target.value)}
+          //     />
+          //     <input
+          //       label="Last Name"
+          //       variant="filled"
+          //       required
+          //       value={lastName}
+          //       onChange={(e) => setLastName(e.target.value)}
+          //     />
+          //     <input
+          //       label="Email"
+          //       variant="filled"
+          //       type="email"
+          //       required
+          //       value={email}
+          //       onChange={(e) => setEmail(e.target.value)}
+          //     />
+          //     <input
+          //       label="Password"
+          //       variant="filled"
+          //       type="password"
+          //       required
+          //       value={password}
+          //       onChange={(e) => setPassword(e.target.value)}
+          //     />
+          //     <div>
+          //       <Button variant="contained" onClick={handleClose}>
+          //         Cancel
+          //       </Button>
+          //       <Button type="submit" variant="contained" onClick={handleThankYouShow} color="primary">
+          //         Signup
+          //       </Button>
+          //     </div>
+          //   </form>
+          //   {
+          //     // <form
+          //     //   onSubmit={submitHandler}
+          //     // >
+
+          //     //   <div className="name-row">
+          //     //     <input
+          //     //       type="text"
+          //     //       required
+          //     //       placeholder="First Name"
+          //     //       onChange={handleChange}
+          //     //       name="firstName"
+          //     //       value={formData.firstName}
+          //     //     />
+          //     //     <input
+          //     //       type="text"
+          //     //       required
+          //     //       placeholder="Last Name"
+          //     //       onChange={handleChange}
+          //     //       name="lastName"
+          //     //       value={formData.lastName}
+          //     //     />
+          //     //   </div>
+
+          //     //   <div className="contact-row">
+          //     //     <input
+          //     //       type="email"
+          //     //       required
+          //     //       placeholder="Email Address"
+          //     //       onChange={handleChange}
+          //     //       name="email"
+          //     //       value={formData.email}
+          //     //     />
+
+          //     //     <input
+          //     //       type="Telephone Number"
+          //     //       placeholder="Telephone Number"
+          //     //       onChange={handleChange}
+          //     //       name="telephoneNumber"
+          //     //       value={formData.telephoneNumber}
+          //     //     />
+          //     //   </div>
+
+          //     //   <Modal.Footer>
+          //     //     <Button variant="secondary" onClick={handleClose}>
+          //     //       Close
+          //     //     </Button>
+          //     //     <Button variant="primary" onClick={handleThankYouShow} className="btn" type="submit">
+          //     //       Submit
+          //     //     </Button>
+          //     //   </Modal.Footer>
+          //     // </form>
+          //   }
+          // </Modal.Body>
+        }
       </Modal>
       <Modal
         show={thankYoushow}
@@ -210,9 +292,7 @@ function NavComponent() {
           <h1>Thank You</h1>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleDownload}>
-            Take print of data
-          </Button>
+
           <Button variant="primary" onClick={handleThankYouClose}>
             Close
           </Button>

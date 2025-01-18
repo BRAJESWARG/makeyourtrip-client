@@ -27,7 +27,7 @@ const AllCategory = () => {
         // if (cat === "Flights") return <FlightSearch />;
         // if (cat === "Trains") return <TrainSearch />;
         // return <BusSearch />;
-        return "Nothimg"
+        return "Oops! Yet to Development!"
     };
     return (
 
