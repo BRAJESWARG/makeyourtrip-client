@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Nav.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,21 +9,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import Modal from 'react-bootstrap/Modal';
 import jsPDF from 'jspdf';
 // import { Link } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 import Logo from '../../Assets/VentureVibes-logo.png';
-import './Nav.css';
+import LogoFlight from '../../Assets/LogoFlight.png';
+import LogoHotel from '../../Assets/LogoHotel.png';
 
 function NavComponent() {
 
-  const [yourTrip, setYourTrip] = useState([]);
+  // const [yourTrip, setYourTrip] = useState([]);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
-      data => setYourTrip(data.data)
-    )
+  //   axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
+  //     data => setYourTrip(data.data)
+  //   )
 
-  }, [])
+  // }, [])
 
   const [isSolid, setIsSolid] = useState(false);
 
@@ -109,11 +111,23 @@ function NavComponent() {
             navbarScroll
           >
             {/* <Nav.Link href="/" className='NavCategory'>Home</Nav.Link> */}
-            {yourTrip.filter((value) => value.ID === '1').map((val, index) => (
+            {
+              // yourTrip.filter((value) => value.ID === '1').map((val, index) => (
 
-              <Nav.Link href={`/${val.Category}`} className='NavCategory' key={index} >{val.Category}</Nav.Link>
-
-            ))}
+              //   <Nav.Link href={`/${val.Category}`} className='NavCategory' key={index} >
+              //     <img src={LogoHotel} height="32rem" alt="LogoHotel" />
+              //     {val.Category}
+              //   </Nav.Link>
+              // ))
+            }
+            <Nav.Link href='/Hotels' className='NavCategory' >
+              <img src={LogoHotel} height="32rem" alt="LogoHotel" />
+              Hotels
+            </Nav.Link>
+            <Nav.Link href='/Flights' className='NavCategory' >
+              <img src={LogoFlight} height="32rem" alt="LogoFlight" />
+              Flights
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
 
