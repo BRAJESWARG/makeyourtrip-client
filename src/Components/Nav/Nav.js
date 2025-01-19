@@ -17,9 +17,23 @@ import LogoTrain from '../../Assets/LogoTrain.png';
 import LogoBus from '../../Assets/LogoBus.png';
 import LogoCab from '../../Assets/LogoCab.png';
 import LogIN from '../LogIN&Register/LogIN';
+import Register from '../LogIN&Register/Register';
 // import { makeStyles } from "@material-ui/core";
 // import TextField from "@material-ui/core/TextField";
 // import Button from "@material-ui/core/Button";
+import {
+  MDBContainer,
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsContent,
+  // MDBTabsPane,
+  // MDBBtn,
+  // MDBIcon,
+  // MDBInput,
+  // MDBCheckbox
+}
+  from 'mdb-react-ui-kit';
 
 const NavComponent = () => {
 
@@ -51,10 +65,10 @@ const NavComponent = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleThankYouClose = () => setThankYouShow(false);
-  const handleThankYouShow = () => {
-    setShow(false)
-    setThankYouShow(true)
-  };
+  // const handleThankYouShow = () => {
+  //   setShow(false)
+  //   setThankYouShow(true)
+  // };
 
   // let [displayData, setDisplayData] = useState(false)
   // const [formData, setFormData] = useState(
@@ -108,16 +122,27 @@ const NavComponent = () => {
 
 
   // create state variables for each input
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(firstName, lastName, email, password);
-    handleClose();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(firstName, lastName, email, password);
+  //   handleClose();
+  // };
+
+  const [justifyActive, setJustifyActive] = useState('tab1');;
+
+  const handleJustifyClick = (value) => {
+    if (value === justifyActive) {
+      return;
+    }
+
+    setJustifyActive(value);
   };
+
 
   return (
     <Navbar className={`navContainer ${isSolid ? 'solid' : 'transparent'}`} expand="lg">
@@ -178,10 +203,41 @@ const NavComponent = () => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Sign in</Modal.Title>
+
         </Modal.Header>
+
         <Modal.Body>
-          <LogIN />
+          <MDBContainer className="p-3 my-5 ">
+
+            <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
+              <MDBTabsItem>
+                <MDBTabsLink onClick={() => handleJustifyClick('tab1')} active={justifyActive === 'tab1'}>
+                  Log In
+                </MDBTabsLink>
+              </MDBTabsItem>
+              <MDBTabsItem>
+                <MDBTabsLink onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
+                  Register
+                </MDBTabsLink>
+              </MDBTabsItem>
+            </MDBTabs>
+
+            <MDBTabsContent>
+              {(() => {
+                if (justifyActive === 'tab1') {
+                  return (
+                    <LogIN />
+                  );
+                } else {
+                  return (
+                    <Register />
+                  );
+                }
+              })()}
+
+            </MDBTabsContent>
+
+          </MDBContainer>
         </Modal.Body>
         {
           // <Modal.Body>

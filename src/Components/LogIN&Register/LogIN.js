@@ -34,7 +34,9 @@ const LogIN = () => {
           </div>
 
           <MDBBtn className="mb-4 w-100" size="lg">Sign in</MDBBtn>
-
+          {
+            // <p className="text-center">Not a member? <a href="#!">Register</a></p>
+          }
         </MDBCol>
 
       </MDBRow>
