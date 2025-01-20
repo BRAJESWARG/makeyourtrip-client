@@ -12,9 +12,9 @@ const AllCategory = () => {
 
     const [yourTrip, setYourTrip] = useState([]);
     console.log(yourTrip);
-    
+
     useEffect(() => {
-        
+
         axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
 
             data => setYourTrip(data.data)
@@ -22,22 +22,39 @@ const AllCategory = () => {
 
     }, [cat])
 
-    function RenderSearchComponent() {
-        if (cat === "Hotels") return <HotelSearch />;
-        // if (cat === "Flights") return <FlightSearch />;
-        // if (cat === "Trains") return <TrainSearch />;
-        // return <BusSearch />;
-        return "Oops! Yet to Development!"
-    };
     return (
 
         <div className='blogBody'>
             <div>
                 <p className='mainCategory'>{cat}</p>
                 <hr className='mainCategoryHr' />
-
-
-                <RenderSearchComponent />
+                {(() => {
+                    if (cat === 'Hotels') {
+                        return (
+                            <HotelSearch />
+                        );
+                    } else if (cat === 'Flights') {
+                        return (
+                            "Oops! Yet to Development!"
+                        );
+                    } else if (cat === 'Trains') {
+                        return (
+                            "Oops! Yet to Development!"
+                        );
+                    } else if (cat === 'Bus') {
+                        return (
+                            "Oops! Yet to Development!"
+                        );
+                    } else if (cat === 'Cab') {
+                        return (
+                            "Oops! Yet to Development!"
+                        );
+                    } else {
+                        return (
+                            "Oops! Yet to Development!"
+                        );
+                    }
+                })()}
 
             </div>
         </div>
