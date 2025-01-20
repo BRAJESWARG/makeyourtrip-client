@@ -65,10 +65,10 @@ const NavComponent = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleThankYouClose = () => setThankYouShow(false);
-  // const handleThankYouShow = () => {
-  //   setShow(false)
-  //   setThankYouShow(true)
-  // };
+  const handleThankYouShow = () => {
+    setShow(false)
+    setThankYouShow(true)
+  };
 
   // let [displayData, setDisplayData] = useState(false)
   // const [formData, setFormData] = useState(
@@ -226,11 +226,11 @@ const NavComponent = () => {
               {(() => {
                 if (justifyActive === 'tab1') {
                   return (
-                    <LogIN />
+                    <LogIN handleThankYouShow={handleThankYouShow} />
                   );
                 } else if (justifyActive === 'tab2') {
                   return (
-                    <Register />
+                    <Register handleThankYouShow={handleThankYouShow} />
                   );
                 }
               })()}
