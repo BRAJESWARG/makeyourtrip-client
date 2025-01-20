@@ -228,7 +228,7 @@ const NavComponent = () => {
                   return (
                     <LogIN />
                   );
-                } else {
+                } else if (justifyActive === 'tab2') {
                   return (
                     <Register />
                   );
