@@ -11,7 +11,7 @@ import {
 }
   from 'mdb-react-ui-kit';
 
-const Register = () => {
+const Register = ({handleThankYouShow}) => {
   return (
     <MDBContainer fluid className="p-3 my-5">
 
@@ -28,7 +28,7 @@ const Register = () => {
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
           </div>
 
-          <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
+          <MDBBtn className="mb-4 w-100" onClick={handleThankYouShow} >Sign up</MDBBtn>
 
 
         </MDBCol>
