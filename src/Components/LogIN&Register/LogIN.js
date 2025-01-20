@@ -11,7 +11,7 @@ import {
 }
   from 'mdb-react-ui-kit';
 
-const LogIN = () => {
+const LogIN = ({handleThankYouShow}) => {
   return (
     <MDBContainer fluid className="p-3 my-5">
 
@@ -33,7 +33,7 @@ const LogIN = () => {
             Forgot password?
           </div>
 
-          <MDBBtn className="mb-4 w-100" size="lg">Sign in</MDBBtn>
+          <MDBBtn className="mb-4 w-100" size="lg" onClick={handleThankYouShow} >Sign in</MDBBtn>
           {
             // <p className="text-center">Not a member? <a href="#!">Register</a></p>
           }
