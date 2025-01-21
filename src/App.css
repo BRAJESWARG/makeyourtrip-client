@@ -1,17 +1,17 @@
-*{
+* {
   text-decoration: none;
 }
 
 .background-bg {
   width: 100%;
   height: auto;
-/*   position: fixed; */
+  /*   position: fixed; */
   opacity: 1;
   background-repeat: no-repeat;
   z-index: -1;
 }
 
-.the{
+.the {
   font-size: 30px;
   transform: rotate(270deg);
   margin-top: 22px;
@@ -19,36 +19,42 @@
 
 }
 
-.siren{
+.siren {
   font-size: 60px;
   font-weight: bolder;
   margin: 0px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.heading{
+.heading {
   display: flex;
   justify-content: center;
-  margin-top: 5px; 
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
 
 
 /* CSS FOR BLOG CONTENTS */
-.blogBody{
+.blogBody {
   display: flex;
   justify-content: space-around;
 }
 
-.mainCategory{
-  text-align: left;
+.mainCategory {
+  /* text-align: left;
   margin-bottom: 0px;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 500; */
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--font-family-default);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: whitesmoke;
 }
 
-.mainCategoryHr{
+.mainCategoryHr {
   width: 190px;
   background-color: red;
   height: 2px;
@@ -57,7 +63,7 @@
   margin-left: 0px;
 }
 
-.blogContainer{
+.blogContainer {
   width: 550px;
   height: 230px;
   display: flex;
@@ -66,36 +72,36 @@
   margin-bottom: 20px;
 }
 
-.blogImg{
+.blogImg {
   width: 250px;
   height: 220px;
 }
 
-.blogContent{
+.blogContent {
   margin-left: 10px;
   height: 220px;
 }
 
-.blogTitle{
+.blogTitle {
   font-weight: bold;
   font-size: 18px;
   text-align: left;
   color: black;
 }
 
-.blogDetail{
+.blogDetail {
   color: rgb(117, 114, 114);
   text-align: justify;
 }
 
-.blogCategory{
+.blogCategory {
   font-weight: 900;
   font-size: 20px;
   color: grey;
   text-align: left;
 }
 
-.blogLine{
+.blogLine {
   margin-left: 0px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -105,22 +111,22 @@
 
 
 /* CSS FOR TOP POST BLOG */
-.LatestContainer{
+.LatestContainer {
   width: 420px;
   height: 420px;
 }
 
-.LatestImg{
+.LatestImg {
   width: 420px;
   height: 320px;
 }
 
-.flexBox{
+.flexBox {
   display: flex;
   justify-content: space-around;
 }
 
-.LatestId{
+.LatestId {
   font-size: 45px;
   font-weight: 600;
   color: silver;
@@ -128,13 +134,13 @@
 
 
 
-.SubContainer{
+.SubContainer {
   display: flex;
   justify-content: space-around;
   width: 420px;
 }
 
-.SubImg{
+.SubImg {
   width: 150px;
   height: 150px;
 }
@@ -142,7 +148,7 @@
 
 
 /* CSS FOR ADVERTISEMENT */
-.advertisement{
+.advertisement {
   border: 3px solid silver;
   font-size: 30px;
   font-weight: 600px;
@@ -158,63 +164,63 @@
 
 /* CSS FOR HOME PAGE */
 /* INTRO COMPONENT CSS */
-.introContainer{
+.introContainer {
   /* border: 1px solid red; */
   display: flex;
   margin-top: 20px;
   height: 430px
 }
 
-.introContainer-1{
+.introContainer-1 {
   /* border: 5px solid yellow; */
   width: 70%;
   margin-left: 8px;
 
 }
 
-.introContainer-2{
+.introContainer-2 {
   /* border: 5px solid green; */
   width: 30%;
   margin-left: 15px;
   margin-right: 6px;
 }
 
-.introImg1{
+.introImg1 {
   width: 100%;
   height: 100%;
 }
 
-.introContent1{
- position: absolute;
- top: 450px;
- left: 100px;
- color: cyan;
- 
+.introContent1 {
+  position: absolute;
+  top: 450px;
+  left: 100px;
+  color: cyan;
+
 }
 
-.introTitle1{
+.introTitle1 {
   font-weight: bolder;
   font-size: 25px;
 }
 
 
 
-.box{
+.box {
   position: relative;
 }
 
-.introImg2{
+.introImg2 {
   width: 400px;
   height: 205px;
   margin-bottom: 15px;
 }
 
-.introTitle2{
+.introTitle2 {
   font-weight: bolder;
   font-size: 18px;
 }
 
-.introContent2{
+.introContent2 {
   position: absolute;
   top: 90px;
   right: 80px;
@@ -225,29 +231,29 @@
 
 
 /* THE LATEST COMPONENT CSS */
-.TheLatestContainer{
+.TheLatestContainer {
   margin-top: 60px;
 }
 
-.TheLatestBox{
+.TheLatestBox {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.TheLatestContent{
+.TheLatestContent {
   width: 400px;
   padding-left: 15px;
   padding-right: 15px;
 
 }
 
-.TheLatestImg{
+.TheLatestImg {
   width: 400px;
   height: 250px;
 }
 
-.title{
+.title {
   color: black;
   font-weight: bold;
   font-size: 20px;
@@ -255,20 +261,20 @@
   height: 50px;
 }
 
-.body{
+.body {
   color: grey;
   text-align: left;
 }
 
-.btn{
+.btn {
   text-align: left;
   color: blue;
   border-radius: 10px;
   padding: 5px;
-  
+
 }
 
-.btn:active{
+.btn:active {
   font-weight: bold;
   color: green;
 }
@@ -276,14 +282,14 @@
 
 
 /* THE LATEST STORIES CSS */
-.TheLatestStories{
+.TheLatestStories {
   width: 400px;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 30px
 }
 
-.TheLatestStoriesHr{
+.TheLatestStoriesHr {
   height: 220px;
   margin-top: 40px;
 }
@@ -291,40 +297,41 @@
 
 
 /* CSS FOR ARTICLE COMPONENT*/
-.articleContainer{
+.articleContainer {
   width: 600px;
   margin: auto auto;
 }
 
-.articleTitle{
+.articleTitle {
   font-weight: bold;
   font-size: 30px;
   font-family: sans-serif;
 }
 
-.articleProfileImg{
+.articleProfileImg {
   width: 120px;
   height: 120px;
   border-radius: 50%;
 }
 
-.articleProfileBox{
+.articleProfileBox {
   display: flex;
   justify-content: center;
- 
+
 }
 
-.articleImg{
+.articleImg {
   width: 600px;
   height: 450px;
   margin-top: 30px;
 }
 
-.MoreFromSirenContainer{
+.MoreFromSirenContainer {
   margin-top: 100px;
   background-color: whitesmoke;
 }
-.Footer-Container{
+
+.Footer-Container {
   display: flex;
   justify-content: right;
   color: dodgerblue;

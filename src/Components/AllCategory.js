@@ -26,7 +26,10 @@ const AllCategory = () => {
 
         <div className='blogBody'>
             <div>
-                <p className='mainCategory'>{cat}</p>
+                <h2 className='mainCategory'>
+                    {cat}
+                    Book Domestic and International Flight Tickets
+                </h2>
                 <hr className='mainCategoryHr' />
                 {(() => {
                     if (cat === 'Hotels') {
