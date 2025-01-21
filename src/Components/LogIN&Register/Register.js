@@ -1,61 +1,74 @@
 import React from 'react';
-import './LogIN.css';
 import {
+  MDBBtn,
   MDBContainer,
+  MDBCard,
+  MDBCardBody,
   MDBCol,
   MDBRow,
-  MDBBtn,
-  MDBIcon,
   MDBInput,
-  MDBCheckbox
+  MDBCheckbox,
+  MDBIcon
 }
-  from 'mdb-react-ui-kit';
+from 'mdb-react-ui-kit';
 
-const Register = ({handleThankYouShow}) => {
+function App() {
   return (
-    <MDBContainer fluid className="p-3 my-5">
+    <MDBContainer fluid>
 
-      <MDBRow>
+      <div className="p-5 bg-image" style={{backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px'}}></div>
 
-        <MDBCol col='4' md='6'>
+      <MDBCard className='mx-5 mb-5 p-5 shadow-5' style={{marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)'}}>
+        <MDBCardBody className='p-5 text-center'>
 
-          <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text' />
-          <MDBInput wrapperClass='mb-4' label='Username' id='form1' type='text' />
-          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' />
-          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' />
+          <h2 className="fw-bold mb-5">Sign up now</h2>
+
+          <MDBRow>
+            <MDBCol col='6'>
+              <MDBInput wrapperClass='mb-4' label='First name' id='form1' type='text'/>
+            </MDBCol>
+
+            <MDBCol col='6'>
+              <MDBInput wrapperClass='mb-4' label='Last name' id='form1' type='text'/>
+            </MDBCol>
+          </MDBRow>
+
+          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
+          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
 
           <div className='d-flex justify-content-center mb-4'>
-            <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
+            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
           </div>
 
-          <MDBBtn className="mb-4 w-100" onClick={handleThankYouShow} >Sign up</MDBBtn>
+          <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
 
+          <div className="text-center">
 
-        </MDBCol>
+            <p>or sign up with:</p>
 
-        <MDBCol col='12' md='6'>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" className='img-fluid' alt="GirlImage" />
-        </MDBCol>
+            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='facebook-f' size="sm"/>
+            </MDBBtn>
 
-      </MDBRow>
-      <MDBRow>
-        <div className="divider d-flex align-items-center my-4">
-          <p className="text-center fw-bold mx-3 mb-0">OR</p>
-        </div>
+            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='twitter' size="sm"/>
+            </MDBBtn>
 
-        <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998' }}>
-          <MDBIcon fab icon="facebook-f" className="mx-2" />
-          Continue with facebook
-        </MDBBtn>
+            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='google' size="sm"/>
+            </MDBBtn>
 
-        <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#55acee' }}>
-          <MDBIcon fab icon="twitter" className="mx-2" />
-          Continue with twitter
-        </MDBBtn>
-      </MDBRow>
+            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+              <MDBIcon fab icon='github' size="sm"/>
+            </MDBBtn>
+
+          </div>
+
+        </MDBCardBody>
+      </MDBCard>
 
     </MDBContainer>
   );
 }
 
-export default Register;
+export default App;

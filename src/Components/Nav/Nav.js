@@ -39,6 +39,7 @@ const NavComponent = () => {
 
   // https://codesandbox.io/p/sandbox/modal-dialog-signup-s7oxw?file=%2Fsrc%2FApp.js%3A20%2C26
   // https://codepen.io/gosnippets/pen/ExyEOBw
+  // https://react-bootstrap.github.io/docs/components/tabs
 
   // const [yourTrip, setYourTrip] = useState([]);
 
