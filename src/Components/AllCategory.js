@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 // import { ArrayofyourTrip } from './ArrayOfBlog/ArrayOfBlog';
 import axios from 'axios';
 import HotelSearch from './HotelSearch/HotelSearch';
+import HotelSearchOrg from './HotelSearch/HotelSearch-org';
 
 const AllCategory = () => {
 
@@ -26,15 +27,20 @@ const AllCategory = () => {
 
         <div className='blogBody'>
             <div>
-                <h2 className='mainCategory'>
-                    {cat}
-                    Book Domestic and International Flight Tickets
-                </h2>
+                {yourTrip.filter((value) => (value.ID === '1') && (value.Category === cat)).map((val, index) => (
+                    <h2 className='mainCategory' key={index} >
+                        {val.CategoryHead}
+                    </h2>
+                ))}
                 <hr className='mainCategoryHr' />
                 {(() => {
                     if (cat === 'Hotels') {
                         return (
+                            <>
+                            <HotelSearchOrg />
                             <HotelSearch />
+                            </>
+
                         );
                     } else if (cat === 'Flights') {
                         return (
