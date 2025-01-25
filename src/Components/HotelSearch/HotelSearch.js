@@ -1,89 +1,175 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, { useEffect, useState } from "react";
+import "./HotelSearch.css"; // Import the external CSS file
+import ResultPage from "./DisplayPage"; // Import the result page component
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-function MultilineTextFields() {
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-  // https://mui.com/material-ui/react-text-field/?srsltid=AfmBOoq_NgFMKrKc45c9gShlm0m9hJlCUswDK4shQFTOQJDxFtUs6J0M
+
+function HotelSearch() {
+
+  const [checkIn, setCheckIn] = useState();
+  const [checkOut, setCheckOut] = useState();
+  const [adults, setAdults] = useState(1); // Default 1 adult
+  const [children, setChildren] = useState(0); // Default 0 children
+  const [location, setLocation] = useState(""); // City/Location input
+  const [nightStatus, setNightStatus] = useState({ nights: 0, days: 0 });
+
+  const [result, setResult] = useState(null); // Result object to pass to ResultPage
+  const [showResultPage, setShowResultPage] = useState(false); // State to toggle between pages
+
+  // Function to get the day of the week from a date
+  const getDayOfWeek = (dateString) => {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const date = new Date(dateString);
+    return dateString ? days[date.getDay()] : "";
+  };
+
+  useEffect(() => {
+    if (checkIn && checkOut) {
+      const checkInDate = new Date(checkIn);
+      const checkOutDate = new Date(checkOut);
+
+      if (checkOutDate > checkInDate) {
+        const timeDifference = checkOutDate - checkInDate;
+        const nights = timeDifference / (1000 * 60 * 60 * 24);
+        // const days = nights + 1; 
+
+        // setNightStatus({ nights, days });
+        setNightStatus({ nights });
+      } else {
+        setNightStatus({ nights: 0 }); // Reset result if invalid dates are selected
+        alert("Check-out date must be after check-in date.");
+      }
+    } else {
+      setNightStatus({ nights: 0 }); // Reset result if dates are cleared
+    }
+  }, [checkIn, checkOut]); // Recalculate when checkIn or checkOut changes
+
+  const handleSearch = () => {
+    if (checkIn && checkOut && location.trim()) {
+      const checkInDate = new Date(checkIn);
+      const checkOutDate = new Date(checkOut);
+
+      if (checkOutDate > checkInDate) {
+        const timeDifference = checkOutDate - checkInDate;
+        const days = timeDifference / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+        const nights = days - 1; // Subtract 1 day for the last day not being a night
+
+        setResult({
+          location,
+          adults,
+          children,
+          nights,
+          days,
+        });
+        setShowResultPage(true); // Navigate to the result page
+      } else {
+        alert("Check-out date must be after check-in date.");
+      }
+    } else {
+      alert("Please fill out all fields (Check-in, Check-out, and Location).");
+    }
+  };
+
+  if (showResultPage && result) {
+    return <ResultPage result={result} />;
+  }
 
   return (
-    <Box
-      component="form"
-      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
-        <TextField
-          id="outlined-multiline-flexible"
-          label="Multiline"
-          multiline
-          maxRows={4}
-        />
-        <TextField
-          id="outlined-textarea"
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
-          multiline
-        />
-        <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-        />
+    <div className="container">
+      <TextField
+        id="outlined-multiline-flexible"
+        label="Where to"
+        maxRows={4}
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        placeholder="Enter city or location"
+      />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DemoContainer components={['DatePicker', 'DatePicker']}>
+            <DatePicker
+              label="Check-in Date"
+              type="date"
+              value={checkIn}
+              onChange={(e) => setCheckIn(e)}
+            />
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                <strong>{getDayOfWeek(checkIn)}</strong>
+              </Box>
+            )}
+            <DatePicker
+              label="Check-out Date"
+              // defaultValue={dayjs('2022-04-17')}
+              type="date"
+              value={checkOut}
+              onChange={(e) => setCheckOut(e)}
+            />
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                <strong>{getDayOfWeek(checkOut)}</strong>
+              </Box>
+            )}
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                Nights: {nightStatus.nights}
+              </Box>
+            )}
+          </DemoContainer>
+      </LocalizationProvider>
+      <br />
+      <div className="input-group">
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Adults</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={adults}
+              label="Adults"
+              defaultValue="1"
+              onChange={(e) => setAdults(e.target.value)}
+            >
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
-      <div>
-        <TextField
-          id="filled-multiline-flexible"
-          label="Multiline"
-          multiline
-          maxRows={4}
-          variant="filled"
-        />
-        <TextField
-          id="filled-textarea"
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
-          multiline
-          variant="filled"
-        />
-        <TextField
-          id="filled-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-          variant="filled"
-        />
+      <div className="input-group">
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Children</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={children}
+              label="Children"
+              defaultValue="0"
+              onChange={(e) => setChildren(e.target.value)}
+            >
+              <MenuItem value={0}>0</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
-      <div>
-        <TextField
-          id="standard-multiline-flexible"
-          label="Multiline"
-          multiline
-          maxRows={4}
-          variant="standard"
-        />
-        <TextField
-          id="standard-textarea"
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
-          multiline
-          variant="standard"
-        />
-        <TextField
-          id="standard-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-          variant="standard"
-        />
-      </div>
-    </Box>
+      <button className="button" onClick={handleSearch}>
+        Search
+      </button>
+    </div>
   );
 }
 
-export default MultilineTextFields;
+export default HotelSearch;

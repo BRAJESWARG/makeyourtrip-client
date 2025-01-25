@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 // import { ArrayofyourTrip } from './ArrayOfBlog/ArrayOfBlog';
 import axios from 'axios';
 import HotelSearch from './HotelSearch/HotelSearch';
-import HotelSearchOrg from './HotelSearch/HotelSearch-org';
 
 const AllCategory = () => {
 
@@ -36,11 +35,7 @@ const AllCategory = () => {
                 {(() => {
                     if (cat === 'Hotels') {
                         return (
-                            <>
-                            <HotelSearchOrg />
                             <HotelSearch />
-                            </>
-
                         );
                     } else if (cat === 'Flights') {
                         return (
