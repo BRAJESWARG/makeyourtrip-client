@@ -7,13 +7,37 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+
+
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function HotelSearch() {
 
-  const [value, setValue] = React.useState(dayjs('2022-04-17'));
+  const [dateRange, setDateRange] = useState([null, null]); // Initialize date range with null values
+  const [nightCount, setNightCount] = useState(0); // State to hold night count
 
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
+  const handleDateChange = (newValue) => {
+    setDateRange(newValue); // Update the selected date range
+
+    // Calculate the number of nights if both dates are selected
+    if (newValue[0] && newValue[1]) {
+      const nights = dayjs(newValue[1]).diff(dayjs(newValue[0]), 'day');
+      setNightCount(nights);
+    } else {
+      setNightCount(0); // Reset night count if the range is incomplete
+    }
+  };
+
+  // const [value, setValue] = useState();
+  // const [value, setValue] = useState(dayjs('2022-04-17'));
+
+  const [checkIn, setCheckIn] = useState();
+  const [checkOut, setCheckOut] = useState();
   const [adults, setAdults] = useState(1); // Default 1 adult
   const [children, setChildren] = useState(0); // Default 0 children
   const [location, setLocation] = useState(""); // City/Location input
@@ -36,16 +60,17 @@ function HotelSearch() {
 
       if (checkOutDate > checkInDate) {
         const timeDifference = checkOutDate - checkInDate;
-        const days = timeDifference / (1000 * 60 * 60 * 24); // Convert milliseconds to days
-        const nights = days - 1; // Subtract 1 day for the last day not being a night
+        const nights = timeDifference / (1000 * 60 * 60 * 24);
+        // const days = nights + 1; 
 
-        setNightStatus({ nights, days });
+        // setNightStatus({ nights, days });
+        setNightStatus({ nights });
       } else {
-        setNightStatus({ nights: 0, days: 0 }); // Reset result if invalid dates are selected
+        setNightStatus({ nights: 0 }); // Reset result if invalid dates are selected
         alert("Check-out date must be after check-in date.");
       }
     } else {
-      setNightStatus({ nights: 0, days: 0 }); // Reset result if dates are cleared
+      setNightStatus({ nights: 0 }); // Reset result if dates are cleared
     }
   }, [checkIn, checkOut]); // Recalculate when checkIn or checkOut changes
 
@@ -82,8 +107,10 @@ function HotelSearch() {
 
   return (
     <div className="container">
-      <h1 className="heading">Plan Your Stay</h1>
       {
+        // <h1 className="heading">Plan Your Stay</h1>
+
+
         // <div className="input-group">
         // <label className="label">
         //   Location:
@@ -109,98 +136,157 @@ function HotelSearch() {
       />
 
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['DatePicker', 'DatePicker']}>
-          <DatePicker label="Uncontrolled picker" defaultValue={dayjs('2022-04-17')} />
-          <DatePicker
-            label="Controlled picker"
-            value={value}
-            onChange={(newValue) => setValue(newValue)}
-          />
-        </DemoContainer>
+        
+          <DemoContainer components={['DatePicker', 'DatePicker']}>
+
+            <DatePicker
+              label="Check-in Date"
+              type="date"
+              value={checkIn}
+              onChange={(e) => setCheckIn(e)}
+            />
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                <strong>{getDayOfWeek(checkIn)}</strong>
+              </Box>
+            )}
+            <DatePicker
+              label="Check-out Date"
+              // defaultValue={dayjs('2022-04-17')}
+              type="date"
+              value={checkOut}
+              onChange={(e) => setCheckOut(e)}
+            />
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                <strong>{getDayOfWeek(checkOut)}</strong>
+              </Box>
+            )}
+            {checkOut && (
+              <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                Nights: {nightStatus.nights}
+              </Box>
+            )}
+          </DemoContainer>
+        
+
       </LocalizationProvider>
+      <br />
+      {
+        // <div className="input-group">
+        //   <label className="label">
+        //     Check-in Date:
+        //     <input
+        //       type="date"
+        //       value={checkIn}
+        //       onChange={(e) => setCheckIn(e.target.value)}
+        //       className="input"
+        //     />
+        //   </label>
 
-      <div className="input-group">
-        <label className="label">
-          Check-in Date:
-          <input
-            type="date"
-            value={checkIn}
-            onChange={(e) => setCheckIn(e.target.value)}
-            className="input"
-          />
-        </label>
-        {checkIn && (
-          <p className="day-text">
-            <strong>{getDayOfWeek(checkIn)}</strong>
-          </p>
-        )}
-      </div>
-      <div className="input-group">
-        <label className="label">
-          Check-out Date:
-          <input
-            type="date"
-            value={checkOut}
-            onChange={(e) => setCheckOut(e.target.value)}
-            className="input"
-          />
-        </label>
-        {checkOut && (
-          <p className="day-text">
-            <strong>{getDayOfWeek(checkOut)}</strong>
-            <br />
-            <div>
-              Nights: {nightStatus.nights}
-              <br />
-              Days: {nightStatus.days}
-            </div>
-          </p>
+        //   {checkIn && (
+        //     <p className="day-text">
+        //       <strong>{getDayOfWeek(checkIn)}</strong>
+        //     </p>
+        //   )}
+        // </div>
+        // <div className="input-group">
+        //   <label className="label">
+        //     Check-out Date:
+        //     <input
+        //       type="date"
+        //       value={checkOut}
+        //       onChange={(e) => setCheckOut(e.target.value)}
+        //       className="input"
+        //     />
+        //   </label>
+        //   {checkOut && (
+        //     <p className="day-text">
+        //       <strong>{getDayOfWeek(checkOut)}</strong>
+        //       <br />
+        //       <div>
+        //         Days: {nightStatus.days}
+        //         <br />
+        //         Nights: {nightStatus.nights}
+        //       </div>
+        //     </p>
 
-        )}
+        //   )}
+        // </div>
+      }
+      <div className="input-group">
+        {
+          // <label className="label">
+          //   Adults:
+          //   <input
+          //     type="number"
+          //     value={adults}
+          //     onChange={(e) => setAdults(e.target.value)}
+          //     className="input"
+          //     min="1"
+          //   />
+          // </label>
+        }
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Adults</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={adults}
+              label="Adults"
+              defaultValue="1"
+              onChange={(e) => setAdults(e.target.value)}
+            >
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
       <div className="input-group">
-        <label className="label">
-          Adults:
-          <input
-            type="number"
-            value={adults}
-            onChange={(e) => setAdults(e.target.value)}
-            className="input"
-            min="1"
-          />
-          <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            slotProps={{
-              inputLabel: {
-                shrink: true,
-              },
-            }}
-          />
-        </label>
-      </div>
-      <div className="input-group">
-        <label className="label">
-          Children:
-          <input
-            type="number"
-            value={children}
-            onChange={(e) => setChildren(e.target.value)}
-            className="input"
-            min="0"
-          />
-          <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            slotProps={{
-              inputLabel: {
-                shrink: true,
-              },
-            }}
-          />
-        </label>
+        {
+          // <label className="label">
+          //   Children:
+          //   <input
+          //     type="number"
+          //     value={children}
+          //     onChange={(e) => setChildren(e.target.value)}
+          //     className="input"
+          //     min="0"
+          //   />
+          //   <TextField
+          //     id="outlined-number"
+          //     label="Number"
+          //     type="number"
+          //     slotProps={{
+          //       inputLabel: {
+          //         shrink: true,
+          //       },
+          //     }}
+          //   />
+          // </label>
+        }
+
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Children</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={children}
+              label="Children"
+              defaultValue="0"
+              onChange={(e) => setChildren(e.target.value)}
+            >
+              <MenuItem value={0}>0</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+
       </div>
       <button className="button" onClick={handleSearch}>
         Search
