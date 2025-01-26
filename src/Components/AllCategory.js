@@ -25,13 +25,17 @@ const AllCategory = () => {
     return (
 
         <div className='blogBody'>
-            <div>
+            <div className='CategoryHead'>
                 {yourTrip.filter((value) => (value.ID === '1') && (value.Category === cat)).map((val, index) => (
                     <h2 className='mainCategory' key={index} >
                         {val.CategoryHead}
                     </h2>
                 ))}
-                <hr className='mainCategoryHr' />
+                {
+                    // <hr className='mainCategoryHr' />
+                }
+            </div>
+            <div className='contentForm'>
                 {(() => {
                     if (cat === 'Hotels') {
                         return (

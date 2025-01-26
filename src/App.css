@@ -39,6 +39,18 @@
 .blogBody {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
+  margin-top: -10rem;
+}
+
+.CategoryHead {
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+}
+
+.contentForm {
+  margin-top: -2rem;
 }
 
 .mainCategory {
