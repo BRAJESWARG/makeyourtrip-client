@@ -191,8 +191,8 @@ const NavComponent = () => {
               Cab
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Button variant="outline-success primary contained" color="primary" className='get-started' onClick={handleShow}>Get Started</Button>
+          <Form className="d-flex ">
+            <Button variant="outline-success primary contained" color="primary" className='login-button' onClick={handleShow}>LOGIN / SIGNUP</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
