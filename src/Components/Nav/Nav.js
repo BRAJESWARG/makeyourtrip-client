@@ -150,7 +150,7 @@ const NavComponent = () => {
   return (
     <Navbar className={`navContainer ${isSolid ? 'solid' : 'transparent'}`} expand="lg">
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/Hotels">
           <img src={Logo} height="200rem" alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

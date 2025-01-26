@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HotelSearch.css"; // Import the external CSS file
+import Advertisement from '../Home-Section/Home'
+
 import ResultPage from "./DisplayPage"; // Import the result page component
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -85,6 +87,7 @@ function HotelSearch() {
   }
 
   return (
+    <>
     <div className="container">
       <div className="input-box">
         <div className="input-group">
@@ -106,11 +109,13 @@ function HotelSearch() {
                 value={checkIn}
                 onChange={(e) => setCheckIn(e)}
               />
-              {checkIn && (
-                <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  <strong>{getDayOfWeek(checkIn)}</strong>
-                </Box>
-              )}
+              {
+                // checkIn && (
+                // <Box  className="input-group" component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                //   <strong>{getDayOfWeek(checkIn)}</strong>
+                // </Box>
+                // )
+              }
               <DatePicker
                 label="Check-out Date"
                 // defaultValue={dayjs('2022-04-17')}
@@ -118,16 +123,20 @@ function HotelSearch() {
                 value={checkOut}
                 onChange={(e) => setCheckOut(e)}
               />
-              {checkOut && (
-                <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  <strong>{getDayOfWeek(checkOut)}</strong>
-                </Box>
-              )}
-              {checkOut && (
-                <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  Nights: {nightStatus.nights}
-                </Box>
-              )}
+              {
+                // checkOut && (
+                //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                //     <strong>{getDayOfWeek(checkOut)}</strong>
+                //   </Box>
+                // )
+              }
+              {
+                // checkOut && (
+                //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                //     Nights: {nightStatus.nights}
+                //   </Box>
+                // )
+              }
             </DemoContainer>
           </LocalizationProvider>
         </div>
@@ -170,10 +179,31 @@ function HotelSearch() {
           </Box>
         </div>
       </div>
+      <div className="extra-section">
+      <Box></Box>
+        {checkIn && (
+          <Box className="checkIn" component="section">
+            <strong>{getDayOfWeek(checkIn)}</strong>
+          </Box>
+        )}
+        {checkOut && (
+          <Box className="checkOut" component="section" >
+            <strong>{getDayOfWeek(checkOut)}</strong>
+          </Box>
+        )}
+        {checkOut && (
+          <Box className="nightStatus" component="section">
+            <strong> Nights: {nightStatus.nights} </strong>
+          </Box>
+        )}
+      </div>
+      <br />
       <button className="button" onClick={handleSearch}>
         Search
       </button>
     </div>
+    <Advertisement />
+    </>
   );
 }
 

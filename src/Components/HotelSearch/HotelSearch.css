@@ -1,124 +1,124 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  /* Container */
-  .container {
-    padding: 20px;
-    max-width: 500px;
-    margin: 50px auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-  .input-box {
-    display: flex;
-    justify-content: space-evenly ;
-    height: 10rem;
-  }
+/* Container */
+.container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
 
-  .LocalizationProvider {
-    padding-top: 0px !important;
-  }
+.input-box {
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+}
 
-  /* .css-10o2lyd-MuiStack-root {
-    padding-top: 10px !important;
-  } */
+.LocalizationProvider {
+  margin-top: -8px;
+}
 
-  /* .css-1xp5r68-MuiFormControl-root-MuiTextField-root {
-    padding-top: 10px !important;
-  } */
- 
-  /* .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root  {
-    padding-top: 10px !important;
-  } */
-  
-  /* Heading */
-  .heading {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Input Group */
-  .input-group {
-    margin-bottom: 20px;
-    width: auto !important;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  /* Button */
-  .button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Result Page Styles */
-  .result-container {
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-    max-width: 500px;
-    margin: 50px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .result-heading {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .result-text {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .result-box {
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .result-message {
-    font-size: 16px;
-    color: #666;
-  }
-  
+/* Heading */
+.heading {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+  /* margin-bottom: 20px; */
+  width: auto !important;
+  /* height: 8rem !important; */
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button */
+.button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 20px 0px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Result Page Styles */
+.result-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-heading {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result-text {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.result-box {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.result-message {
+  font-size: 16px;
+  color: #666;
+}
+
+.extra-section {
+  /* display: flex;
+    justify-content: space-evenly; */
+  color: green;
+  display: grid;
+  grid-template-columns: 17rem 18rem 17rem 17rem;
+}
+
