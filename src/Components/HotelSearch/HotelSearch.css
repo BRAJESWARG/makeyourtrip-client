@@ -119,6 +119,6 @@ body {
     justify-content: space-evenly; */
   color: green;
   display: grid;
-  grid-template-columns: 17rem 18rem 17rem 17rem;
+  grid-template-columns: 22rem 18rem 20rem 17rem;
 }
 
