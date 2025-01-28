@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Intro from "./Intro/Intro"
 import axios from 'axios';
 import '../../App.css';
-
+import MultiCarousel from './MultiCarousel';
 
 function Home() {
 
