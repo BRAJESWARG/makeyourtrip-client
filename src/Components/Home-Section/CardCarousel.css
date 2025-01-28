@@ -1,0 +1,52 @@
+.MultiCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    /* border: 2px solid black; */
+}
+
+.MultiCard > h1 {
+
+    color: rgb(20, 24, 35);
+    /* font: 400 1.2rem / 1.33 Rubik, Arial, sans-serif; */
+    -webkit-font-smoothing: antialiased;
+}
+
+.card-group {
+    width: 40%;
+    margin-right: 10px;
+
+}
+
+.MultiCard-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-group>.card {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border: 2px blueviolet solid;
+}
+
+.CardImg {
+    height: 200px !important;
+    width: 40% !important;
+    /* padding: 10px;
+    border: 2px blueviolet solid; */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-footer {
+    margin-top: 80px;
+    margin-left: 10px;
+    line-height: normal;
+    font-weight: 500;
+    padding-top: 1rem;
+}
