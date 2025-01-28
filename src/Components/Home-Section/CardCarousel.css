@@ -34,6 +34,11 @@
     border: 2px blueviolet solid;
 }
 
+.MultiCarousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .CardImg {
     height: 200px !important;
     width: 40% !important;
