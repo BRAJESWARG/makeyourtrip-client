@@ -19,6 +19,7 @@ function Home() {
     return (
 
         <div>
+            <MultiCarousel />
             <Intro yourTrip={yourTrip} />
         </div>
 
