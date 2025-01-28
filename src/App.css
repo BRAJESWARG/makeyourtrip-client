@@ -200,8 +200,8 @@
 }
 
 .introContent1 {
-  position: absolute;
-  top: 450px;
+  position: relative;
+  top: -120px;
   left: 100px;
   color: cyan;
 
