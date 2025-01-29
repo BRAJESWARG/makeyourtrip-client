@@ -36,7 +36,7 @@ function Testimonials(props) {
                 responsive={responsive}
                 ssr={true} // means to render carousel on server-side.
                 infinite={true}
-                autoPlay={false}
+                autoPlay={true}
                 autoPlaySpeed={2000}
                 // keyBoardControl={true}
                 // customTransition="all .5"
