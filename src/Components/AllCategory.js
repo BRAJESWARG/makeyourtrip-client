@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 // import { ArrayofyourTrip } from './ArrayOfBlog/ArrayOfBlog';
 import axios from 'axios';
 import HotelSearch from './HotelSearch/HotelSearch';
+import Testimonials from './Home-Section/Testimonials';
 
 const AllCategory = () => {
 
@@ -43,7 +44,7 @@ const AllCategory = () => {
                         );
                     } else if (cat === 'Flights') {
                         return (
-                            "Oops! Yet to Development!"
+                            <Testimonials />
                         );
                     } else if (cat === 'Trains') {
                         return (
