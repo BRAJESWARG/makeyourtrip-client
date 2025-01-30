@@ -23,42 +23,39 @@ export const productData = [
   {
     id: 1,
     imageurl:
-      "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcR2OIBC4ai6__woXzFywGOaYTS0dOvQx0PoIHB5BLVnz2CO0sMjZ5s7YgKQzuc_b5sTQxxaI8sTWzWjCYs",
-    name: "Sir Ratan Tata",
-    designation: "Industrialist and former chairman of Tata Sons.",
-    description: "Ratan Naval Tata is an Indian Industrialist and former chairman of Tata Sons. He was also the chairman of the Tata Group from 1990 to 2012.",
+      "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/swiezmifobyjibudd4cc/4-Inseln-TagestourabKrabi.jpg",
+    name: "karabi",
   },
   {
     id: 2,
     imageurl:
-      "https://ichef.bbci.co.uk/news/976/cpsprodpb/150B8/production/_110000268_fe81a048b.jpg.webp",
-    name: "Sundar Pichai",
-    designation: "Chief Executive Officer of Google.",
-    description: "Sundar Pichai, is an Indian-American business executive. He is the chief executive officer of Alphabet Inc. and its subsidiary Google.",
+      "https://etimg.etb2bimg.com/photo/109819916.cms",
+    name: "Lakshadweep",
   },
   {
     id: 3,
     imageurl:
-      "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQIFszJM0q8qdDHZBLD3KSlPT78W3jVPqfanyR78xqRiOAf0gDS5HzNJRZNNuhPWXqUQp1QdNbQYA7NqEU",
-    name: "Dr. Vikram Sarabhai",
-    designation: "Indian Physicist",
-    description: "Dr. Vikram Sarabhai was an Indian physicist and astronomer who initiated space research and helped develop nuclear power in India.",
+      "https://www.rltourism.com/wp-content/uploads/2023/04/langkavi.jpg",
+    name: "Langkawi",
   },
   {
     id: 4,
     imageurl:
-      "https://www.forbesindia.com/media/images/2020/Dec/img_148379_mukeshambani.jpg",
-    name: "Mukesh Ambani",
-    designation: "Chairman and MD, Reliance Industries",
-    description: "Mukesh Dhirubhai Ambani is an Indian billionaire businessman. He is the Chairman and MD of Reliance Industries Ltd.",
+      "https://cdn.forevervacation.com/uploads/blog/the-best-time-to-visit-phuket-2537.webp",
+    name: "Phuket",
   },
   {
     id: 5,
     imageurl:
-      "https://cdn.britannica.com/48/222648-050-F4D0A2D8/President-of-India-A-P-J-Abdul-Kalam-2007.jpg",
-    name: "Dr. A. P. J. Abdul Kalam",
-    designation: "Former President of India",
-    description: "Dr. A. P. J. Kalam BR was an Indian aerospace scientist and statesman who served as the 11th president of India from 2002 to 2007. ",
-  }
+      "https://c.otcdn.com/imglib/hotelfotos/8/169/itc-grand-goa-a-luxury-collection-resort-spa-goa-20231117124928226000.jpg",
+    name: "Goa",
+  },
+  {
+    id: 6,
+    imageurl:
+      "https://www.indianholiday.com/wordpress/wp-content/uploads/2024/09/ooty-best-1.png",
+    name: "Ooty",
+  },
+
 ];
 
