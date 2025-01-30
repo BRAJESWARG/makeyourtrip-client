@@ -9,46 +9,47 @@ function Testimonials(props) {
     const product = productData.map((item) => (
         <Product
             name={item.name}
-            designation={item.designation}
             url={item.imageurl}
-            price={item.price}
-            description={item.description}
         />
     ));
 
 
     // https://www.npmjs.com/package/react-multi-carousel
+    // https://github.com/nshntarora/Indian-Cities-JSON/blob/master/a-detailed-version.json
 
 
     return (
-        <div className="Testimonials">
-            <div>
-                <hr className="hr-left" />
-                <hr className="hr-right" />
-                &nbsp;&nbsp;<h1 className="Testimonials-text">Offers for you</h1>&nbsp;&nbsp;
-            </div>
-            <Carousel
-                className="Carousel"
-                swipeable={true}
-                draggable={false}
-                // centerMode={true}
-                showDots={false}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={2000}
-                // keyBoardControl={true}
-                // customTransition="all .5"
-                transitionDuration={500}
-                // containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
+        <div className="Testimonials-container">
+            <div className="Testimonials">
+                <div>
+                    {/* <hr className="hr-left" />
+                    <hr className="hr-right" />
+                    &nbsp;&nbsp;<h1 className="Testimonials-text">Point. Pick. Stay.</h1>&nbsp;&nbsp; */}
+                    <h1 className="Testimonials-text">Point. Pick. Stay.</h1>
+                </div>
+                <Carousel
+                    className="Carousel"
+                    swipeable={true}
+                    draggable={true}
+                    // centerMode={true}
+                    showDots={false}
+                    responsive={responsive}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={2000}
+                    // keyBoardControl={true}
+                    // customTransition="all .5"
+                    transitionDuration={500}
+                    // containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    dotListClass="custom-dot-list-style"
+                // itemClass="carousel-item-padding-40-px"
 
-            >
-                {product}
-            </Carousel>
+                >
+                    {product}
+                </Carousel>
+            </div>
         </div>
     );
 }
