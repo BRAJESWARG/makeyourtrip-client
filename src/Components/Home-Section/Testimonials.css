@@ -1,3 +1,9 @@
+.Testimonials-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4em;
+}
+
 h1 {
     margin: 0rem auto 6rem;
     padding-top: 4rem;
@@ -14,7 +20,7 @@ h1 {
     z-index: +10;
 }
 
-.card {
+.product--card {
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
     /* max-width: 350px; */
     /* margin: auto 1rem 0; */
@@ -28,17 +34,33 @@ h1 {
 
 .Carousel {
     /* justify-content: center; */
-    height: 500px;
-    margin-top: -5rem;
+    height: 300px;
+    /* margin-top: -5rem; */
 }
+
+.Carousel>ul>li {
+    padding: 20px;
+    width: 396px !important;
+    border-radius: 10px;
+}
+
+/* .Carousel>ul {
+    transform: translate3d(-1180px, 0px, 0px) !important;
+    margin-left: 80px;
+} */
 
 /* .react-multi-carousel-list {
     justify-content: center;
   } */
 .Testimonials {
-    background: dodgerblue;
+    /* background: dodgerblue; */
     height: 500px;
-    padding-bottom: 4em;
+    padding: 0 1rem 2rem;
+    width: 70%;
+    border: 2px solid whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .Testimonials-text {
@@ -63,11 +85,18 @@ h1 {
     border: solid wheat;
 }
 
-/* img {
+.product--card>img {
     border-radius: 100%;
     border: 4px solid wheat;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5);
-} */
+
+}
+
+.bg-image>img {
+    border-radius: 4px;
+    width: 374px;
+    height: 156px;
+}
 
 .social-icons {
     display: flex;
@@ -103,7 +132,7 @@ h1 {
         display: none;
     }
 
-    .card {
+    .product--card {
         max-width: 250px;
         margin: auto 1rem 0;
     }
@@ -125,11 +154,11 @@ h1 {
 }
 
 .Testimonials {
-    height: 540px;
+    height: 420px;
 }
 
 @media screen and (min-width: 320.9px) and (max-width: 375.9px) {
-    .card {
+    .product--card {
         max-width: 250px;
         margin: auto 1rem 0;
     }
@@ -160,7 +189,7 @@ h1 {
 }
 
 @media screen and (min-width: 375.9px) and (max-width: 767.9px) {
-    .card {
+    .product--card {
         max-width: 250px;
         margin: auto 1rem 0;
     }
@@ -197,7 +226,7 @@ h1 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.9px) {
-    .card {
+    .product--card {
         margin: auto 0.6rem 0;
     }
 
