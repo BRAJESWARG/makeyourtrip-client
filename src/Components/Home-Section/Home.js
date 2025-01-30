@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../../App.css';
 import MultiCarousel from './MultiCarousel';
 import MultiCard from './MultiCard';
+import Testimonials from './Testimonials';
 
 function Home() {
 
@@ -21,6 +22,7 @@ function Home() {
 
         <div>
             <MultiCard />
+            <Testimonials />
             <MultiCarousel />
             <Intro yourTrip={yourTrip} />
         </div>
