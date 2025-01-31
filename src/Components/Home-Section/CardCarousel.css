@@ -19,7 +19,7 @@
 
 }
 
-.MultiCard > .carousel {
+.MultiCard>.carousel {
     margin-left: 2rem !important;
 }
 
@@ -71,4 +71,14 @@
     line-height: normal;
     font-weight: 500;
     padding-top: 1rem;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -55px !important;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: blueviolet !important;
 }
