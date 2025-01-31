@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Intro from "./Intro/Intro"
 import axios from 'axios';
 import '../../App.css';
-import MultiCarousel from './MultiCarousel';
+// import MultiCarousel from './MultiCarousel';
 import MultiCard from './MultiCard';
 import Testimonials from './Testimonials';
 
@@ -23,7 +23,7 @@ function Home() {
         <div>
             <MultiCard />
             <Testimonials />
-            <MultiCarousel />
+            {/* <MultiCarousel /> */}
             <Intro yourTrip={yourTrip} />
         </div>
 
