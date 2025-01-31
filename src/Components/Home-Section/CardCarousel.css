@@ -19,8 +19,11 @@
 
 }
 
-.MultiCard>h1 {
+.MultiCard > .carousel {
+    margin-left: 2rem !important;
+}
 
+.MultiCard>h1 {
     color: rgb(20, 24, 35);
     /* font: 400 1.2rem / 1.33 Rubik, Arial, sans-serif; */
     -webkit-font-smoothing: antialiased;
