@@ -40,7 +40,7 @@ const AllCategory = () => {
                 {(() => {
                     if (cat === 'Hotels') {
                         return (
-                            <HotelSearch />
+                            <HotelSearch yourTrip={yourTrip} />
                         );
                     } else if (cat === 'Flights') {
                         return (
