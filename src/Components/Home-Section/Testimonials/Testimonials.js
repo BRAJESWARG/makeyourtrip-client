@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Product from "./Product";
-import { productData, responsive } from "../utilis/data";
+import { productData, responsive } from "../../utilis/data";
 import './Testimonials.css'
 
 function Testimonials(props) {
