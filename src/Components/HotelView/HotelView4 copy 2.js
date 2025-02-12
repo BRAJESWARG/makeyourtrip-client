@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/mousewheel";
-import { FreeMode, Mousewheel } from "swiper/modules";
 
 const HotelView = () => {
   const images = [
@@ -31,25 +26,17 @@ const HotelView = () => {
       <button className="prev-button" onClick={handlePrev}>❮</button>
       <img src={images[currentIndex].original} alt="Main View" className="main-image" />
       <button className="next-button" onClick={handleNext}>❯</button>
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        mousewheel={true}
-        modules={[FreeMode, Mousewheel]}
-        className="thumbnails"
-      >
+      <div className="thumbnails">
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img
-              src={image.thumbnail}
-              alt={`Thumbnail ${index}`}
-              className="thumbnail"
-              onMouseEnter={() => setCurrentIndex(index)}
-            />
-          </SwiperSlide>
+          <img
+            key={index}
+            src={image.thumbnail}
+            alt={`Thumbnail ${index}`}
+            className="thumbnail"
+            onMouseEnter={() => setCurrentIndex(index)}
+          />
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };
