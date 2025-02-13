@@ -31,3 +31,13 @@
 .image-gallery-thumbnail-image {
     border-radius: 4px;
 }
+
+.main-image {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.next-button{
+    margin-left: -2.5em;
+}
