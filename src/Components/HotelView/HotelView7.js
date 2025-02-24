@@ -15,13 +15,13 @@ import "react-image-gallery/styles/css/image-gallery.css";
 const HotelView = () => {
 
   const images = [
-    { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50" },
-    { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50" },
-    { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50" },
-    { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50" },
-    { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50" },
-    { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50" },
-    { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50" }
+    { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 1 },
+    { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50", ID: 2 },
+    { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50", ID: 3 },
+    { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50", ID: 4 },
+    { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50", ID: 5 },
+    { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 6 },
+    { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50", ID: 7 }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +45,7 @@ const HotelView = () => {
                 <img src={images[currentIndex].original} alt="Main View" className="main-image" />
                 <button className="next-button" onClick={handleNext}>❯</button>
                 <div className="thumbnails">
-                  {images.map((image, index) => (
+                  {images.filter((value) => (value.ID <= 5)).map((image, index) => (
                     <img
                       key={index}
                       src={image.thumbnail}
@@ -61,7 +61,12 @@ const HotelView = () => {
           <MDBCol md='4' className='Info-Component'>
             <MDBCardBody className='Info'>
               <MDBCardText className='Ratings'>
-                <span>5 star Hotel</span>
+                <span>
+                  5
+                  <span class="fa fa-star checked"></span>
+                  <i style={{fontSize: '5px'}} class="fa">&#xf111;</i>
+                   Hotel
+                </span>
                 <span>1271 Ratings</span>
               </MDBCardText>
               <div>

@@ -24,6 +24,19 @@
     width: 75% !important;
 }
 
+.thumbnails {
+    /* display: flex;
+    justify-content: space-around; */
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.thumbnail {
+    width: 78PX;
+    padding-right: 10px;
+    border-radius: 4px;
+}
+
 .image-gallery-slide-wrapper {
     margin-left: -1.5em;
 }
@@ -35,9 +48,50 @@
 .main-image {
     width: 90%;
     padding: 10px;
-    border-radius: 5px;
+    border: 0px;
+    border-radius: 15px;
+    margin-left: -2rem;
 }
 
-.next-button{
+.next-button {
     margin-left: -2.5em;
+}
+
+.prev-button {
+    position: relative;
+    left: 8px;
+    background: transparent;
+    border: none;
+    color: rgb(187, 187, 187);
+    font-size: 20px;
+}
+
+.next-button {
+    background: transparent;
+    border: none;
+    color: rgb(187, 187, 187);
+    font-size: 20px;
+}
+
+.prev-button:hover {
+    color: aliceblue;
+    font-size: 20.5px;
+}
+
+.next-button:hover {
+    color: aliceblue;
+    font-size: 20.5px;
+}
+
+.Ratings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.StarLogo {
+    width: 50px;
+}
+
+.checked {
+    color: orange;
 }
