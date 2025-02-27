@@ -36,7 +36,7 @@ const HotelView = () => {
 
   return (
     <div className='HotelView'>
-      <MDBCard style={{ maxWidth: '70%' }}>
+      <MDBCard style={{ maxWidth: '70%', maxHeight:'300px' }}>
         <MDBRow className='g-0'>
           <MDBCol md='4'>
             <div className='box'>
