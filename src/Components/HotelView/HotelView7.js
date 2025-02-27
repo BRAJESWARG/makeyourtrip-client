@@ -15,12 +15,12 @@ import "react-image-gallery/styles/css/image-gallery.css";
 const HotelView = () => {
 
   const images = [
-    { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 1 },
+    { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 1 },
     { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50", ID: 2 },
     { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50", ID: 3 },
     { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50", ID: 4 },
     { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50", ID: 5 },
-    { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 6 },
+    { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 6 },
     { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50", ID: 7 }
   ];
 
@@ -36,7 +36,7 @@ const HotelView = () => {
 
   return (
     <div className='HotelView'>
-      <MDBCard style={{ maxWidth: '70%', maxHeight:'300px' }}>
+      <MDBCard style={{ maxWidth: '70%', maxHeight: '300px' }}>
         <MDBRow className='g-0'>
           <MDBCol md='4'>
             <div className='box'>
@@ -45,7 +45,7 @@ const HotelView = () => {
                 <img src={images[currentIndex].original} alt="Main View" className="main-image" />
                 <button className="next-button" onClick={handleNext}>❯</button>
                 <div className="thumbnails">
-                  {images.filter((value) => (value.ID <= 5)).map((image, index) => (
+                  {images.filter((value) => (value.ID <= 4)).map((image, index) => (
                     <img
                       key={index}
                       src={image.thumbnail}
@@ -418,6 +418,17 @@ const HotelView = () => {
           </MDBCol>
         </MDBRow>
       </MDBCard>
+      <div className='viewAllBox'>
+        <img
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAeJpGZ9hA6ug-yU-SNFYPsHp8d2nkR58qir_qQ9LRRfw4f1HBB9voms0zX0JCyiyvESs&usqp=CAU'
+          alt='view all'
+          className="viewAllBoxImage"
+        />
+        <div className='viewAllBoxText'>
+          <div>VIEW</div>
+          <div>ALL</div>
+        </div>
+      </div>
     </div>
   );
 }
