@@ -5,7 +5,7 @@ import "./HotelSearch.css"; // Import the external CSS file
 import Advertisement from '../Home-Section/Home'
 import BackgroundBG from '../../Assets/header-bg.svg';
 
-import ResultPage from "./DisplayPage"; // Import the result page component
+import ResultPage from "./DisplayPage3"; // Import the result page component
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -89,6 +89,8 @@ function HotelSearch() {
           children,
           nights,
           days,
+          checkIn,
+          checkOut,
         });
         setShowResultPage(true); // Navigate to the result page
       } else {
