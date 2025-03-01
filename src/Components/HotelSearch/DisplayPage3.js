@@ -15,6 +15,8 @@ function DisplayPage({ result }) {
 
   // Temporary state for form inputs
   const [tempFormData, setTempFormData] = useState({ ...formData });
+  // const [guestData, setGuestData] = useState({ adults: result.adults || 1, children: result.children || 0 });
+  // const [showGuestModal, setShowGuestModal] = useState(false);
 
   useEffect(() => {
     axios
@@ -63,7 +65,7 @@ function DisplayPage({ result }) {
               />
             </div>
 
-            <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
+            {/* <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
               <label>GUEST & ROOMS</label>
               <input
                 type="number"
@@ -71,7 +73,71 @@ function DisplayPage({ result }) {
                 value={tempFormData.adults}
                 onChange={(e) => setTempFormData({ ...tempFormData, adults: parseInt(e.target.value) || 1 })}
               />
+            </div> */}
+
+            {/* GUESTS (Combined Adults + Children in One Box) */}
+            {/* <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
+              <label>GUESTS</label>
+              <input
+                type="text"
+                readOnly
+                value={`${tempFormData.adults} Adults, ${tempFormData.children} Children`}
+                onClick={() => setTempFormData(true)}
+                className="guest-input-box"
+              />
+            </div> */}
+
+
+            {/* GUESTS (Adults + Children) */}
+            {/* <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
+              <label>GUESTS</label>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <div>
+                  <label>Adults</label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={tempFormData.adults}
+                    onChange={(e) => setTempFormData({ ...tempFormData, adults: Math.max(1, parseInt(e.target.value) || 1) })}
+                  />
+                </div>
+                <div>
+                  <label>Children</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={tempFormData.children}
+                    onChange={(e) => setTempFormData({ ...tempFormData, children: Math.max(0, parseInt(e.target.value) || 0) })}
+                  />
+                </div>
+              </div>
+            </div> */}
+
+            <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
+              <label>GUESTS</label>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <div>
+                <input
+                    type="number"
+                    min="1"
+                    value={tempFormData.adults}
+                    onChange={(e) => setTempFormData({ ...tempFormData, adults: Math.max(1, parseInt(e.target.value) || 1) })}
+                  />
+                  <label>Adult</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={tempFormData.children}
+                    onChange={(e) => setTempFormData({ ...tempFormData, children: Math.max(0, parseInt(e.target.value) || 0) })}
+                  />
+                   <input
+                    type="text"
+                    value='1 Room'
+                  />
+                </div>
+              </div>
             </div>
+
 
             <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">
               Update Search
@@ -79,7 +145,33 @@ function DisplayPage({ result }) {
           </div>
         </section>
       </div>
-
+      {/* GUEST SELECTION MODAL */}
+      {/* {showGuestModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Select Guests</h2>
+            <div className="guest-selection">
+              <label>Adults</label>
+              <input
+                type="number"
+                min="1"
+                value={tempFormData.adults}
+                onChange={(e) => setTempFormData({ ...tempFormData, adults: Math.max(1, parseInt(e.target.value) || 1) })}
+              />
+            </div>
+            <div className="guest-selection">
+              <label>Children</label>
+              <input
+                type="number"
+                min="0"
+                value={tempFormData.children}
+                onChange={(e) => setTempFormData({ ...tempFormData, children: Math.max(0, parseInt(e.target.value) || 0) })}
+              />
+            </div>
+            <button onClick={() => setShowGuestModal(false)}>Save</button>
+          </div>
+        </div>
+      )} */}
       <div className="result-container">
         <h1 className="result-heading">Thank You!</h1>
         <p className="result-text">Your updated booking details are as follows:</p>

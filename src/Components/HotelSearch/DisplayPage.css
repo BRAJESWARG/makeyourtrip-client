@@ -199,11 +199,16 @@ ul {
     background-color: rgb(255, 255, 255);
     margin-top: 1.5rem;
     height: 2.8rem;
-    width: 19.6rem;
+    width: 15rem;
     color: rgb(22, 107, 211);
     text-transform: none;
     border: 1px solid white;
     border-radius: 0.6rem;
+}
+.hDRTlP:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 14px 0px;
+    height: 2.82rem;
+    width: 15.02rem;
 }
 
 /* .cYhrVX {
@@ -218,3 +223,21 @@ ul {
     border-radius: 1.2rem;
     font-family: Rubik;
 } */
+
+.adultsChildRoom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.adultsChildRoomBox {
+    display: flex;
+    justify-content: center;
+    padding-right: 1rem;
+}
+
+.adultsChildRoomInput {
+    border: none !important;
+    width: 2rem;
+}
+
+/* .adultsChildRoomLebel {} */
