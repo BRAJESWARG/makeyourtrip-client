@@ -1,6 +1,7 @@
 .HotelView {
     display: flex;
     justify-content: center;
+    margin-top: 5em;
 }
 
 .image-gallery {
@@ -598,7 +599,6 @@
     align-items: center;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;

@@ -7,14 +7,18 @@
   z-index: -10;
 }
 
-.background-bg {
+.container-fluid {
+  height: 100% !important;
+}
+
+/* .background-bg {
   width: 100%;
-  height: auto;
-  /*   position: fixed; */
-  opacity: 1;
+  height: auto; */
+/*   position: fixed; */
+/* opacity: 1;
   background-repeat: no-repeat;
   z-index: -1;
-}
+} */
 
 .the {
   font-size: 30px;
@@ -45,13 +49,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  margin-top: -15rem;
-}
-
-.CategoryHead {
-  display: flex;
-  justify-content: center;
-  color: antiquewhite;
+  /* margin-top: -15rem; */
 }
 
 .contentForm {

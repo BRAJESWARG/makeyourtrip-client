@@ -6,11 +6,34 @@ body {
   background-color: #f4f4f4;
 }
 
+.hotelSearch-container {
+  margin-top: -15em;
+  position: relative;
+  z-index: +2;
+}
+
+.background-bg {
+  width: 100%;
+  height: auto;
+  /*   position: fixed; */
+  opacity: 1;
+  background-repeat: no-repeat;
+  z-index: -10;
+  margin-top: -2em;
+}
+
+.CategoryHead {
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  /* margin-top: -14em; */
+}
+
 /* Container */
 .container {
   padding: 12px;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: #f9f9f9;
   border-radius: 22px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

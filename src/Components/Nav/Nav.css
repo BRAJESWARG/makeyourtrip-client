@@ -68,7 +68,9 @@
 } */
 
 .transparent {
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px 0px;
 }
 
 .solid {

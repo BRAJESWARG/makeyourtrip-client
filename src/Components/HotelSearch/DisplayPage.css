@@ -1,0 +1,220 @@
+.displayHotelsContainer {
+    margin-top: 2.5em;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(97.59deg, rgb(255, 109, 56) 0%, rgb(219, 122, 33) 100.53%);
+    height: 5.5rem;
+}
+
+.edQnfF {
+    display: flex;
+    width: 70%;
+    position: sticky;
+    top: -0.01rem;
+    z-index: 9;
+}
+
+.bFIqAi {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0px auto;
+    padding: 1.2rem 0px;
+    background-image: linear-gradient(97.59deg, rgb(255, 109, 56) 0%, rgb(219, 122, 33) 100.53%);
+}
+
+.buWWlt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gwpVPd {
+    display: flex;
+    width: 75%;
+}
+
+.gfWNJG {
+    width: 22rem;
+    padding-right: 1.2rem;
+    position: relative;
+}
+
+.iGTTep {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cZkTVY {
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+}
+
+.cGELZI {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
+    border: none;
+    text-transform: capitalize;
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    padding: 1rem 1rem 1.2rem;
+    border-radius: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+button,
+input {
+    font-family: Rubik;
+}
+
+.dHsxlv {
+    z-index: 99;
+    position: absolute;
+    top: 6rem;
+    left: 0px;
+    list-style-type: none;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 14px 0px;
+    transform: translateY(4px);
+    min-width: 54rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.fsTdCE {
+    padding-right: 1.2rem;
+    width: 16.5rem;
+}
+
+.dhbsSR {
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    display: flex;
+}
+
+.kNWLrS {
+    background-color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
+    border: none;
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    padding: 1rem 1rem 1.2rem;
+    border-radius: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fsTdCE {
+    padding-right: 1.2rem;
+    width: 16.5rem;
+}
+
+.dhbsSR {
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    display: flex;
+}
+
+.kNWLrS {
+    background-color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
+    border: none;
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    padding: 1rem 1rem 1.2rem;
+    border-radius: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.idfXAf {
+    padding-right: 0.5rem;
+    position: relative;
+    width: 25.4rem;
+}
+
+.dhbsSR {
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    display: flex;
+}
+
+.kNWLrS {
+    background-color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
+    border: none;
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    padding: 1rem 1rem 1.2rem;
+    border-radius: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hDRTlP {
+    line-height: normal;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    margin-top: 1.5rem;
+    height: 2.8rem;
+    width: 19.6rem;
+    color: rgb(22, 107, 211);
+    text-transform: none;
+    border: 1px solid white;
+    border-radius: 0.6rem;
+}
+
+/* .cYhrVX {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(255, 109, 56);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 1.2rem;
+    font-family: Rubik;
+} */

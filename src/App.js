@@ -9,7 +9,7 @@ import Footer from './Components/Home-Section/Footer/Footer';
 import NotFound from "./Components/Home-Section/Not Found/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Article from './Components/Article.js';
-import BackgroundBG from './Assets/header-bg.svg';
+// import BackgroundBG from './Assets/header-bg.svg';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        <img src={BackgroundBG} className='background-bg' alt="background-bg" />
+        {/* <img src={BackgroundBG} className='background-bg' alt="background-bg" /> */}
         <br />
         <Routes>
           <Route path="/" element={<Home />} />

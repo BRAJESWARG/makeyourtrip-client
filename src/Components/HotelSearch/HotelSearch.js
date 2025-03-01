@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import "./HotelSearch.css"; // Import the external CSS file
 import Advertisement from '../Home-Section/Home'
+import BackgroundBG from '../../Assets/header-bg.svg';
 
 import ResultPage from "./DisplayPage"; // Import the result page component
 import TextField from '@mui/material/TextField';
@@ -17,6 +20,20 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 function HotelSearch() {
+
+  const { cat } = useParams()
+
+  const [yourTrip, setYourTrip] = useState([]);
+  console.log(yourTrip);
+
+  useEffect(() => {
+
+    axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
+
+      data => setYourTrip(data.data)
+    )
+
+  }, [cat])
 
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
@@ -88,123 +105,133 @@ function HotelSearch() {
 
   return (
     <>
-      <div className="container">
-        <div className="input-box">
-          <div className="input-group">
-            <TextField
-              id="outlined-multiline-flexible"
-              label="Where to"
-              maxRows={4}
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Enter city or location"
-            />
+      <img src={BackgroundBG} className='background-bg' alt="background-bg" />
+      <div className="hotelSearch-container">
+        <div className='CategoryHead'>
+          {yourTrip.filter((value) => (value.ID === '1') && (value.Category === cat)).map((val, index) => (
+            <h2 className='mainCategory' key={index} >
+              {val.CategoryHead}
+            </h2>
+          ))}
+        </div>
+        <div className="container">
+          <div className="input-box">
+            <div className="input-group">
+              <TextField
+                id="outlined-multiline-flexible"
+                label="Where to"
+                maxRows={4}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Enter city or location"
+              />
+            </div>
+            <div className="input-group LocalizationProvider">
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoContainer components={['DatePicker', 'DatePicker']}>
+                  <DatePicker
+                    label="Check-in Date"
+                    type="date"
+                    value={checkIn}
+                    onChange={(e) => setCheckIn(e)}
+                  />
+                  {
+                    // checkIn && (
+                    // <Box  className="input-group" component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                    //   <strong>{getDayOfWeek(checkIn)}</strong>
+                    // </Box>
+                    // )
+                  }
+                  <DatePicker
+                    label="Check-out Date"
+                    // defaultValue={dayjs('2022-04-17')}
+                    type="date"
+                    value={checkOut}
+                    onChange={(e) => setCheckOut(e)}
+                  />
+                  {
+                    // checkOut && (
+                    //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                    //     <strong>{getDayOfWeek(checkOut)}</strong>
+                    //   </Box>
+                    // )
+                  }
+                  {
+                    // checkOut && (
+                    //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+                    //     Nights: {nightStatus.nights}
+                    //   </Box>
+                    // )
+                  }
+                </DemoContainer>
+              </LocalizationProvider>
+            </div>
+            <div className="input-group">
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Adults</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={adults}
+                    label="Adults"
+                    defaultValue="1"
+                    onChange={(e) => setAdults(e.target.value)}
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </div>
+            <div className="input-group">
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Children</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={children}
+                    label="Children"
+                    defaultValue="0"
+                    onChange={(e) => setChildren(e.target.value)}
+                  >
+                    <MenuItem value={0}>0</MenuItem>
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </div>
           </div>
-          <div className="input-group LocalizationProvider">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={['DatePicker', 'DatePicker']}>
-                <DatePicker
-                  label="Check-in Date"
-                  type="date"
-                  value={checkIn}
-                  onChange={(e) => setCheckIn(e)}
-                />
-                {
-                  // checkIn && (
-                  // <Box  className="input-group" component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  //   <strong>{getDayOfWeek(checkIn)}</strong>
-                  // </Box>
-                  // )
-                }
-                <DatePicker
-                  label="Check-out Date"
-                  // defaultValue={dayjs('2022-04-17')}
-                  type="date"
-                  value={checkOut}
-                  onChange={(e) => setCheckOut(e)}
-                />
-                {
-                  // checkOut && (
-                  //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  //     <strong>{getDayOfWeek(checkOut)}</strong>
-                  //   </Box>
-                  // )
-                }
-                {
-                  // checkOut && (
-                  //   <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-                  //     Nights: {nightStatus.nights}
-                  //   </Box>
-                  // )
-                }
-              </DemoContainer>
-            </LocalizationProvider>
+          <div className="extra-section">
+            <Box></Box>
+            {checkIn && (
+              <Box className="checkIn" component="section">
+                <strong>{getDayOfWeek(checkIn)}</strong>
+              </Box>
+            )}
+            {checkOut && (
+              <Box className="checkOut" component="section" >
+                <strong>{getDayOfWeek(checkOut)}</strong>
+              </Box>
+            )}
+            {checkOut && (
+              <Box className="nightStatus" component="section">
+                <strong> Nights: {nightStatus.nights} </strong>
+              </Box>
+            )}
           </div>
-          <div className="input-group">
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Adults</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={adults}
-                  label="Adults"
-                  defaultValue="1"
-                  onChange={(e) => setAdults(e.target.value)}
-                >
-                  <MenuItem value={1}>1</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                  <MenuItem value={3}>3</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-          </div>
-          <div className="input-group">
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Children</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={children}
-                  label="Children"
-                  defaultValue="0"
-                  onChange={(e) => setChildren(e.target.value)}
-                >
-                  <MenuItem value={0}>0</MenuItem>
-                  <MenuItem value={1}>1</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
+          <br />
+          <div className="hotelSearch">
+            <button className="hotelSearchButton" onClick={handleSearch}>
+              Search
+            </button>
           </div>
         </div>
-        <div className="extra-section">
-          <Box></Box>
-          {checkIn && (
-            <Box className="checkIn" component="section">
-              <strong>{getDayOfWeek(checkIn)}</strong>
-            </Box>
-          )}
-          {checkOut && (
-            <Box className="checkOut" component="section" >
-              <strong>{getDayOfWeek(checkOut)}</strong>
-            </Box>
-          )}
-          {checkOut && (
-            <Box className="nightStatus" component="section">
-              <strong> Nights: {nightStatus.nights} </strong>
-            </Box>
-          )}
-        </div>
-        <br />
-        <div className="hotelSearch">
-          <button className="hotelSearchButton" onClick={handleSearch}>
-            Search
-          </button>
-        </div>
+        <Advertisement />
       </div>
-      <Advertisement />
     </>
   );
 }

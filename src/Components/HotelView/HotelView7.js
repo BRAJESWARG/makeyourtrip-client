@@ -189,8 +189,6 @@ const HotelView = () => {
                       </div>
                     </div>
                   </div>
-
-
                   <a
                     itemprop="name"
                     href="https://www.goibibo.com/hotels/ramee-techome-hotel-in-mumbai-1382082848099584304/"
