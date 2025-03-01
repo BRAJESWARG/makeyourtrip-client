@@ -13,7 +13,7 @@ function DisplayPage({ result }) {
     checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
   });
 
-  // Temporary state for form inputs
+  // Temporary state to store new values before updating the form
   const [tempFormData, setTempFormData] = useState({ ...formData });
 
   useEffect(() => {
@@ -24,8 +24,18 @@ function DisplayPage({ result }) {
   }, []);
 
   const handleUpdate = () => {
-    setFormData({ ...tempFormData }); // Apply changes on button click
+    setFormData({ ...tempFormData }); // Update main form data only when clicking the button
   };
+
+  const { adults, children, location, nights, days, checkIn, checkOut } = formData;
+
+  if (adults < 1) {
+    return <h1>At least one Adult needs to be selected...</h1>;
+  }
+
+  const filteredData = yourTrip.filter(
+    (value) => value.Adults === adults && value.Child === children && value.Category === "Hotels"
+  );
 
   return (
     <>
@@ -40,7 +50,10 @@ function DisplayPage({ result }) {
                   placeholder="LOCATION NAME"
                   className="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
                   value={tempFormData.location}
-                  onChange={(e) => setTempFormData({ ...tempFormData, location: e.target.value })}
+                  onClick={() => {
+                    const newLocation = prompt("Enter location:", tempFormData.location);
+                    if (newLocation) setTempFormData((prev) => ({ ...prev, location: newLocation }));
+                  }}
                 />
               </div>
             </div>
@@ -48,28 +61,44 @@ function DisplayPage({ result }) {
             <div className="SearchWidgetUIstyles__CheckinCheckoutWrapper-sc-1x37qbj-3 fsTdCE">
               <label>CHECK-IN</label>
               <input
-                type="date"
+                type="text"
+                placeholder="Travel Dates"
                 value={tempFormData.checkIn}
-                onChange={(e) => setTempFormData({ ...tempFormData, checkIn: e.target.value })}
+                onClick={() => {
+                  const newCheckIn = prompt("Enter Check-in date (YYYY-MM-DD):", tempFormData.checkIn);
+                  if (newCheckIn) {
+                    setTempFormData((prev) => ({ ...prev, checkIn: dayjs(newCheckIn).format("YYYY-MM-DD") }));
+                  }
+                }}
               />
             </div>
 
             <div className="SearchWidgetUIstyles__CheckinCheckoutWrapper-sc-1x37qbj-3 fsTdCE">
               <label>CHECK-OUT</label>
               <input
-                type="date"
+                type="text"
+                placeholder="Travel Dates"
                 value={tempFormData.checkOut}
-                onChange={(e) => setTempFormData({ ...tempFormData, checkOut: e.target.value })}
+                onClick={() => {
+                  const newCheckOut = prompt("Enter Check-out date (YYYY-MM-DD):", tempFormData.checkOut);
+                  if (newCheckOut) {
+                    setTempFormData((prev) => ({ ...prev, checkOut: dayjs(newCheckOut).format("YYYY-MM-DD") }));
+                  }
+                }}
               />
             </div>
 
             <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf">
               <label>GUEST & ROOMS</label>
               <input
-                type="number"
-                min="1"
-                value={tempFormData.adults}
-                onChange={(e) => setTempFormData({ ...tempFormData, adults: parseInt(e.target.value) || 1 })}
+                type="text"
+                value={`${tempFormData.adults} Adults . 1 Room`}
+                onClick={() => {
+                  const newAdults = parseInt(prompt("Enter number of adults:", tempFormData.adults));
+                  if (!isNaN(newAdults) && newAdults > 0) {
+                    setTempFormData((prev) => ({ ...prev, adults: newAdults }));
+                  }
+                }}
               />
             </div>
 
@@ -84,25 +113,27 @@ function DisplayPage({ result }) {
         <h1 className="result-heading">Thank You!</h1>
         <p className="result-text">Your updated booking details are as follows:</p>
         <div className="result-box">
-          <p><strong>Location:</strong> {formData.location}</p>
-          <p><strong>Adults:</strong> {formData.adults}</p>
-          <p><strong>Children:</strong> {formData.children}</p>
-          <p><strong>Nights:</strong> {formData.nights}</p>
-          <p><strong>Days:</strong> {formData.days}</p>
-          <p><strong>Check-in:</strong> {formData.checkIn}</p>
-          <p><strong>Check-out:</strong> {formData.checkOut}</p>
+          <p><strong>Location:</strong> {location}</p>
+          <p><strong>Adults:</strong> {adults}</p>
+          <p><strong>Children:</strong> {children}</p>
+          <p><strong>Nights:</strong> {nights}</p>
+          <p><strong>Days:</strong> {days}</p>
+          <p><strong>Check-in:</strong> {checkIn}</p>
+          <p><strong>Check-out:</strong> {checkOut}</p>
         </div>
 
         <div className="result-box">
           <h2>Data from Server:</h2>
-          {yourTrip.length > 0 ? (
-            yourTrip.map((val, index) => (
+          {filteredData.length > 0 ? (
+            filteredData.map((val, index) => (
               <Link key={index} target="_blank" to={`/article/${val.Category}/${val.ID}`}>
                 <div>
                   <img src={val.Image1} className="introImg1" alt={val.Title} />
                   <div>
                     <p>{val.Title}</p>
-                    <p>{val.Category} / {val.Date}</p>
+                    <p>
+                      {val.Category} / {val.Date}
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -111,7 +142,7 @@ function DisplayPage({ result }) {
             <p>No hotels found for your selection.</p>
           )}
         </div>
-        <p className="result-message">We hope you enjoy your stay in {formData.location}!</p>
+        <p className="result-message">We hope you enjoy your stay in {location}!</p>
       </div>
     </>
   );

@@ -184,7 +184,7 @@ const Intro = ({ yourTrip }) => {
                     <div className='IntroContainer-2'>
                         <div className='box'>
                             <img
-                                src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Dubai_Skylines_at_night_%28Pexels_3787839%29.jpg/1200px-Dubai_Skylines_at_night_%28Pexels_3787839%29.jpg'
+                                src='https://images.wanderon.in/blogs/new/2023/10/alla-rome-vqnksyxraea-unsplash-min.jpg'
                                 className='introImg2 CommonImg' alt=''
                             />
                             <div className='introContent2'>
