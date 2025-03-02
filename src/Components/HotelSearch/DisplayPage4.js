@@ -27,6 +27,13 @@ function DisplayPage({ result }) {
     setFormData({ ...tempFormData }); // Apply changes on button click
   };
 
+  const { adults, children, location, nights, days, checkIn, checkOut } = result;
+
+  const filteredData = yourTrip.filter(
+    (value) => value.Adults === adults && value.Child === children && value.Category === "Hotels"
+  );
+
+
   return (
     <>
       <div className="displayHotelsContainer">
@@ -36,9 +43,9 @@ function DisplayPage({ result }) {
               <div className="SearchWidgetUIstyles__SearchWrapperArea-sc-1x37qbj-2 gfWNJG">
                 <div
                   // role="combobox"
-                  aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-1-label" class="SearchWidgetAutosuggeststyles__AutocompleteWrapperStyles-sc-1lizu4w-0 iGTTep"
+                  aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-1-label" className="SearchWidgetAutosuggeststyles__AutocompleteWrapperStyles-sc-1lizu4w-0 iGTTep"
                 >
-                  <label id="downshift-1-label" for="downshift-1-input" class="SearchWidgetAutosuggeststyles__SearchLabelStyles-sc-1lizu4w-2 cZkTVY">AREA, LANDMARK OR PROPERTY NAME</label>
+                  <label id="downshift-1-label" for="downshift-1-input" className="SearchWidgetAutosuggeststyles__SearchLabelStyles-sc-1lizu4w-2 cZkTVY">AREA, LANDMARK OR PROPERTY NAME</label>
                   <input
                     aria-autocomplete="list"
                     aria-labelledby="downshift-1-label"
@@ -49,13 +56,13 @@ function DisplayPage({ result }) {
                     value={tempFormData.location}
                     onChange={(e) => setTempFormData({ ...tempFormData, location: e.target.value })}
                   />
-                  <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" class="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
+                  <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" className="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                   </ul>
                 </div>
               </div>
               <div id="search-widget-calendar-element" className="SearchWidgetUIstyles__CheckinCheckoutWrapper-sc-1x37qbj-3 fsTdCE">
                 <div>
-                  <label class="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">CHECK-IN</label>
+                  <label className="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">CHECK-IN</label>
                   <input
                     type="date"
                     id="search-widget-checkin-input"
@@ -80,12 +87,12 @@ function DisplayPage({ result }) {
 
 
 
-              {/* <div class="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf/">
-                <label class="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">GUEST &amp; ROOMS</label>
+              {/* <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf/">
+                <label className="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">GUEST &amp; ROOMS</label>
                 <input type="text"
                   editable="false"
                   readonly=""
-                  class="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
+                  className="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
                   value="2 Adults  . 1 Room "
                 />
               </div> */}
@@ -155,8 +162,8 @@ function DisplayPage({ result }) {
 
         <div className="result-box">
           <h2>Data from Server:</h2>
-          {yourTrip.length > 0 ? (
-            yourTrip.map((val, index) => (
+          {filteredData.length > 0 ? (
+            filteredData.map((val, index) => (
               <Link key={index} target="_blank" to={`/article/${val.Category}/${val.ID}`}>
                 <div>
                   <img src={val.Image1} className="introImg1" alt={val.Title} />
