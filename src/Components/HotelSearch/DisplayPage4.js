@@ -102,6 +102,7 @@ function DisplayPage({ result }) {
                       <input
                         type="number"
                         min="1"
+                        max='3'
                         className="adultsChildRoomInput"
                         value={tempFormData.adults}
                         onChange={(e) => setTempFormData({ ...tempFormData, adults: Math.max(1, parseInt(e.target.value) || 1) })}
@@ -112,6 +113,7 @@ function DisplayPage({ result }) {
                       <input
                         type="number"
                         min="0"
+                        max='2'
                         className="adultsChildRoomInput"
                         value={tempFormData.children}
                         onChange={(e) => setTempFormData({ ...tempFormData, children: Math.max(0, parseInt(e.target.value) || 0) })}
