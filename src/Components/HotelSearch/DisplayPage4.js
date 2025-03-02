@@ -5,15 +5,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 
-function DisplayPage({ result }) {
+function DisplayPage({ result, setResult }) {
   const [yourTrip, setYourTrip] = useState([]);
   const [formData, setFormData] = useState({
     ...result,
     checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
     checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
   });
-
-  // Temporary state for form inputs
   const [tempFormData, setTempFormData] = useState({ ...formData });
 
   useEffect(() => {
@@ -21,18 +19,21 @@ function DisplayPage({ result }) {
       .get("http://localhost:8040/api/v1/MakeYourTrip")
       .then((data) => setYourTrip(data.data))
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, [result]);
 
   const handleUpdate = () => {
-    setFormData({ ...tempFormData }); // Apply changes on button click
+    setFormData({ ...tempFormData });
+    if (typeof setResult === "function") {
+      setResult({ ...tempFormData });
+    } else {
+      console.error("setResult is not a function. Ensure it's passed correctly.");
+    }
   };
 
-  const { adults, children, location, nights, days, checkIn, checkOut } = result;
-
+  const { adults, children, location, nights, days, checkIn, checkOut } = formData;
   const filteredData = yourTrip.filter(
-    (value) => value.Adults === adults && value.Child === children && value.Category === "Hotels"
+    (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
   );
-
 
   return (
     <>
@@ -41,20 +42,17 @@ function DisplayPage({ result }) {
           <div className="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
             <div className="dwebCommonstyles__FlexItem-sc-112ty3f-4 gwpVPd">
               <div className="SearchWidgetUIstyles__SearchWrapperArea-sc-1x37qbj-2 gfWNJG">
-                <div
-                  // role="combobox"
-                  aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-1-label" className="SearchWidgetAutosuggeststyles__AutocompleteWrapperStyles-sc-1lizu4w-0 iGTTep"
-                >
-                  <label id="downshift-1-label" for="downshift-1-input" className="SearchWidgetAutosuggeststyles__SearchLabelStyles-sc-1lizu4w-2 cZkTVY">AREA, LANDMARK OR PROPERTY NAME</label>
+                <div aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-1-label" className="SearchWidgetAutosuggeststyles__AutocompleteWrapperStyles-sc-1lizu4w-0 iGTTep">
+                  <label id="downshift-1-label" htmlFor="downshift-1-input" className="SearchWidgetAutosuggeststyles__SearchLabelStyles-sc-1lizu4w-2 cZkTVY">AREA, LANDMARK OR PROPERTY NAME</label>
                   <input
                     aria-autocomplete="list"
                     aria-labelledby="downshift-1-label"
-                    autocomplete="off" id="downshift-1-input"
-                    // id="location"
+                    autoComplete="off"
+                    id="downshift-1-input"
                     placeholder="LOCATION NAME"
                     className="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
                     value={tempFormData.location}
-                    onChange={(e) => setTempFormData({ ...tempFormData, location: e.target.value })}
+                    onChange={(e) => setTempFormData((prev) => ({ ...prev, location: e.target.value }))}
                   />
                   <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" className="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                   </ul>
@@ -68,7 +66,7 @@ function DisplayPage({ result }) {
                     id="search-widget-checkin-input"
                     className="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
                     value={tempFormData.checkIn}
-                    onChange={(e) => setTempFormData({ ...tempFormData, checkIn: e.target.value })}
+                    onChange={(e) => setTempFormData((prev) => ({ ...prev, checkIn: e.target.value }))}
                   />
                 </div>
               </div>
@@ -79,28 +77,10 @@ function DisplayPage({ result }) {
                     type="date"
                     className="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
                     value={tempFormData.checkOut}
-                    onChange={(e) => setTempFormData({ ...tempFormData, checkOut: e.target.value })}
+                    onChange={(e) => setTempFormData((prev) => ({ ...prev, checkOut: e.target.value }))}
                   />
                 </div>
               </div>
-
-
-
-
-              {/* <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf/">
-                <label className="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">GUEST &amp; ROOMS</label>
-                <input type="text"
-                  editable="false"
-                  readonly=""
-                  className="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
-                  value="2 Adults  . 1 Room "
-                />
-              </div> */}
-
-
-
-
-
               <div className="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf/">
                 <label className="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">GUEST &amp; ROOMS</label>
                 <div style={{ display: "flex", gap: "10px" }}>
@@ -109,10 +89,10 @@ function DisplayPage({ result }) {
                       <input
                         type="number"
                         min="1"
-                        max='3'
+                        max="3"
                         className="adultsChildRoomInput"
                         value={tempFormData.adults}
-                        onChange={(e) => setTempFormData({ ...tempFormData, adults: Math.max(1, parseInt(e.target.value) || 1) })}
+                        onChange={(e) => setTempFormData((prev) => ({ ...prev, adults: Math.max(1, parseInt(e.target.value) || 1) }))}
                       />
                       <label className="adultsChildRoomLebel" >Adult,</label>
                     </div>
@@ -120,10 +100,10 @@ function DisplayPage({ result }) {
                       <input
                         type="number"
                         min="0"
-                        max='2'
+                        max="2"
                         className="adultsChildRoomInput"
                         value={tempFormData.children}
-                        onChange={(e) => setTempFormData({ ...tempFormData, children: Math.max(0, parseInt(e.target.value) || 0) })}
+                        onChange={(e) => setTempFormData((prev) => ({ ...prev, children: Math.max(0, parseInt(e.target.value) || 0) }))}
                       />
                       <label className="adultsChildRoomLebel" >Child,</label>
                     </div>
@@ -138,7 +118,6 @@ function DisplayPage({ result }) {
                   </div>
                 </div>
               </div>
-
             </div>
             <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">
               Update Search
@@ -146,10 +125,9 @@ function DisplayPage({ result }) {
           </div>
         </section>
       </div>
-
       <div className="result-container">
-        <h1 className="result-heading">Thank You!</h1>
-        <p className="result-text">Your updated booking details are as follows:</p>
+        <h1>Thank You!</h1>
+        <p>Your updated booking details are as follows:</p>
         <div className="result-box">
           <p><strong>Location:</strong> {formData.location}</p>
           <p><strong>Adults:</strong> {formData.adults}</p>
@@ -159,7 +137,6 @@ function DisplayPage({ result }) {
           <p><strong>Check-in:</strong> {formData.checkIn}</p>
           <p><strong>Check-out:</strong> {formData.checkOut}</p>
         </div>
-
         <div className="result-box">
           <h2>Data from Server:</h2>
           {filteredData.length > 0 ? (
@@ -169,7 +146,7 @@ function DisplayPage({ result }) {
                   <img src={val.Image1} className="introImg1" alt={val.Title} />
                   <div>
                     <p>{val.Title}</p>
-                    <p>{val.Category} / {val.Date}</p>
+                    <p>{val.Category} / {val.SubCategory}</p>
                   </div>
                 </div>
               </Link>
@@ -178,7 +155,7 @@ function DisplayPage({ result }) {
             <p>No hotels found for your selection.</p>
           )}
         </div>
-        <p className="result-message">We hope you enjoy your stay in {formData.location}!</p>
+        <p>We hope you enjoy your stay in {formData.location}!</p>
       </div>
     </>
   );
