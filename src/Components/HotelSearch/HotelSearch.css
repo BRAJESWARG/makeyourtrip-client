@@ -111,13 +111,8 @@ body {
 
 /* Result Page Styles */
 .result-container {
-  padding: 20px;
-  text-align: center;
-  background-color: #f4f4f4;
-  max-width: 500px;
-  margin: 50px auto;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .result-heading {
@@ -133,11 +128,17 @@ body {
 }
 
 .result-box {
-  padding: 15px;
+  /* padding: 15px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  position: relative;
+  margin-top: 12rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .result-message {

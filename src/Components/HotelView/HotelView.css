@@ -1,7 +1,7 @@
 .HotelView {
     display: flex;
     justify-content: center;
-    margin-top: 5em;
+    /* margin-top: 5em; */
 }
 
 .image-gallery {
@@ -48,7 +48,7 @@
 }
 
 .main-image {
-    width: 94%;
+    width: 400px;
     height: 240px;
     padding: 10px;
     border: 0px;
@@ -957,8 +957,10 @@ WcUSk img {
     left: 638px;
     top: 381px; */
     position: relative;
-    right: 966px;
-    top: 241px;
+    left: 320px;
+    bottom: 59px;
+    width: 100px;
+    height: 50px;
     font-size: x-small;
 
 }
