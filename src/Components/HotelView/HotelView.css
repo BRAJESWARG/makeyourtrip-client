@@ -667,6 +667,21 @@
     left: -5rem;
 }
 
+.hsUjcS:hover>.HoverPersuasionstyles__HoverCardOuter-sc-8xv4x3-0 {
+    visibility: visible;
+}
+
+/* .AoYiU {
+    position: absolute;
+    z-index: 8;
+    visibility: visible;
+    border-radius: 0.8rem;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.1rem 0.4rem;
+    top: 2.5rem;
+    left: -5rem;
+} */
+
 .liohMR {
     padding: 1.2rem;
     min-width: 12rem;
@@ -679,11 +694,6 @@
     line-height: normal;
     font-size: 14px;
     font-weight: 500;
-}
-
-.WcUSk {
-    display: flex;
-    align-items: center;
 }
 
 .OrsFY {
@@ -733,10 +743,6 @@
     justify-content: space-between;
 }
 
-.WcUSk img {
-    margin-right: 0.5rem;
-}
-
 .liohMR {
     padding: 1.2rem;
     min-width: 12rem;
@@ -751,11 +757,6 @@
     font-weight: 500;
 }
 
-.WcUSk {
-    display: flex;
-    align-items: center;
-}
-
 .cbFZPq {
     margin-top: 0.4rem;
 }
@@ -763,29 +764,6 @@
 ul {
     list-style: none;
     margin-left: -2rem;
-}
-
-.dgqzwp {
-    gap: 0.6rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.4rem;
-}
-
-.WcUSk {
-    display: flex;
-    align-items: center;
-}
-
-WcUSk img {
-    margin-right: 0.5rem;
-}
-
-.dgqzwp {
-    gap: 0.6rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.4rem;
 }
 
 .WcUSk {
@@ -806,13 +784,6 @@ WcUSk img {
 
 .dgqzwp:last-child {
     margin-bottom: 0px;
-}
-
-.dgqzwp {
-    gap: 0.6rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.4rem;
 }
 
 .rCBfm {

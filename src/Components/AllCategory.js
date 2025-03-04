@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import HotelSearch from './HotelSearch/HotelSearch';
 import HotelView from './HotelView/HotelView';
+import InsideHotel from './InsideHotel/InsideHotel';
 
 const AllCategory = () => {
 
@@ -44,7 +45,7 @@ const AllCategory = () => {
                         );
                     } else if (cat === 'Flights') {
                         return (
-                            <HotelView />
+                            <InsideHotel />
                         );
                     } else if (cat === 'Trains') {
                         return (
