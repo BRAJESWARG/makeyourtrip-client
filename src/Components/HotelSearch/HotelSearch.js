@@ -39,7 +39,7 @@ function HotelSearch() {
   const [checkOut, setCheckOut] = useState();
   const [adults, setAdults] = useState(1); // Default 1 adult
   const [children, setChildren] = useState(0); // Default 0 children
-  const [location, setLocation] = useState(""); // City/Location input
+  const [city, setCity] = useState(""); // City/Location input
   const [nightStatus, setNightStatus] = useState({ nights: 0, days: 0 });
 
   const [result, setResult] = useState(null); // Result object to pass to ResultPage
@@ -74,7 +74,7 @@ function HotelSearch() {
   }, [checkIn, checkOut]); // Recalculate when checkIn or checkOut changes
 
   const handleSearch = () => {
-    if (checkIn && checkOut && location.trim()) {
+    if (checkIn && checkOut && city.trim()) {
       const checkInDate = new Date(checkIn);
       const checkOutDate = new Date(checkOut);
 
@@ -84,7 +84,7 @@ function HotelSearch() {
         const nights = days - 1; // Subtract 1 day for the last day not being a night
 
         setResult({
-          location,
+          city,
           adults,
           children,
           nights,
@@ -97,7 +97,7 @@ function HotelSearch() {
         alert("Check-out date must be after check-in date.");
       }
     } else {
-      alert("Please fill out all fields (Check-in, Check-out, and Location).");
+      alert("Please fill out all fields (Check-in, Check-out, and City).");
     }
   };
 
@@ -123,9 +123,9 @@ function HotelSearch() {
                 id="outlined-multiline-flexible"
                 label="Where to"
                 maxRows={4}
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder="Enter city or location"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Enter city or city"
               />
             </div>
             <div className="input-group LocalizationProvider">

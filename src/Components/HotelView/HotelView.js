@@ -14,25 +14,45 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 const HotelView = ({ val, index }) => {
 
-  const images = [
-    { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 1 },
-    { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50", ID: 2 },
-    { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50", ID: 3 },
-    { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50", ID: 4 },
-    { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50", ID: 5 },
-    { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 6 },
-    { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50", ID: 7 }
-  ];
+  // const images = [
+  //   { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 1 },
+  //   { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50", ID: 2 },
+  //   { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50", ID: 3 },
+  //   { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50", ID: 4 },
+  //   { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50", ID: 5 },
+  //   { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 6 },
+  //   { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50", ID: 7 }
+  // ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % val.Images.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + val.Images.length) % val.Images.length);
   };
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0, // Removes decimal values
+    }).format(value);
+  };
+
+  const getPriceAfterDiscount = (value) => {
+    return value * 0.4;
+  };
+
+  const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);
+
+  const getTaxValue = (value) => {
+    return value * 0.18;
+  };
+
+  const TaxValue = getTaxValue(PriceAfterDiscount);
 
   return (
     <div className='HotelView'>
@@ -92,7 +112,7 @@ const HotelView = ({ val, index }) => {
                           <div className="AltAccoRatingsRendererstyles__HotelTag-sc-1z0kydb-0 ijHVWm">
                             <div className="AltAccoRatingsRendererstyles__HotelStarRating-sc-1z0kydb-1 hIffyn">
                               <span>
-                                4
+                                {val.StarRating}
                               </span>
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" width="1rem" height="1rem" margin="0 0.2rem 0 0" className="HappyRatingStarIcon-sc-qukodd-0 knROuZ">
                                 <path fill-rule="evenodd" d="m8.172 13.282 3.964 2.434c.726.446 1.614-.213 1.423-1.047l-1.05-4.577 3.505-3.084c.64-.562.296-1.629-.545-1.696l-4.613-.398L9.051.589c-.325-.785-1.432-.785-1.757 0L5.489 4.904l-4.613.398C.036 5.37-.31 6.436.33 6.999l3.505 3.083-1.05 4.577c-.191.834.697 1.494 1.423 1.048l3.963-2.425z">
@@ -112,16 +132,16 @@ const HotelView = ({ val, index }) => {
                           <div className="ReviewAndRatingsstyles__HotelTotalReviewWrapper-sc-hy6oq9-1 CntYP">
                             <div className="ReviewAndRatingsstyles__RatingWrapper-sc-hy6oq9-32 bFYVse">
                               <div className="HotelReviewstyles__TotalUserCountDiv-sc-1hb22sy-6 bPLtwR">
-                                <span>443 Ratings</span>
+                                <span>{val.Ratings} Ratings</span>
                               </div>
                               <div className="HotelReviewstyles__CenteredDivWrap-sc-1hb22sy-0 HotelReviewstyles__UserRatingWrapperDiv-sc-1hb22sy-2 cNQnuA imgiRd">
-                                <span className="HotelReviewstyles__RatingText-sc-1hb22sy-4 fJCwcn">4.1</span>
+                                <span className="HotelReviewstyles__RatingText-sc-1hb22sy-4 fJCwcn">{val.StarRating}</span>
                                 <span className="HotelReviewstyles__TotalRating-sc-1hb22sy-5 ccXZUc">/5</span>
                               </div>
                               <div className="ReviewAndRatingsstyles__GuestReviewPopUpWrap-sc-hy6oq9-0 fUGqIF">
                                 <div bgcolor="#1ca54f" className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 ReviewAndRatingsstyles__GoRatingBlock-sc-hy6oq9-9 bGKfHf PvrTo">
                                   <p className="ReviewAndRatingsstyles__AvgReviewTextWrapperDiv-sc-hy6oq9-13 iLqjAf">
-                                    <span className="ReviewAndRatingsstyles__AvgReviewTextWrapper-sc-hy6oq9-14 cSoxCp">4.1</span>
+                                    <span className="ReviewAndRatingsstyles__AvgReviewTextWrapper-sc-hy6oq9-14 cSoxCp">{val.StarRating}</span>
                                     <span className="ReviewAndRatingsstyles__TotalReviewTextWrapper-sc-hy6oq9-15 gzEDcE">/5</span>
                                   </p>
                                   <p className="ReviewAndRatingsstyles__RatingsCountTextWrapper-sc-hy6oq9-12 feUPJF">443 Ratings</p>
@@ -215,11 +235,11 @@ const HotelView = ({ val, index }) => {
                         <div className="PersuasionsUnifstyles__LocationPersuasionWrapper-sc-wislna-10 bcAlMZ">
                           <span className="PersuasionsUnifstyles__ElementUIWrapper-sc-wislna-1 LtdCD">
                             <span lineclamp="0" className="PersuasionTextUI__PersuasionTextWrapperSpan-sc-mkqdob-1 hQQLPW" style={{ color: 'rgb(34, 118, 227)' }} >
-                              Khar West
+                              {val.Address}
                             </span>
                           </span>
                           <span className="PersuasionsUnifstyles__ElementUIWrapper-sc-wislna-1 LtdCD">
-                            <span lineclamp="0" className="PersuasionTextUI__PersuasionTextWrapperSpan-sc-mkqdob-1 hQQLPW" style={{ color: 'rgb(113, 113, 113)' }} > | 2.9 km drive to Lilavati Hospital And Research Centre</span>
+                            <span lineclamp="0" className="PersuasionTextUI__PersuasionTextWrapperSpan-sc-mkqdob-1 hQQLPW" style={{ color: 'rgb(113, 113, 113)' }} > | {val.NearBy}</span>
                           </span>
                         </div>
                       </div>
@@ -250,7 +270,7 @@ const HotelView = ({ val, index }) => {
                               <div className="HoverPersuasionstyles__HoverCardOuter-sc-8xv4x3-0 cwgsXw">
                                 <div className="HoverPersuasionstyles__HoverCard-sc-8xv4x3-1 liohMR">
                                   <div className="HoverPersuasionstyles__HoverHeader-sc-8xv4x3-2 jQBJPp">
-                                    <div lineclamp="0" className="PersuasionTextWithImageUI__PersuasionTextWrapperDiv-sc-leqkbd-0 WcUSk" style={{ padding:'4px' }} >
+                                    <div lineclamp="0" className="PersuasionTextWithImageUI__PersuasionTextWrapperDiv-sc-leqkbd-0 WcUSk" style={{ padding: '4px' }} >
                                       <span>Amenities</span>
                                     </div>
                                   </div>
@@ -416,7 +436,7 @@ const HotelView = ({ val, index }) => {
                       <div className="PersuasionsUnifstyles__PersuasionUIElementsWrapper-sc-wislna-0 knnNaM">
                         <img src="https://go-assets.ibcdn.com/u/GI/images/1726036804650-BankofferDT.png" alt="" data-testid="" loading="lazy" style={{ width: '1.5rem', height: '1.5rem', fill: 'rgb(34, 34, 34)' }} />
                         <span lineclamp="0" className="PersuasionTextUI__PersuasionTextWrapperSpan-sc-mkqdob-1 hQQLPW" style={{ color: 'rgb(34, 34, 34)' }} >
-                          Bank offer | ₹1147 off
+                          Bank offer | 10% off upto ₹1147
                         </span>
                       </div>
                       <div className="PersuasionsUnifstyles__Separator-sc-wislna-15 dcGuDt">
@@ -433,17 +453,19 @@ const HotelView = ({ val, index }) => {
                   <div className="HotelCardV2styles__RightInfoBottomWrapper-sc-6przws-14 fPOEHs">
                     <div className="HotelCardV2styles__PriceInfoWrapper-sc-6przws-17 eyETDV">
                       <p className="HotelCardV2styles__OriginalPrice-sc-6przws-19 bfeKJJ">
-                        ₹8,499
+                        {formatCurrency(val.PricePerNight)}
                       </p>
                       <p itemprop="priceRange" className="HotelCardV2styles__OfferPrice-sc-6przws-18 ewBNyB">
-                        ₹4,999
+                        {formatCurrency(PriceAfterDiscount)}
                       </p>
                     </div>
                     <p className="HotelCardV2styles__TaxText-sc-6przws-16 bGmdZP">
-                      +₹1,911 taxes &amp;fees
+                      +{formatCurrency(TaxValue)} taxes &amp;fees
                     </p>
                     <p className="HotelCardV2styles__TaxText-sc-6przws-16 bGmdZP">
-                      per night
+                      <strong>
+                        per night
+                      </strong>
                     </p>
                   </div>
                   <div className="HotelCardV2styles__BottomWrapper-sc-6przws-15 DBlvW">

@@ -27,7 +27,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> {result.location}</p>
+            <p><strong>City:</strong> {result.city}</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -50,7 +50,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -61,7 +61,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> { }</p>
+            <p><strong>City:</strong> { }</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -83,7 +83,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -94,7 +94,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> { }</p>
+            <p><strong>City:</strong> { }</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -116,7 +116,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -127,7 +127,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> { }</p>
+            <p><strong>City:</strong> { }</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -149,7 +149,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -160,7 +160,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> { }</p>
+            <p><strong>City:</strong> { }</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -182,7 +182,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -193,7 +193,7 @@ function DisplayPage({ result }) {
           <h1 className="result-heading">Thank You!</h1>
           <p className="result-text">Your booking details are as follows:</p>
           <div className="result-box">
-            <p><strong>Location:</strong> {result.location}</p>
+            <p><strong>City:</strong> {result.city}</p>
             <p><strong>Adults:</strong> {adultsCount} </p>
             <p><strong>Children:</strong> {childrenCount}</p>
             <p><strong>Nights:</strong> {result.nights}</p>
@@ -215,7 +215,7 @@ function DisplayPage({ result }) {
             ))
             }
           </div>
-          <p className="result-message">We hope you enjoy your stay in {result.location}!</p>
+          <p className="result-message">We hope you enjoy your stay in {result.city}!</p>
         </div>
       )
 
@@ -244,7 +244,7 @@ function DisplayPage({ result }) {
                     aria-autocomplete="list"
                     aria-labelledby="downshift-1-label"
                     autocomplete="off" id="downshift-1-input"
-                    placeholder="LOCATION NAME"
+                    placeholder="CITY NAME"
                     class="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
                     value="Bengaluru"
                   />

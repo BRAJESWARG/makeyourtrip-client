@@ -34,7 +34,7 @@ function DisplayPage({ result, setResult }) {
   const {
     adults,
     children,
-    // location,
+    // city,
     // nights,
     // days,
     // checkIn,
@@ -46,7 +46,6 @@ function DisplayPage({ result, setResult }) {
 
   return (
     <>
-      {/* <div className="displayHotelsTotal"> */}
       <div className="displayHotelsContainer">
         <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
           <div className="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
@@ -61,8 +60,8 @@ function DisplayPage({ result, setResult }) {
                     id="downshift-1-input"
                     placeholder="LOCATION NAME"
                     className="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
-                    value={tempFormData.location}
-                    onChange={(e) => setTempFormData((prev) => ({ ...prev, location: e.target.value }))}
+                    value={tempFormData.city}
+                    onChange={(e) => setTempFormData((prev) => ({ ...prev, City: e.target.value }))}
                   />
                   <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" className="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                   </ul>
@@ -185,7 +184,7 @@ function DisplayPage({ result, setResult }) {
         <h1>Thank You!</h1>
         <p>Your updated booking details are as follows:</p>
         <div className="result-box">
-          <p><strong>Location:</strong> {formData.location}</p>
+          <p><strong>City:</strong> {formData.city}</p>
           <p><strong>Adults:</strong> {formData.adults}</p>
           <p><strong>Children:</strong> {formData.children}</p>
           <p><strong>Nights:</strong> {formData.nights}</p>
@@ -211,7 +210,7 @@ function DisplayPage({ result, setResult }) {
             <p>No hotels found for your selection.</p>
           )}
         </div>
-        <p>We hope you enjoy your stay in {formData.location}!</p>
+        <p>We hope you enjoy your stay in {formData.city}!</p>
       </div> */}
       <div className="result-container">
         <div className="result-box">
