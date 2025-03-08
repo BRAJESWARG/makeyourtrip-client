@@ -3,54 +3,59 @@ import "./DisplayPage.css";
 import "./HotelSearch.css";
 // import axios from "axios";
 import { Link } from "react-router-dom";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 import HotelView from "../HotelView/HotelView";
 import HotelSearchNav from "../HotelSearchNav/HotelSearchNav";
 
 function DisplayPage({ result, setResult }) {
+  // const [yourTrip, setYourTrip] = useState([]);
+  // const [formData, setFormData] = useState({
+  //   ...result,
+  //   checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
+  //   checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
+  // });
+  // const [tempFormData, setTempFormData] = useState({ ...formData });
 
-  const [yourTrip, setYourTrip] = useState([]);
-  const [formData, setFormData] = useState({
-    ...result,
-    checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
-    checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
-  });
-  const [tempFormData, setTempFormData] = useState({ ...formData });
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8040/api/v1/MakeYourTrip")
+  //     .then((data) => setYourTrip(data.data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, [result]);
 
-  const handleUpdate = () => {
-    setFormData({ ...tempFormData });
-    if (typeof setResult === "function") {
-      setResult({ ...tempFormData });
-    } else {
-      console.error("setResult is not a function. Ensure it's passed correctly.");
-    }
-  };
+  // const handleUpdate = () => {
+  //   setFormData({ ...tempFormData });
+  //   if (typeof setResult === "function") {
+  //     setResult({ ...tempFormData });
+  //   } else {
+  //     console.error("setResult is not a function. Ensure it's passed correctly.");
+  //   }
+  // };
 
-  const {
-    adults,
-    children,
-    // city,
-    // nights,
-    // days,
-    // checkIn,
-    // checkOut
-  } = formData;
-  const filteredData = yourTrip.filter(
-    (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
-  );
+  // const {
+  //   adults,
+  //   children,
+  //   // city,
+  //   // nights,
+  //   // days,
+  //   // checkIn,
+  //   // checkOut
+  // } = formData;
+  // const filteredData = yourTrip.filter(
+  //   (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
+  // );
 
-  const [message, setMessage] = useState("");
+  const [filteredData, setFilteredData] = useState("");
 
   // Function to receive data from child
   const handleDataFromChild = (data) => {
-    setMessage(data);
+    setFilteredData(data);
   };
 
   return (
     <>
       <div className="displayHotelsContainer">
         <HotelSearchNav sendDataToParent={handleDataFromChild} result={result} />
-
         {
           // <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
           //   <div className="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
