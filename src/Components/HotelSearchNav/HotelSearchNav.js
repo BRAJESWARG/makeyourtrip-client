@@ -29,7 +29,7 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
         }
     };
 
-    const [inputValue, setInputValue] = useState("");
+    // const [inputValue, setInputValue] = useState("");
 
     return (
         <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
