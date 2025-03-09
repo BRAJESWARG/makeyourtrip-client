@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./InsideMainView.css";
 
 function InsideMainView() {
+
+    const images = [
+        { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 1 },
+        { original: "https://picsum.photos/id/1/600/300", thumbnail: "https://picsum.photos/id/1/100/50", ID: 2 },
+        { original: "https://picsum.photos/id/10/600/300", thumbnail: "https://picsum.photos/id/10/100/50", ID: 3 },
+        { original: "https://picsum.photos/id/100/600/300", thumbnail: "https://picsum.photos/id/100/100/50", ID: 4 },
+        { original: "https://picsum.photos/id/101/600/300", thumbnail: "https://picsum.photos/id/101/100/50", ID: 5 },
+        { original: "https://picsum.photos/id/237/600/300", thumbnail: "https://picsum.photos/id/237/100/50", ID: 6 },
+        { original: "https://picsum.photos/id/1001/600/300", thumbnail: "https://picsum.photos/id/1001/100/50", ID: 7 }
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
     return (
         <section className="HotelOverviewstyles__OuterWrapperDiv-sc-i4dhtt-2 kutOgb">
             <div className="HotelOverviewstyles__HotelOverviewContainer-sc-i4dhtt-0 bbgLaK">
@@ -220,60 +241,67 @@ function InsideMainView() {
                                 <div className="Carouselstyles__CarouselContainer-sc-1hv3vvl-1 iAowDS">
                                     <div className="Carouselstyles__CarouselSlider-sc-1hv3vvl-2 jUQFXK">
                                         <div className="Carouselstyles__SliderWrap-sc-1hv3vvl-3 bRTEOS" style={{ transform: 'translate3d(0px, 0px, 0px)' }} >
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <img
-                                                    src="//r1imghtlak.ibcdn.com/082f1ae6330211eb9c050242ac110004.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
-                                                    alt="Pride Plaza Hotel Aerocity New Delhi"
-                                                    listitemwidth="100%" itemprop="image"
-                                                    className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImageBasic-sc-1sonew0-9 gwgRZq"
-                                                />
+                                            <div className="gallery-containe">
+                                                <button className="prev-button" onClick={handlePrev}>❮</button>
+                                                <img src={images[currentIndex].original} alt="Main View" className="main-image" />
+                                                <button className="next-button" onClick={handleNext}>❯</button>
                                             </div>
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <img
-                                                    src="//r1imghtlak.ibcdn.com/522c1cf6730d11e78b200a4cef95d023.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;8,0&amp;output-format=webp"
-                                                    alt="Main gallery"
-                                                    className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
-                                                    data-testid="" listitemwidth="100%"
-                                                />
-                                            </div>
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <img
-                                                    src="//r1imghtlak.ibcdn.com/24469f1a330211eb8ff90242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
-                                                    alt="Main gallery"
-                                                    className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
-                                                    data-testid="" listitemwidth="100%"
-                                                />
-                                            </div>
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <img
-                                                    src="//r1imghtlak.ibcdn.com/b29afe406ad011eba4640242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
-                                                    alt="Main gallery"
-                                                    className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
-                                                    data-testid="" listitemwidth="100%"
-                                                />
-                                            </div>
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <img
-                                                    src="//r1imghtlak.ibcdn.com/7dbe61dc330111eba8410242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
-                                                    alt="Main gallery"
-                                                    className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
-                                                    data-testid="" listitemwidth="100%"
-                                                />
-                                            </div>
-                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGalleryWithVideostyles__WideImageViewAllPhotosOuter-sc-1sonew0-3 bGKfHf dyEGux">
-                                                    <img
-                                                        src="https://gos3.ibcdn.com/default-4-1426763954.png"
-                                                        alt="" className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImageViewAll-sc-1sonew0-14 cUfyBU fdOKAx"
-                                                        data-testid=""
-                                                    />
-                                                    <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGalleryWithVideostyles__WideImageViewAllPhotos-sc-1sonew0-4 bGKfHf clKlIy">
-                                                        <span className="CaptivateBannerGalleryWithVideostyles__ViewAllPhotosText-sc-1sonew0-6 dIonlg">
-                                                            <span>View All</span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <img
+                                                //         src="//r1imghtlak.ibcdn.com/082f1ae6330211eb9c050242ac110004.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
+                                                //         alt="Pride Plaza Hotel Aerocity New Delhi"
+                                                //         listitemwidth="100%" itemprop="image"
+                                                //         className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImageBasic-sc-1sonew0-9 gwgRZq"
+                                                //     />
+                                                // </div>
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <img
+                                                //         src="//r1imghtlak.ibcdn.com/522c1cf6730d11e78b200a4cef95d023.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;8,0&amp;output-format=webp"
+                                                //         alt="Main gallery"
+                                                //         className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
+                                                //         data-testid="" listitemwidth="100%"
+                                                //     />
+                                                // </div>
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <img
+                                                //         src="//r1imghtlak.ibcdn.com/24469f1a330211eb8ff90242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
+                                                //         alt="Main gallery"
+                                                //         className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
+                                                //         data-testid="" listitemwidth="100%"
+                                                //     />
+                                                // </div>
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <img
+                                                //         src="//r1imghtlak.ibcdn.com/b29afe406ad011eba4640242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
+                                                //         alt="Main gallery"
+                                                //         className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
+                                                //         data-testid="" listitemwidth="100%"
+                                                //     />
+                                                // </div>
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <img
+                                                //         src="//r1imghtlak.ibcdn.com/7dbe61dc330111eba8410242ac110002.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;2,0&amp;output-format=webp"
+                                                //         alt="Main gallery"
+                                                //         className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 ghqZaU"
+                                                //         data-testid="" listitemwidth="100%"
+                                                //     />
+                                                // </div>
+                                                // <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
+                                                //     <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGalleryWithVideostyles__WideImageViewAllPhotosOuter-sc-1sonew0-3 bGKfHf dyEGux">
+                                                //         <img
+                                                //             src="https://gos3.ibcdn.com/default-4-1426763954.png"
+                                                //             alt="" className="CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImage-sc-1sonew0-10 CaptivateBannerGalleryWithVideostyles__CaptivateGalleryImageViewAll-sc-1sonew0-14 cUfyBU fdOKAx"
+                                                //             data-testid=""
+                                                //         />
+                                                //         <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGalleryWithVideostyles__WideImageViewAllPhotos-sc-1sonew0-4 bGKfHf clKlIy">
+                                                //             <span className="CaptivateBannerGalleryWithVideostyles__ViewAllPhotosText-sc-1sonew0-6 dIonlg">
+                                                //                 <span>View All</span>
+                                                //             </span>
+                                                //         </div>
+                                                //     </div>
+                                                // </div>
+                                            }
                                         </div>
                                     </div>
                                     <div className="Carouselstyles__CarouselControls-sc-1hv3vvl-4 cmcZMx">
