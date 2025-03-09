@@ -1,111 +1,20 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
 import "./InsideHotel.css";
-import "../HotelSearch/DisplayPage.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import InsideSearchView from "./InsideSearchView";
+import InsideMainView from "./InsideMainView";
 
 
 const InsideHotel = () => {
 
-    // const images = [
-    //     "https://via.placeholder.com/800x400/FF5733/FFFFFF?text=Slide+1",
-    //     "https://via.placeholder.com/800x400/33FF57/FFFFFF?text=Slide+2",
-    //     "https://via.placeholder.com/800x400/3357FF/FFFFFF?text=Slide+3",
-    // ];
-    const images = [
-        { original: "https://picsum.photos/id/1000/600/300", ID: 1 },
-        { original: "https://picsum.photos/id/1/600/300", ID: 2 },
-        { original: "https://picsum.photos/id/10/600/300", ID: 3 },
-        { original: "https://picsum.photos/id/100/600/300", ID: 4 },
-        { original: "https://picsum.photos/id/101/600/300", ID: 5 },
-        { original: "https://picsum.photos/id/237/600/300", ID: 6 },
-        { original: "https://picsum.photos/id/1001/600/300", ID: 7 }
-    ];
-
-
     return (
         <>
-            <div className='InsideHotel'>
-                <section class="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
-                    <div class="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
-                        <div class="dwebCommonstyles__FlexItem-sc-112ty3f-4 gwpVPd">
-                            <div class="SearchWidgetUIstyles__SearchWrapperArea-sc-1x37qbj-2 gfWNJG">
-                                <div
-                                    aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-1-label" class="SearchWidgetAutosuggeststyles__AutocompleteWrapperStyles-sc-1lizu4w-0 iGTTep"
-                                >
-                                    <label id="downshift-1-label" for="downshift-1-input" class="SearchWidgetAutosuggeststyles__SearchLabelStyles-sc-1lizu4w-2 cZkTVY">AREA, LANDMARK OR PROPERTY NAME</label>
-                                    <input
-                                        aria-autocomplete="list"
-                                        aria-labelledby="downshift-1-label"
-                                        autocomplete="off" id="downshift-1-input"
-                                        placeholder="CITY NAME"
-                                        class="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
-                                        value="Bengaluru"
-                                    />
-                                    <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" class="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="search-widget-calendar-element" class="SearchWidgetUIstyles__CheckinCheckoutWrapper-sc-1x37qbj-3 fsTdCE">
-                                <div>
-                                    <label class="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">CHECKIN</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Travel Dates"
-                                        id="search-widget-checkin-input"
-                                        editable="false"
-                                        readonly=""
-                                        class="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
-                                        value="Apr 16, 2025"
-                                    />
-                                </div>
-                            </div>
-                            <div class="SearchWidgetUIstyles__CheckinCheckoutWrapper-sc-1x37qbj-3 fsTdCE">
-                                <div>
-                                    <label class="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">CHECKOUT</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Travel Dates"
-                                        editable="false"
-                                        readonly=""
-                                        class="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
-                                        value="Apr 26, 2025"
-                                    />
-                                </div>
-                            </div>
-                            <div class="SearchWidgetUIstyles__PaxWrapperStyle-sc-1x37qbj-4 idfXAf/">
-                                <label class="SearchWidgetUIstyles__SearchLabelStyle-sc-1x37qbj-5 dhbsSR">GUEST &amp; ROOMS</label>
-                                <input type="text"
-                                    editable="false"
-                                    readonly=""
-                                    class="SearchWidgetUIstyles__SearchInputStyle-sc-1x37qbj-6 kNWLrS"
-                                    value="2 Adults  . 1 Room "
-                                />
-                            </div>
-                        </div>
-                        <button class="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">Update Search</button>
-                    </div>
-                </section>
+            <div className='InsideHotelSearchView'>
+                <InsideSearchView />
             </div>
-
-            <div className="max-w-2xl mx-auto">
-                <Carousel showThumbs={false} infiniteLoop autoPlay>
-                    {images.map((src, index) => (
-                        <div key={index}>
-                            <img src={images.original} alt={`Slide ${index + 1}`} className="rounded-lg" />
-                        </div>
-                    ))}
-                    {images.filter((value) => (value.ID > 0)).map((image, index) => (
-                        <img
-                            key={index}
-                            src={image.original}
-                            alt={`Thumbnail ${index}`}
-                            className="thumbnail"
-                        />
-                    ))}
-                </Carousel>
+            <div className='InsideHotelMainView'>
+                <InsideMainView />
             </div>
-
         </>
     );
 }
