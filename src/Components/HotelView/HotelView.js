@@ -43,7 +43,7 @@ const HotelView = ({ val, index }) => {
   };
 
   const getPriceAfterDiscount = (value) => {
-    return value * 0.4;
+    return value * 0.6;
   };
 
   const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);

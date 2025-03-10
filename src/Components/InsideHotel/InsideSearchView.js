@@ -60,7 +60,7 @@ function InsideSearchView() {
                         />
                     </div>
                 </div>
-                <button class="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">Update Search</button>
+                <button class="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 hDRTlP">Update Search</button>
             </div>
         </section>
     )

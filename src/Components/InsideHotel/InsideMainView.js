@@ -153,7 +153,7 @@ function InsideMainView() {
                                             </h1>
                                         </div>
                                         <div className="HotelInfostyles__CenterDiv-sc-138dfbx-0 NvkHf">
-                                            <a href="#" width="100%" className="TriggerActionText__TriggerAnchorText-sc-1vbd2op-0 tzmmd">
+                                            <a href="/#" width="100%" className="TriggerActionText__TriggerAnchorText-sc-1vbd2op-0 tzmmd">
                                                 <div className="HotelAddressText__HotelAddressTextDiv-sc-1lcrowf-2 cUDamO">
                                                     <span className="HotelAddressText__AddressTextLeftSpan-sc-1lcrowf-3 gkwTFY">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="16" className="LocationInfoIcon-sc-vwm4pc-0 hKTTdu">
@@ -196,7 +196,7 @@ function InsideMainView() {
                                         </div>
                                     </div>
                                     <div className="HotelInfostyles__ReviewInfoContainer-sc-138dfbx-4 hpjvqo">
-                                        <a href="#" className="TriggerActionText__TriggerAnchorText-sc-1vbd2op-0 gnNNeO">
+                                        <a href="/#" className="TriggerActionText__TriggerAnchorText-sc-1vbd2op-0 gnNNeO">
                                             <div className="ReviewInfostyles__FlexItemColumn-sc-extx54-16 cVXDiL">
                                                 <div className="dwebCommonstyles__FlexItem-sc-112ty3f-4 gwpVPd">
                                                     <div className="ReviewInfostyles__RatingOuterWrapper-sc-extx54-17 bHFLpI">

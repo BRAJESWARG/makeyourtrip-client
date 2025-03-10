@@ -113,7 +113,7 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
                         </div>
                     </div>
                 </div>
-                <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">
+                <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 hDRTlP">
                     Update Search
                 </button>
             </div>

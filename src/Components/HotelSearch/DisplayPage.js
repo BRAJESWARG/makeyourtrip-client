@@ -56,9 +56,8 @@ function DisplayPage({ result, setResult }) {
   return (
     <>
       <div className="displayHotelsContainer">
-        {
-          // <HotelSearchNav sendDataToParent={handleDataFromChild} result={result} />
-        }
+
+          {/* <HotelSearchNav sendDataToParent={handleDataFromChild} result={result} /> */}
 
         <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
           <div className="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
@@ -141,7 +140,7 @@ function DisplayPage({ result, setResult }) {
                 </div>
               </div>
             </div>
-            <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 cYhrVX hDRTlP">
+            <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 hDRTlP">
               Update Search
             </button>
           </div>
