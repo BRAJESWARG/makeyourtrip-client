@@ -9,7 +9,6 @@ import {
 } from 'mdb-react-ui-kit';
 import "./HotelView.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./HotelView.css";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const HotelView = ({ val, index }) => {

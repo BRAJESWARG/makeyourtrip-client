@@ -21,14 +21,25 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
 
     const handleUpdate = () => {
         setFormData({ ...tempFormData });
-        sendDataToParent(yourTrip)
+        // sendDataToParent(yourTrip)
         if (typeof setResult === "function") {
             setResult({ ...tempFormData });
         } else {
             console.error("setResult is not a function. Ensure it's passed correctly.");
         }
     };
-
+    const {
+        adults,
+        children,
+        // city,
+        // nights,
+        // days,
+        // checkIn,
+        // checkOut
+    } = formData;
+    const filteredData = yourTrip.filter(
+        (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
+    );
     // const [inputValue, setInputValue] = useState("");
 
     return (
