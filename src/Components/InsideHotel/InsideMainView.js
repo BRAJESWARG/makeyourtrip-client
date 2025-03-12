@@ -245,11 +245,9 @@ function InsideMainView() {
                                         </a>
                                     </div>
                                 </MDBCol>
-                                {/* <div className=''></div> */}
                             </MDBRow>
 
                             <MDBRow className='g-0' >
-                                {/* <div className='GalleryWrapper'> */}
                                 <MDBCol md='8'>
                                     <div className="CaptivateGallerystyles__ImageGalleryWrapper-sc-1dvzj0j-0 iYvHLx">
                                         <div className="CaptivateGallerystyles__AltAccoCaptivateBannerContainer-sc-1dvzj0j-1 bXQfQi">
@@ -280,21 +278,6 @@ function InsideMainView() {
                                                                 <div className="Carouselstyles__SliderWrap-sc-1hv3vvl-3 bRTEOS"
                                                                     style={{ transform: 'transform: translate3d(0px, 0px, 0px);' }}
                                                                 >
-                                                                    {/* <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                                <img src="//r1imghtlak.ibcdn.com/7dea04d4810911ecb06d0a58a9feac02.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;0,85&amp;output-format=webp" alt="Main gallery" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 fYqGpU" data-testid="" itemprop="image" listitemwidth="100%" />
-                                                            </div>
-                                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                                <img src="//r1imghtlak.ibcdn.com/f1a506e41bb511ecbd530a58a9feac02.jpg?&amp;output-quality=75&amp;downsize=520:350&amp;crop=520:350;0,85&amp;output-format=webp" alt="Main gallery" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 fYqGpU" data-testid="" listitemwidth="100%" />
-                                                            </div>
-                                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                                <img src="https://gos3.ibcdn.com/default-4-1426763954.png" alt="Main gallery" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 fYqGpU" data-testid="" listitemwidth="100%" />
-                                                            </div>
-                                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                                <img src="https://gos3.ibcdn.com/default-4-1426763954.png" alt="Main gallery" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 fYqGpU" data-testid="" listitemwidth="100%" />
-                                                            </div>
-                                                            <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
-                                                                <img src="https://gos3.ibcdn.com/default-4-1426763954.png" alt="Main gallery" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 fYqGpU" data-testid="" listitemwidth="100%" />
-                                                            </div> */}
                                                                     <div className="Carouselstyles__CarouselSlide-sc-1hv3vvl-5 ccUBwm">
                                                                         <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGallerystyles__WideImageViewAllPhotosOuter-sc-dn43rp-2 bGKfHf iBqcKR">
                                                                             <button className="prev-button" onClick={handlePrev}>❮</button>
@@ -303,29 +286,10 @@ function InsideMainView() {
                                                                             )}
                                                                             <button className="next-button" onClick={handleNext}>❯</button>
                                                                             {/* <img src="https://gos3.ibcdn.com/default-4-1426763954.png" alt="" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 CaptivateBannerGallerystyles__CaptivateGalleryImageViewAll-sc-dn43rp-12 dozrMg kTHxxY" data-testid="" /> */}
-                                                                            {/* <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGallerystyles__WideImageViewAllPhotos-sc-dn43rp-3 bGKfHf gINffC">
-                                                                        <h3 className="dwebCommonstyles__SectionHeader-sc-112ty3f-9 CaptivateBannerGallerystyles__ViewAllPhotosText-sc-dn43rp-5 gxmRLJ dgvubf">
-                                                                            <span>View All</span>
-                                                                        </h3>
-                                                                    </div> */}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            {/* <div className="Carouselstyles__CarouselControls-sc-1hv3vvl-4 cmcZMx">
-                                                        <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 Carouselstyles__CarouselIconWrapper-sc-1hv3vvl-6 bGKfHf jivIUZ">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFFFFF" width="1.2rem" height="1.2rem" className="HappyAngleLeftIcon-sc-15mlbp-0 iZkvQN" onClick={handlePrev}>
-                                                                <path d="M26 16a3.07 3.07 0 0 1-1.04 2.305L10.091 31.386a2.462 2.462 0 0 1-3.251-3.698l13.003-11.439a.334.334 0 0 0 0-.501L6.84 4.309A2.463 2.463 0 0 1 10.092.611l14.864 13.077a3.08 3.08 0 0 1 1.045 2.309z">
-                                                                </path>
-                                                            </svg>
-                                                        </div>
-                                                        <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 Carouselstyles__CarouselIconWrapper-sc-1hv3vvl-6 bGKfHf hREPeu">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFFFFF" width="1.2rem" height="1.2rem" className="HappyAngleRightIcon-sc-1vqys28-0 ghgJFj" onClick={handleNext}>
-                                                                <path d="M26 16a3.07 3.07 0 0 1-1.04 2.305L10.091 31.386a2.462 2.462 0 0 1-3.251-3.698l13.003-11.439a.334.334 0 0 0 0-.501L6.84 4.309A2.463 2.463 0 0 1 10.092.611l14.864 13.077a3.08 3.08 0 0 1 1.045 2.309z">
-                                                                </path>
-                                                            </svg>
-                                                        </div>
-                                                    </div> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -443,16 +407,7 @@ function InsideMainView() {
                                         </div>
                                     </div>
                                 </MDBCol>
-                                {/* </div> */}
                             </MDBRow>
-
-                            {/* <MDBRow className='g-0' >
-                        <MDBCol md='12'>
-                            <div className=''>
-                                Hiiii
-                            </div>
-                        </MDBCol>
-                    </MDBRow> */}
                         </MDBCol>
                         <MDBCol md='3'>
                             <div className='rightBox'>

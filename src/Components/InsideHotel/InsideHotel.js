@@ -3,6 +3,7 @@ import "./InsideHotel.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import InsideSearchView from "./InsideSearchView";
 import InsideMainView from "./InsideMainView";
+import InsideNav from "./InsideNav";
 
 
 const InsideHotel = () => {
@@ -14,6 +15,9 @@ const InsideHotel = () => {
             </div>
             <div className='InsideHotelMainView'>
                 <InsideMainView />
+            </div>
+            <div className='InsideHotelNav'>
+                <InsideNav />
             </div>
         </>
     );
