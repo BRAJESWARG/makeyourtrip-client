@@ -4,6 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import InsideSearchView from "./InsideSearchView";
 import InsideMainView from "./InsideMainView";
 import InsideNav from "./InsideNav";
+import Amenities from "./Amenities";
+import Host from "./Host";
+import PropertyPolicies from "./PropertyPolicies";
 
 
 const InsideHotel = () => {
@@ -18,6 +21,15 @@ const InsideHotel = () => {
             </div>
             <div className='InsideHotelNav'>
                 <InsideNav />
+            </div>
+            <div className='InsideHotelAmenities'>
+                <Amenities />
+            </div>
+            <div className='InsideHotelHost'>
+                <Host />
+            </div>
+            <div className='InsideHotelPropertyPolicies'>
+                <PropertyPolicies />
             </div>
         </>
     );

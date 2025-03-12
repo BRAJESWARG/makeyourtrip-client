@@ -9,9 +9,378 @@
     z-index: +20;
     height: 5.5rem;
 }
+
 .InsideHotelMainView {
     margin-top: 12em;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+
+
+/* ////////////////////////////////////Amenities////////////////////////////////////////////////////////////// */
+
+
+
+.jKkVic {
+    width: 100%;
+    margin: 2rem 0px;
+}
+
+.cdZIRD {
+    width: 100%;
+    margin: 0px auto;
+    max-width: 120rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.2rem;
+}
+
+.fRCeTy {
+    border-bottom: 0.1rem solid rgb(225, 231, 238);
+    padding: 2rem 2.5rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.eeTyKB {
+    line-height: normal;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.jtaVPN {
+    padding: 2.5rem;
+    border-radius: 0px 0px 0.6rem 0.6rem;
+}
+
+.kOWhTi {
+    padding: 0.2rem 1.5rem 0.2rem 0.5rem;
+    background-image: linear-gradient(96deg, rgb(27, 149, 100), rgb(57, 213, 70));
+    border-radius: 0.2rem;
+}
+
+.kCaNwu {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.ixObVF {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 0px 0px;
+    font-size: 1.6rem;
+}
+
+.iYVwtt {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: rgb(119, 119, 119);
+    cursor: pointer;
+}
+
+.hkBexV {
+    font-weight: 600;
+    padding: 0px 1.5rem 0px 1rem;
+}
+
+.chqHwc {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0px;
+}
+
+.chqHwc g path:last-child {
+    fill: rgb(119, 119, 119);
+}
+
+.hFyVkv {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: rgb(100, 122, 151);
+}
+
+.gpcTKG {
+    padding: 2.5rem 2.5rem 1.5rem;
+    background: rgb(255, 255, 255);
+    border-top: 0.1rem solid rgb(225, 231, 238);
+    display: flex;
+    justify-content: space-around;
+}
+
+.fEmIHs {
+    padding: 2.5rem 2.5rem 1.5rem;
+    background: rgb(255, 255, 255);
+    border-top: 0.1rem solid rgb(225, 231, 238);
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.hiqBoU {
+    flex: 1 1 0%;
+    padding-bottom: 1rem;
+}
+
+.dlgwqi {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+    margin-bottom: 12px;
+}
+
+.cQHPky {
+    list-style-type: none;
+}
+
+.jDhMTW {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.jDhMTW::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(113, 113, 113);
+    position: absolute;
+    left: 0px;
+    top: 8px;
+}
+
+.kGlxow {
+    padding: 0rem 2.5rem 1.5rem;
+    color: rgb(34, 118, 227);
+    line-height: normal;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bmajuy {
+    color: rgb(34, 116, 224);
+}
+
+
+
+
+/* ////////////////////////////////////Amenities////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+.fWRZBM {
+    margin: 0px auto 2rem;
+    max-width: 120rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.2rem;
+    width: 100%;
+}
+
+.RKVI {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.dScsck {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+    margin-bottom: 24px;
+}
+
+.dCBohn {
+    display: flex;
+}
+
+.eWOzgM {
+    flex: 1 1 0%;
+}
+
+.gGezYF {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.gGezYF li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.jiwVcX {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0px 0.5rem 1rem 0px;
+    fill: rgb(100, 122, 151);
+    cursor: pointer;
+}
+
+.kyMWsf {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0px 2px 0px 0px;
+}
+
+.dPnlFr {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: rgb(34, 34, 34);
+}
+
+.cIdHWM {
+    max-width: 100%;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 3; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dPnlFr a {
+    color: rgb(34, 116, 224);
+}
+
+.mPDAg {
+    margin-left: 60px;
+}
+
+.hJDQRm {
+    width: 15.4rem;
+    height: 15.4rem;
+    border-radius: 50%;
+    position: relative;
+    background-color: rgb(194, 194, 194);
+}
+
+.bGKfHf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hPPHIS {
+    width: 15.4rem;
+    height: 15.4rem;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////PropertyPolicies////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+.bJrRvy {
+    width: 100%;
+    margin: 2.5rem auto 0px;
+    max-width: 120rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.2rem;
+}
+
+.cyPRSL {
+    border-bottom: 0.1rem solid rgb(225, 231, 238);
+    padding: 2rem 2.5rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.jwBOfs {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 16px;
+}
+
+.gQcjvk {
+    font-size: 1.6rem;
+    background: rgb(238, 244, 253);
+    border-radius: 53px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.gQcjvk>span:first-child {
+    margin-right: 22px;
+}
+
+.civGJZ {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.civGJZ {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bMWa-dl {
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem 0px;
+}
+
+.bMWa-dl>li {
+    display: flex;
+    padding: 0.5rem 2.5rem;
+    align-items: center;
+}
+
+.nsHxJ {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0px 1rem 0px 0px;
+    fill: rgb(70, 72, 77);
+}
+
+.gmLhXm {
+    font-size: 1.6rem;
+    width: 70%;
+}
+
+.dLGoCB {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+}
+
+.bmajuy {
+    color: rgb(34, 116, 224);
 }
