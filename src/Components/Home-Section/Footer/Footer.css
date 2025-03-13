@@ -94,12 +94,12 @@
     margin-top: 10px;
 }
 
-.kOXtNh .footer-sprite.facebookIcon {
+/* .kOXtNh .footer-sprite.facebookIcon {
     background-position: -213px -3px;
     width: 25px;
     height: 25px;
     margin-right: 10px;
-}
+} */
 
 .kOXtNh .footer-sprite {
     display: inline-flex;
@@ -107,17 +107,49 @@
     background: url(https://gos3.ibcdn.com/footer-sprite-1688459091.png) 0% 0% / 300px 200px no-repeat;
 }
 
-.kOXtNh .footer-sprite.twitterIcon {
+/* .kOXtNh .footer-sprite.twitterIcon {
     background-position: -241px -3px;
     width: 25px;
     height: 25px;
     margin-right: 10px;
-}
+} */
 
-.kOXtNh .footer-sprite.youTubeIcon {
+/* .kOXtNh .footer-sprite.youTubeIcon {
     background-position: -268px -3px;
     width: 30px;
     height: 25px;
+} */
+.facebookIcon {
+    color: deepskyblue;
+    font-size: 28px;
+    filter: grayscale(100%);
+    /* padding-right: 10px; */
+}
+
+.facebookIcon:hover {
+    filter: none;
+}
+
+.twitterIcon {
+    color: deepskyblue;
+    font-size: 28px;
+    filter: grayscale(100%);
+    padding-right: 10px;
+}
+
+.twitterIcon:hover {
+    filter: none;
+}
+
+
+.linkedInIcon {
+    color: deepskyblue;
+    font-size: 28px;
+    filter: grayscale(100%);
+}
+
+.linkedInIcon:hover {
+    filter: none;
 }
 
 .kOXtNh .footer-app-links .follow-us .store-icons {

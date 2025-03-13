@@ -153,18 +153,22 @@ function Footer() {
                                     <a target="_blank" href="http://www.facebook.com/mihup_ai" title="facebook" rel="noreferrer" aria-label="Facebook">
                                         <span className="footer-sprite facebookIcon">
                                         </span>
+                                        <i class="fa fa-facebook-f facebookIcon" ></i>
                                     </a>
                                     <a target="_blank" href="https://twitter.com/mihup_ai" title="Twitter" rel="noreferrer" aria-label="Twitter">
                                         <span className="footer-sprite twitterIcon">
                                         </span>
+                                        <i class="fa fa-twitter twitterIcon" ></i>
                                     </a>
                                     <a target="_blank" href="https://www.linkedin.com/company/mihup/" title="youtube" rel="noreferrer" aria-label="youtube">
-                                        <span className="footer-sprite youTubeIcon">
-                                        </span>
+                                        {/* <span className="footer-sprite youTubeIcon">
+                                        </span> */}
+                                        <i className="fa fa-linkedin-square linkedInIcon" ></i>
                                     </a>
-                                    <a target="_blank" href="https://plus.google.com/+goibibo/" className="fl" title="Google Plus" rel="noreferrer" aria-label="Google Plus">
+
+                                    {/* <a target="_blank" href="https://plus.google.com/+goibibo/" className="fl" title="Google Plus" rel="noreferrer" aria-label="Google Plus">
                                         <span className="hd_vs fr_gplus margin0">&nbsp;</span>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                             <div className="follow-us">
