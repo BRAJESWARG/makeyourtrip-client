@@ -150,15 +150,15 @@ function Footer() {
                             <div className="follow-us">
                                 <p>Follow Us</p>
                                 <div className="social-icons">
-                                    <a target="_blank" href="http://www.facebook.com/goibibo" title="facebook" rel="noreferrer" aria-label="Facebook">
+                                    <a target="_blank" href="http://www.facebook.com/mihup_ai" title="facebook" rel="noreferrer" aria-label="Facebook">
                                         <span className="footer-sprite facebookIcon">
                                         </span>
                                     </a>
-                                    <a target="_blank" href="http://twitter.com/goibibo" title="Twitter" rel="noreferrer" aria-label="Twitter">
+                                    <a target="_blank" href="https://twitter.com/mihup_ai" title="Twitter" rel="noreferrer" aria-label="Twitter">
                                         <span className="footer-sprite twitterIcon">
                                         </span>
                                     </a>
-                                    <a target="_blank" href="http://www.youtube.com/user/goibibo" title="youtube" rel="noreferrer" aria-label="youtube">
+                                    <a target="_blank" href="https://www.linkedin.com/company/mihup/" title="youtube" rel="noreferrer" aria-label="youtube">
                                         <span className="footer-sprite youTubeIcon">
                                         </span>
                                     </a>
