@@ -191,17 +191,20 @@ function Footer() {
                         </div>
                         <div className="footer-copyrights">
                             <div className="brand-name">
-                                <a href="https://www.makemytrip.com/" target="_black">
+                                {/* <a href="https://www.makemytrip.com/" target="_black">
                                     <span className="footer-sprite mmtLogo">
                                     </span>
                                 </a>
                                 <a href="https://www.redbus.in/" target="_black">
                                     <span className="footer-sprite redBusLogo">
                                     </span>
+                                </a> */}
+                                <a target="_blank" href="https://mihup.ai/" rel="noreferrer">
+                                    <img src="https://via.mihup.com/assets/logo/logo-new-lg.png" alt="" className="mihupLogo" data-testid="" />
                                 </a>
                             </div>
                             {/* <span className="sc-dOdxqt lilDLf">© <!-- -->2025<!-- --> Makemytrip (India) Private Limited. All rights reserved</span> */}
-                            Brajeswar Ghosh | {new Date().getFullYear()} All Rights Reserved.
+                            <span> © Brajeswar Ghosh | {new Date().getFullYear()} All Rights Reserved. </span>
                         </div>
                     </div>
                 </section>

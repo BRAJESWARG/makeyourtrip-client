@@ -55,11 +55,16 @@
 }
 
 .fjLnZe {
-    color: rgb(34, 116, 224);
+    /* color: rgb(34, 116, 224); */
+    color: gray;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
+}
+
+.fjLnZe:hover {
+    color: rgb(34, 116, 224);
 }
 
 .kOXtNh {
@@ -183,14 +188,19 @@
     padding-top: 20px;
     padding-bottom: 20px;
     color: rgb(179, 179, 179);
-    font-size: 11px;
+    font-size: 1rem;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.kOXtNh .footer-sprite.mmtLogo {
+.kOXtNh .footer-copyrights>span:hover {
+    color: deepskyblue;
+    cursor: context-menu;
+}
+
+/* .kOXtNh .footer-sprite.mmtLogo {
     background-position: -8px -120px;
     width: 98px;
     height: 32px;
@@ -206,6 +216,22 @@
     height: 32px;
     filter: grayscale(100%);
     opacity: 0.6;
+}
+
+.footer-sprite.redBusLogo:hover {
+    filter: none;
+} */
+
+.mihupLogo {
+    background-position: -56px -166px;
+    width: 100px;
+    height: 30px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.mihupLogo:hover {
+    filter: none;
 }
 
 .lilDLf {

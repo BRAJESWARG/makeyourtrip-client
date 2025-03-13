@@ -23,8 +23,13 @@
 
 
 
+.Amenities {
+    display: flex;
+    justify-content: center;
+}
+
 .jKkVic {
-    width: 100%;
+    width: 70%;
     margin: 2rem 0px;
 }
 
@@ -55,7 +60,7 @@
 }
 
 .kOWhTi {
-    padding: 0.2rem 1.5rem 0.2rem 0.5rem;
+    padding: 0.5rem 1.5rem 0.2rem 0.5rem;
     background-image: linear-gradient(96deg, rgb(27, 149, 100), rgb(57, 213, 70));
     border-radius: 0.2rem;
 }
@@ -71,13 +76,13 @@
     list-style-type: none;
     display: flex;
     align-items: center;
-    padding: 2.5rem 0px 0px;
-    font-size: 1.6rem;
+    padding: 2.5rem 2.2rem 0px;
+    font-size: 1rem;
 }
 
 .iYVwtt {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: rgb(119, 119, 119);
     cursor: pointer;
 }
@@ -88,8 +93,8 @@
 }
 
 .chqHwc {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin: 0px;
 }
 
@@ -98,8 +103,8 @@
 }
 
 .hFyVkv {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: rgb(100, 122, 151);
 }
 
@@ -186,7 +191,7 @@
     max-width: 120rem;
     background-color: rgb(255, 255, 255);
     border-radius: 1.2rem;
-    width: 100%;
+    width: 70%;
 }
 
 .RKVI {
@@ -302,8 +307,8 @@
 
 
 .bJrRvy {
-    width: 100%;
-    margin: 2.5rem auto 0px;
+    width: 70%;
+    margin: 2.5rem auto 2.5rem ;
     max-width: 120rem;
     background-color: rgb(255, 255, 255);
     border-radius: 1.2rem;
@@ -311,7 +316,7 @@
 
 .cyPRSL {
     border-bottom: 0.1rem solid rgb(225, 231, 238);
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     display: flex;
@@ -320,18 +325,20 @@
 
 .jwBOfs {
     line-height: normal;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
+    margin-bottom: 0px;
     margin-right: 16px;
 }
 
 .gQcjvk {
-    font-size: 1.6rem;
+    font-size: 1rem;
     background: rgb(238, 244, 253);
     border-radius: 53px;
     padding: 9px 16px;
     display: flex;
     align-items: center;
+    margin-bottom: 0px;
 }
 
 .gQcjvk>span:first-child {
@@ -370,8 +377,9 @@
 }
 
 .gmLhXm {
-    font-size: 1.6rem;
+    font-size: 1rem;
     width: 70%;
+    margin-bottom: 0px;
 }
 
 .dLGoCB {
