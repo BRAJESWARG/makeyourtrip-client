@@ -34,6 +34,11 @@
   color: rgb(113, 113, 113) !important;
 }
 
+.NavCategory:active {
+  border-bottom: 3px solid red;
+
+}
+
 .login-button {
   background-color: rgb(39, 115, 230) !important;
   color: whitesmoke !important;
