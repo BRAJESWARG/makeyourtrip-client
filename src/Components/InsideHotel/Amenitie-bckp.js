@@ -87,7 +87,7 @@ const Amenities = () => {
                             </ul>
                         </div>
                     </div>
-                    {/* <div className="Amenitiesstyles__CategorizedAmenitiesTableContainer-sc-e2msby-11 fEmIHs">
+                    <div className="Amenitiesstyles__CategorizedAmenitiesTableContainer-sc-e2msby-11 fEmIHs">
                         <div id="Popular Amenities" className="Amenitiesstyles__OneCateoryOfAmenitiesContainer-sc-e2msby-12 hiqBoU">
                             <h3 className="Amenitiesstyles__HeadingOneCategoryOfAmenitiesBlockStyled-sc-e2msby-13 dlgwqi">Popular Amenities</h3>
                             <ul className="Amenitiesstyles__OneCategoryOfAmenitiesList-sc-e2msby-14 cQHPky">
@@ -148,13 +148,13 @@ const Amenities = () => {
                                 <li className="Amenitiesstyles__OneCategoryOfAmenitiesListItem-sc-e2msby-15 jDhMTW">Balcony/Terrace</li>
                             </ul>
                         </div>
-                    </div> */}
-                    {/* <div className="Amenitiesstyles__ShowHideLink-sc-e2msby-6 kGlxow">
+                    </div>
+                    <div className="Amenitiesstyles__ShowHideLink-sc-e2msby-6 kGlxow">
                         <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">Show All Amenities</a>
                     </div>
                     <div className="Amenitiesstyles__ShowHideLink-sc-e2msby-6 kGlxow">
                         <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">Hide</a>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>

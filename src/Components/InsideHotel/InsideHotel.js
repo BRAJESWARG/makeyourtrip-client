@@ -7,6 +7,8 @@ import InsideNav from "./InsideNav";
 import Amenities from "./Amenities";
 import Host from "./Host";
 import PropertyPolicies from "./PropertyPolicies";
+import GuestReviews from "./GuestReviews";
+import StayOptions from "./StayOptions";
 
 
 const InsideHotel = () => {
@@ -22,11 +24,17 @@ const InsideHotel = () => {
             <div className='InsideHotelNav'>
                 <InsideNav />
             </div>
+            <div className='InsideHotelStayOptions'>
+                <StayOptions />
+            </div>
             <div className='InsideHotelAmenities'>
                 <Amenities />
             </div>
             <div className='InsideHotelHost'>
                 <Host />
+            </div>
+            <div className='InsideHotelGuestReviews'>
+                <GuestReviews />
             </div>
             <div className='InsideHotelPropertyPolicies'>
                 <PropertyPolicies />
