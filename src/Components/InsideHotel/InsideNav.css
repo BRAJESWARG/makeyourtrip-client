@@ -1,8 +1,12 @@
+/* .InsideNav{
+    position: sticky;
+    top: calc(0px + 31.8rem);
+} */
 .eYxIWd {
     width: 100%;
     background-color: rgb(255, 255, 255);
     position: sticky;
-    top: 8.6rem;
+    top: calc(0px + 21.8rem);
     z-index: 5;
     height: 5.5rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 5px;

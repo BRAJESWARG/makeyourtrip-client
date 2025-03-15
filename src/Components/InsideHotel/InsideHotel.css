@@ -1,3 +1,9 @@
+.InsideHotelNav {
+    position: sticky;
+    top: calc(0px + 9rem);
+    z-index: 100;
+}
+
 .InsideHotelSearchView {
     margin-top: 2.5em;
     position: fixed;
@@ -531,11 +537,13 @@
     display: inline-block;
     cursor: pointer;
 }
+
 .gYdvnt:checked {
     background-color: rgb(233, 236, 238);
     border: 2px solid rgb(173, 184, 192);
     color: rgb(153, 161, 167);
 }
+
 .jrzcjl {
     font-size: 1rem;
 }
