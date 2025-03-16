@@ -39,54 +39,9 @@ function InsideNav() {
                                         {item.label}
                                     </Link>
                                 ))}
-                                {/* <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Stay Options</button>
-                                </Link> */}
-                                {/* <a href="#stays" data-testid="navigation-header-cta-#stays" className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN">Stay Options</a> */}
                             </div>
                         </li>
-                        {/* <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Amenities</button>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Host</button>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Guest Reviews</button>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Property Policies</button>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button>Location</button>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="Navigationstyles__TextWrapperSpan-sc-1qhzy4a-3 llgclM">
-                                <Link to="contact" spy={true} smooth={true} className="Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 jyDmWN" >
-                                    <button> Similar Properties</button>
-                                </Link>
-                            </div>
-                        </li> */}
+
                     </ul>
                 </div>
             </section>

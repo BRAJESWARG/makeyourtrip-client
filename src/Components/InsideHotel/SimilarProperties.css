@@ -9,6 +9,7 @@
 
 .CurrentHotelCard {
     background: rgb(255, 253, 233) !important;
+    height: 680px !important;
 }
 
 .buWWlt {
@@ -70,6 +71,8 @@
     background: rgb(255, 255, 255);
     /* border-radius: 1.2rem; */
     display: flex;
+    width: 100%;
+    max-height: 680px;
 }
 
 .guwHAy {
@@ -86,6 +89,7 @@
 .Card-Img {
     margin: 1rem;
     width: 90% !important;
+    height: 200px !important;
 }
 
 .lfQUri {
@@ -131,7 +135,7 @@
     border-top: 1px solid rgb(232, 243, 255);
     border-bottom: 1px solid rgb(232, 243, 255);
     padding: 0.5rem 0px 0.5rem;
-    min-height: 165px;
+    min-height: 100px;
 }
 
 .jdzNHa {
@@ -206,7 +210,7 @@
 .cfBEgO {
     display: flex;
     flex-direction: column;
-    padding-top: 1.5rem;
+    /* padding-top: 1.5rem; */
 }
 
 .gyWimb {
@@ -224,4 +228,21 @@
 
 .bhPWYy {
     color: rgb(119, 119, 119);
+}
+
+/* .Carousel{
+    z-index: 100;
+} */
+.similarHotelCardCointaner {
+    width: 75%;
+    padding: 10px 10px 10px 2px;
+}
+
+.similarHotelCarousel>ul>li {
+    width: 34% !important;
+    margin-right: 10px;
+}
+.similarHotelCard {
+    background: rgb(245, 245, 244) !important;
+    max-height: 660px;
 }
