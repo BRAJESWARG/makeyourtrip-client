@@ -17,6 +17,8 @@
     "formik": "^2.4.6",
     "jspdf": "^2.5.2",
     "mdb-react-ui-kit": "^9.0.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.8",
     "react-dom": "^18.2.0",

@@ -30,14 +30,14 @@ const Host = () => {
                                 </li>
                             </ul>
                             <div className="HostInfoUIstyles__HostBioWrapper-sc-b0b7rv-7 dPnlFr">
-                                <p className="HostInfoUIstyles__HostBio-sc-b0b7rv-8 cIdHWM">Say hello to your host, Nidhi. She has been hosting since 2020.
+                                <p className="HostInfoUIstyles__HostBio-sc-b0b7rv-8 cIdHWM">Say hello to your host, Saikat. He has been hosting since 2020.
 
-                                    Nidhi  is extremely cordial and forthcoming. Apart from hosting, her hobbies include travelling and listening to music.
+                                    Saikat  is extremely cordial and forthcoming. Apart from hosting, her hobbies include travelling and listening to music.
 
-                                    In order to fulfil her dream of starting a personal business, Nidhi decided to venture into the hospitality space. Besides being a host, Nidhi is also looking after the family business. She has employed well-trained staff to take care of guest needs.
+                                    In order to fulfil her dream of starting a personal business, Saikat decided to venture into the hospitality space. Besides being a host, Saikat is also looking after the family business. He has employed well-trained staff to take care of guest needs.
 
                                     Interaction With Guests:
-                                    Though Nidhi is not physically present at the property, she is always a phone call away for her guests.</p>
+                                    Though Saikat is not physically present at the property, he is always a phone call away for her guests.</p>
                                 {/* <a href="/">Read More</a> */}
                             </div>
                         </div>

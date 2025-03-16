@@ -9,6 +9,7 @@ import Host from "./Host";
 import PropertyPolicies from "./PropertyPolicies";
 import GuestReviews from "./GuestReviews";
 import StayOptions from "./StayOptions";
+import SimilarProperties from "./SimilarProperties";
 
 
 const InsideHotel = () => {
@@ -38,6 +39,9 @@ const InsideHotel = () => {
             </div>
             <div className='InsideHotelPropertyPolicies'>
                 <PropertyPolicies />
+            </div>
+            <div className='InsideHotelSimilarProperties'>
+                <SimilarProperties />
             </div>
         </>
     );
