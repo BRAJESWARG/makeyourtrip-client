@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import "./InsideNav.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 function InsideNav() {
-
     const [activeItem, setActiveItem] = useState(null);
 
     const navItems = [
@@ -19,8 +18,8 @@ function InsideNav() {
     ];
 
     return (
-        <div className='InsideNav'>
-            <section id="details-navigation" className="Navigationstyles__NavigationStyleContainer-sc-1qhzy4a-0 eYxIWd">
+        <div className="InsideNav">
+            <nav id="details-navigation" className="Navigationstyles__NavigationStyleContainer-sc-1qhzy4a-0 eYxIWd navigation-container">
                 <div className="Navigationstyles__StyledWrapper-sc-1qhzy4a-1 iOBtpt">
                     <ul className="Navigationstyles__MenuList-sc-1qhzy4a-2 dwFebw">
                         <li>
@@ -32,21 +31,20 @@ function InsideNav() {
                                         spy={true}
                                         smooth={true}
                                         duration={500}
-                                        className={`Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 ${activeItem === item.id ? "jyDmWNActiv" : "jyDmWN"
-                                            }`}
+                                        className={`Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 ${activeItem === item.id ? "jyDmWNActiv" : "jyDmWN"}`}
                                         onClick={() => setActiveItem(item.id)}
+                                        onSetActive={() => setActiveItem(item.id)}  // Updates active state on scroll
                                     >
                                         {item.label}
                                     </Link>
                                 ))}
                             </div>
                         </li>
-
                     </ul>
                 </div>
-            </section>
+            </nav>
         </div>
-    )
+    );
 }
 
 export default InsideNav;
