@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 // import { DataBase } from './Components/ArrayOfBlog/ArrayOfBlog';
-import Home from "./Components/Home-Section/Home";
+// import Home from "./Components/Home-Section/Home";
 import AllCategory from "./Components/AllCategory"
 import Nav from "./Components/Nav/Nav.js";
 import Footer from './Components/Home-Section/Footer/Footer';
@@ -21,8 +21,11 @@ function App() {
         {/* <img src={BackgroundBG} className='background-bg' alt="background-bg" /> */}
         <br />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Navigate to="/Hotels" replace />} />
+          <Route path="/#" element={<Navigate to="/Hotels" replace />} />
+          <Route path="/home" element={<Navigate to="/Hotels" replace />} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/:cat" element={<AllCategory />} />
           <Route path="/article/:cat/:Id" element={<Article />} />
           <Route path="*" element={<NotFound />} />

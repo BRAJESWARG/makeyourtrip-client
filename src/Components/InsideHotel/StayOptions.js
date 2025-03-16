@@ -70,11 +70,11 @@ const StayOptions = () => {
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <div className="Layouts__Row-sc-1yzlivq-0 RoomInfoText__RoomTextInfoWrapperStyled-sc-1bg35eu-0 iRIAvw tbBNw">
+                                                {/* <div className="Layouts__Row-sc-1yzlivq-0 RoomInfoText__RoomTextInfoWrapperStyled-sc-1bg35eu-0 iRIAvw tbBNw">
                                                     <span className="RoomInfoText__RoomInfoTextStyled-sc-1bg35eu-1 fTPZGc">
                                                         <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy" style={{ marginTop: '12px', fontWeight: 'bold' }}>View More Details</a>
                                                     </span>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                         <div className="RoomFlavorsstyles__RoomFlavorsContainer-sc-19znpmi-0 gIXzUC room-flavor-container" flexgrowshrink="2">
@@ -143,9 +143,9 @@ const StayOptions = () => {
                                                     </div>
                                                     <div>
                                                         <button data-testid="selectRoomBtn" className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 RoomFlavorstyles__ButtonWrapper-sc-90vv8b-16 cYhrVX fhJGsp">Select  room</button>
-                                                        <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">
+                                                        {/* <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">
                                                             <span className="RoomFlavorstyles__LoginForMore-sc-90vv8b-42 eBotoi">Login Now to unlock best deals and offers!</span>
-                                                        </a>
+                                                        </a> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -211,9 +211,9 @@ const StayOptions = () => {
                                                     </div>
                                                     <div>
                                                         <button data-testid="selectRoomBtn" className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 RoomFlavorstyles__ButtonWrapper-sc-90vv8b-16 cYhrVX fhJGsp">Select  room</button>
-                                                        <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">
+                                                        {/* <a href="/" className="dwebCommonstyles__PrimaryLink-sc-112ty3f-11 bmajuy">
                                                             <span className="RoomFlavorstyles__LoginForMore-sc-90vv8b-42 eBotoi">Login Now to unlock best deals and offers!</span>
-                                                        </a>
+                                                        </a> */}
                                                     </div>
                                                 </div>
                                             </div>

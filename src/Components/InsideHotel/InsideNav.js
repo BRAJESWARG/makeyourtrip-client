@@ -13,7 +13,7 @@ function InsideNav() {
         { id: "Host", label: "Host" },
         { id: "GuestReviews", label: "Guest Reviews" },
         { id: "PropertyPolicies", label: "Property Policies" },
-        { id: "Location", label: "Location" },
+        // { id: "Location", label: "Location" },
         { id: "SimilarProperties", label: "Similar Properties" },
     ];
 
@@ -31,6 +31,7 @@ function InsideNav() {
                                         spy={true}
                                         smooth={true}
                                         duration={500}
+                                        offset={-250}
                                         className={`Navigationstyles__ItemLinkTo-sc-1qhzy4a-4 ${activeItem === item.id ? "jyDmWNActiv" : "jyDmWN"}`}
                                         onClick={() => setActiveItem(item.id)}
                                         onSetActive={() => setActiveItem(item.id)}  // Updates active state on scroll
