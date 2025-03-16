@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 
-const StayOptions = () => {
+const StayOptions = ({ val }) => {
 
     return (
         <div className="StayOptions">
@@ -48,7 +48,13 @@ const StayOptions = () => {
                                                 <h3 filterheight="0" className="Roomstyles__RoomTypeTextStyled-sc-1vvh1xt-3 hEXjuX">Standard Room</h3>
                                                 <a href="/#">
                                                     <div className="Layouts__Column-sc-1yzlivq-1 Roomstyles__Column-sc-1vvh1xt-0 Roomstyles__RoomImageWrapper-sc-1vvh1xt-5 gANvcd kyMJfW fqOCbV">
-                                                        <img src="https://r1imghtlak.ibcdn.com/f1a506e41bb511ecbd530a58a9feac02.jpg?downsize=428:230" alt="Shakespeare Corporate Guest House Room Type - Standard Room" className="Roomstyles__RoomImageStyled-sc-1vvh1xt-6 UeQCs" data-testid="" title="Shakespeare Corporate Guest House Room Type - Standard Room" />
+                                                        <img
+                                                            // src="https://r1imghtlak.ibcdn.com/f1a506e41bb511ecbd530a58a9feac02.jpg?downsize=428:230" 
+                                                            src={val.Thumbnail}
+                                                            alt="Shakespeare Corporate Guest House Room Type - Standard Room"
+                                                            className="Roomstyles__RoomImageStyled-sc-1vvh1xt-6 UeQCs"
+                                                            data-testid="" title="Shakespeare Corporate Guest House Room Type - Standard Room"
+                                                        />
                                                         <div className="Roomstyles__RoomImageTag-sc-1vvh1xt-10 fjWUzF">+7 Photos</div>
                                                     </div>
                                                 </a>
@@ -56,7 +62,8 @@ const StayOptions = () => {
                                                     <div width="50%" className="Layouts__Row-sc-1yzlivq-0 RoomInfoText__RoomTextInfoWrapperStyled-sc-1bg35eu-0 iRIAvw hQzkPE">
                                                         <span alignitems="center" className="RoomInfoText__RoomInfoTextStyled-sc-1bg35eu-1 cUApqs">
                                                             <div margintop="6px" padding="0 0.5rem 0 0" className="Roomstyles__RoomTypeColumnIconsContainer-sc-1vvh1xt-7 dTyqtu">
-                                                                <img alt="" src="https://gos3.ibcdn.com/roomSizeBlack-1678093548.png" width="22px" />
+                                                                <img
+                                                                    alt="" src="https://gos3.ibcdn.com/roomSizeBlack-1678093548.png" width="22px" />
                                                             </div>
                                                             <span style={{ paddingLeft: '3px', paddingTop: '7px' }}>120 sq.ft (11 sq.mt)</span>
                                                         </span>

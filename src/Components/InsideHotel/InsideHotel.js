@@ -12,36 +12,36 @@ import StayOptions from "./StayOptions";
 import SimilarProperties from "./SimilarProperties";
 
 
-const InsideHotel = () => {
+const InsideHotel = ({ val }) => {
 
     return (
         <>
             <div className='InsideHotelSearchView'>
-                <InsideSearchView />
+                <InsideSearchView val={val} />
             </div>
             <div className='InsideHotelMainView'>
-                <InsideMainView />
+                <InsideMainView val={val} />
             </div>
             <div className='InsideHotelNav'>
-                <InsideNav />
+                <InsideNav val={val} />
             </div>
             <div className='InsideHotelStayOptions'>
-                <StayOptions />
+                <StayOptions val={val} />
             </div>
             <div className='InsideHotelAmenities'>
-                <Amenities />
+                <Amenities val={val} />
             </div>
             <div className='InsideHotelHost'>
-                <Host />
+                <Host val={val} />
             </div>
             <div className='InsideHotelGuestReviews'>
-                <GuestReviews />
+                <GuestReviews val={val} />
             </div>
             <div className='InsideHotelPropertyPolicies'>
-                <PropertyPolicies />
+                <PropertyPolicies val={val} />
             </div>
             <div className='InsideHotelSimilarProperties'>
-                <SimilarProperties />
+                <SimilarProperties val={val} />
             </div>
         </>
     );

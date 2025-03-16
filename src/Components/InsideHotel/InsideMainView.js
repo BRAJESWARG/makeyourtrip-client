@@ -11,7 +11,7 @@ import {
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-function InsideMainView() {
+function InsideMainView({ val }) {
 
     const images = [
         { original: "https://picsum.photos/id/1000/600/300", thumbnail: "https://picsum.photos/id/1000/100/50", ID: 1 },
@@ -32,7 +32,25 @@ function InsideMainView() {
     const handlePrev = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
-
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0, // Removes decimal values
+        }).format(value);
+      };
+    
+      const getPriceAfterDiscount = (value) => {
+        return value * 0.6;
+      };
+    
+      const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);
+    
+      const getTaxValue = (value) => {
+        return value * 0.18;
+      };
+    
+      const TaxValue = getTaxValue(PriceAfterDiscount);
     return (
         <div className='InsideMainView'>
             <div className='InsideMainViewChild'>
@@ -232,7 +250,7 @@ function InsideMainView() {
                                                                 <span color="#1ABA32" className="ReviewInfostyles__ReviewNumber-sc-extx54-3 hyxOAP">
                                                                     <span itemprop="worstRating" content="1">
                                                                     </span>
-                                                                    <span itemprop="ratingValue">3.9</span>
+                                                                    <span itemprop="ratingValue">{val.StarRating}</span>
                                                                     <span>/</span>
                                                                     <span itemprop="bestRating" className="ReviewInfostyles__OutOfNumberForReview-sc-extx54-6 gnnIdA">5</span>
                                                                 </span>
@@ -282,7 +300,8 @@ function InsideMainView() {
                                                                         <div className="dwebCommonstyles__CenteredDivWrap-sc-112ty3f-1 CaptivateBannerGallerystyles__WideImageViewAllPhotosOuter-sc-dn43rp-2 bGKfHf iBqcKR">
                                                                             <button className="prev-button" onClick={handlePrev}>❮</button>
                                                                             {images?.length > 0 && (
-                                                                                <img src={images[currentIndex].original} alt="InsideMainView Imageiew" className="InsideMainView-image" />
+                                                                                <img src={val.Images[currentIndex].original} alt="InsideMainView Imageiew" className="InsideMainView-image" />
+                                                                                // <img src={images[currentIndex].original} alt="InsideMainView Imageiew" className="InsideMainView-image" />
                                                                             )}
                                                                             <button className="next-button" onClick={handleNext}>❯</button>
                                                                             {/* <img src="https://gos3.ibcdn.com/default-4-1426763954.png" alt="" className="CaptivateBannerGallerystyles__CaptivateGalleryImage-sc-dn43rp-8 CaptivateBannerGallerystyles__CaptivateGalleryImageViewAll-sc-dn43rp-12 dozrMg kTHxxY" data-testid="" /> */}
@@ -450,13 +469,13 @@ function InsideMainView() {
                                         </div>
                                         <div className="BookingWidgetstyles__Column-sc-bwqud6-3 dFmDgp">
                                             <div className="dwebCommonstyles__FlexCentered-sc-112ty3f-6 lfQUri">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1.4rem" height="1.4rem" fill="#141823" className="RupeeIcon-sc-5hlwf0-0 eKLDvu">
+                                                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="1.4rem" height="1.4rem" fill="#141823" className="RupeeIcon-sc-5hlwf0-0 eKLDvu">
                                                     <path d="M21.482 7.945h3.536c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.786 1.818h-3.536a9.43 9.43 0 0 1-2.625 5.109 9.5 9.5 0 0 1-6.75 2.891h-.679l9.661 9.255c0 .018.018.018.036.036.679.673.696 1.782.036 2.473a1.74 1.74 0 0 1-2.518.091L5.714 19a1.78 1.78 0 0 1-.554-1.364c.036-.964.839-1.727 1.786-1.691h5.179a5.9 5.9 0 0 0 4.214-1.836 6.3 6.3 0 0 0 1.482-2.527H6.946c-.982 0-1.786-.818-1.786-1.818s.804-1.818 1.786-1.818h10.875C17 5.455 14.714 3.782 12.125 3.764H6.946c-.982 0-1.786-.818-1.786-1.818S5.964.128 6.946.128h18.071c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.804 1.818h-5.464a8.5 8.5 0 0 1 1.946 4.182z">
                                                     </path>
-                                                </svg>
-                                                <p className="BookingWidgetstyles__PriceValueStyled-sc-bwqud6-4 csEaWM">2,544</p>
+                                                </svg> */}
+                                                <p className="BookingWidgetstyles__PriceValueStyled-sc-bwqud6-4 csEaWM">{formatCurrency(PriceAfterDiscount)}</p>
                                             </div>
-                                            <div className="dwebCommonstyles__FlexCentered-sc-112ty3f-6 lfQUri">+<p className="BookingWidgetstyles__PlusPriceValueText-sc-bwqud6-5 kBdKJl">602 taxes &amp; fees</p>
+                                            <div className="dwebCommonstyles__FlexCentered-sc-112ty3f-6 lfQUri">+<p className="BookingWidgetstyles__PlusPriceValueText-sc-bwqud6-5 kBdKJl">{formatCurrency(TaxValue)} taxes &amp; fees</p>
                                             </div>
                                             <p className="BookingWidgetstyles__PerRoomPerNightLabel-sc-bwqud6-6 jOwQqP">
                                                 <strong className="RoomPerNightUIstyles__RoomCountText-sc-1clmiys-0 jvAZfA">1 Room</strong>
@@ -464,10 +483,10 @@ function InsideMainView() {
                                             </p>
                                         </div>
                                     </div>
-                                    <span itemprop="priceRange" className="dwebCommonstyles__HiddenElement-sc-112ty3f-17 cJirRI">Hotel Rushabh Home Price Starts at INR 2,544/Night</span>
+                                    <span itemprop="priceRange" className="dwebCommonstyles__HiddenElement-sc-112ty3f-17 cJirRI">Hotel Rushabh Home Price Starts at INR {val.PricePerNight}/Night</span>
                                     <button className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 BookingWidgetstyles__ViewRoomOptionsButton-sc-bwqud6-10 cYhrVX cjSXqJ">
                                         <div styleprops="[object Object]" className="TextFieldExpt__Tag-sc-7a7pro-0 hAWoHt">
-                                            <span>VIEW 8 ROOM OPTIONS</span>
+                                            <span>VIEW ALL ROOM OPTIONS</span>
                                             <div className="BookingWidgetstyles__RightDoubleArrowIconContainer-sc-bwqud6-9 insATV">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 15" width="2rem" height="2rem" fill="#FFFFFF" className="RightDoubleArrow__RightDoubleArrowIcon-sc-1tk0dpe-0 hppXJR">
                                                     <g fill="none" fill-rule="evenodd">

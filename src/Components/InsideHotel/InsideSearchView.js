@@ -1,7 +1,7 @@
 import React from 'react'
 import "../HotelSearch/DisplayPage.css";
 
-function InsideSearchView() {
+function InsideSearchView({ val }) {
     return (
         <section class="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
             <div class="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
@@ -17,7 +17,7 @@ function InsideSearchView() {
                                 autocomplete="off" id="downshift-1-input"
                                 placeholder="CITY NAME"
                                 class="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
-                                value="Bengaluru"
+                                value={val.City}
                             />
                             <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" class="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                             </ul>
