@@ -36,14 +36,14 @@ function DisplayPage({ result, setResult }) {
   const {
     adults,
     children,
-    // city,
+    city,
     // nights,
     // days,
     // checkIn,
     // checkOut
   } = formData;
   const filteredData = yourTrip.filter(
-    (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
+    (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels" && value.City === city
   );
 
   // const [message, setMessage] = useState("");

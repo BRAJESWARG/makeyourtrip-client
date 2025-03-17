@@ -125,7 +125,7 @@ function HotelSearch() {
                 maxRows={4}
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                placeholder="Enter city or city"
+                placeholder="Enter Location or city"
               />
             </div>
             <div className="input-group LocalizationProvider">
