@@ -6,6 +6,26 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const StayOptions = ({ val }) => {
 
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            maximumFractionDigits: 0, // Removes decimal values
+        }).format(value);
+    };
+
+    const getPriceAfterDiscount = (value) => {
+        return value * 0.6;
+    };
+
+    const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);
+
+    const getTaxValue = (value) => {
+        return value * 0.18;
+    };
+
+    const TaxValue = getTaxValue(PriceAfterDiscount);
+
     return (
         <div className="StayOptions">
             <section id="stays" className="DetailsPagestyles__WrapperSection-sc-5ti44n-3 kCFGJC">
@@ -131,18 +151,16 @@ const StayOptions = ({ val }) => {
                                                 </div>
                                                 <div className="RoomFlavorstyles__RoomFlavorColumn-sc-90vv8b-0 gpDZNN">
                                                     <span className="RoomFlavorstyles__OuterBlockWrapper-sc-90vv8b-38 dZPLdY">
-                                                        <div textcolor="#ffffff" bgcolor="#e63148" className="RoomFlavorstyles__PercentageOffWrapperDiv-sc-90vv8b-39 dVZNvc">18 % off</div>
+                                                        <div textcolor="#ffffff" bgcolor="#e63148" className="RoomFlavorstyles__PercentageOffWrapperDiv-sc-90vv8b-39 dVZNvc">40 % off</div>
                                                         <span className="RoomFlavorstyles__PercentageLabelStyles-sc-90vv8b-40 eVznBG">
                                                         </span>
                                                     </span>
                                                     <div>
-                                                        <span className="RoomFlavorstyles__StrikeThroughPersuasionPriceTextStyled-sc-90vv8b-12 ipTqZy">₹ 2,250</span>
+                                                        <span className="RoomFlavorstyles__StrikeThroughPersuasionPriceTextStyled-sc-90vv8b-12 ipTqZy">{formatCurrency(val.PricePerNight)}</span>
                                                         <div className="RoomFlavorstyles__ActualPriceTextStyled-sc-90vv8b-13 huWnMY">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#141823" width="1.4rem" height="1.4rem" className="RupeeIcon-sc-5hlwf0-0 eKLDvu">
-                                                                <path d="M21.482 7.945h3.536c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.786 1.818h-3.536a9.43 9.43 0 0 1-2.625 5.109 9.5 9.5 0 0 1-6.75 2.891h-.679l9.661 9.255c0 .018.018.018.036.036.679.673.696 1.782.036 2.473a1.74 1.74 0 0 1-2.518.091L5.714 19a1.78 1.78 0 0 1-.554-1.364c.036-.964.839-1.727 1.786-1.691h5.179a5.9 5.9 0 0 0 4.214-1.836 6.3 6.3 0 0 0 1.482-2.527H6.946c-.982 0-1.786-.818-1.786-1.818s.804-1.818 1.786-1.818h10.875C17 5.455 14.714 3.782 12.125 3.764H6.946c-.982 0-1.786-.818-1.786-1.818S5.964.128 6.946.128h18.071c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.804 1.818h-5.464a8.5 8.5 0 0 1 1.946 4.182z">
-                                                                </path>
-                                                            </svg>1,843</div>
-                                                        <span className="RoomFlavorstyles__TaxesTextStyled-sc-90vv8b-14 bZeyYo">+ ₹ 392 taxes &amp; fees</span>
+                                                            {formatCurrency(PriceAfterDiscount)}
+                                                        </div>
+                                                        <span className="RoomFlavorstyles__TaxesTextStyled-sc-90vv8b-14 bZeyYo">+ {formatCurrency(TaxValue)} taxes &amp; fees</span>
                                                         <p className="RoomFlavorstyles__PerRoomNightTextStyled-sc-90vv8b-15 jvcZpx">
                                                             <strong className="RoomPerNightUIstyles__RoomCountText-sc-1clmiys-0 jvAZfA">1  room</strong>
                                                             <span style={{ paddingLeft: '2px' }}>per night</span>
@@ -198,18 +216,16 @@ const StayOptions = ({ val }) => {
                                                 </div>
                                                 <div className="RoomFlavorstyles__RoomFlavorColumn-sc-90vv8b-0 gpDZNN">
                                                     <span className="RoomFlavorstyles__OuterBlockWrapper-sc-90vv8b-38 dZPLdY">
-                                                        <div textcolor="#ffffff" bgcolor="#e63148" className="RoomFlavorstyles__PercentageOffWrapperDiv-sc-90vv8b-39 dVZNvc">11 % off</div>
+                                                        <div textcolor="#ffffff" bgcolor="#e63148" className="RoomFlavorstyles__PercentageOffWrapperDiv-sc-90vv8b-39 dVZNvc">40 % off</div>
                                                         <span className="RoomFlavorstyles__PercentageLabelStyles-sc-90vv8b-40 eVznBG">
                                                         </span>
                                                     </span>
                                                     <div>
-                                                        <span className="RoomFlavorstyles__StrikeThroughPersuasionPriceTextStyled-sc-90vv8b-12 ipTqZy">₹ 2,250</span>
+                                                        <span className="RoomFlavorstyles__StrikeThroughPersuasionPriceTextStyled-sc-90vv8b-12 ipTqZy">{formatCurrency(val.PricePerNight * 1.5)}</span>
                                                         <div className="RoomFlavorstyles__ActualPriceTextStyled-sc-90vv8b-13 huWnMY">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#141823" width="1.4rem" height="1.4rem" className="RupeeIcon-sc-5hlwf0-0 eKLDvu">
-                                                                <path d="M21.482 7.945h3.536c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.786 1.818h-3.536a9.43 9.43 0 0 1-2.625 5.109 9.5 9.5 0 0 1-6.75 2.891h-.679l9.661 9.255c0 .018.018.018.036.036.679.673.696 1.782.036 2.473a1.74 1.74 0 0 1-2.518.091L5.714 19a1.78 1.78 0 0 1-.554-1.364c.036-.964.839-1.727 1.786-1.691h5.179a5.9 5.9 0 0 0 4.214-1.836 6.3 6.3 0 0 0 1.482-2.527H6.946c-.982 0-1.786-.818-1.786-1.818s.804-1.818 1.786-1.818h10.875C17 5.455 14.714 3.782 12.125 3.764H6.946c-.982 0-1.786-.818-1.786-1.818S5.964.128 6.946.128h18.071c.982 0 1.786.818 1.786 1.818s-.804 1.818-1.804 1.818h-5.464a8.5 8.5 0 0 1 1.946 4.182z">
-                                                                </path>
-                                                            </svg>2,003</div>
-                                                        <span className="RoomFlavorstyles__TaxesTextStyled-sc-90vv8b-14 bZeyYo">+ ₹ 427 taxes &amp; fees</span>
+                                                            {formatCurrency(PriceAfterDiscount * 1.5)}
+                                                        </div>
+                                                        <span className="RoomFlavorstyles__TaxesTextStyled-sc-90vv8b-14 bZeyYo">+ {formatCurrency(TaxValue * 1.5)} taxes &amp; fees</span>
                                                         <p className="RoomFlavorstyles__PerRoomNightTextStyled-sc-90vv8b-15 jvcZpx">
                                                             <strong className="RoomPerNightUIstyles__RoomCountText-sc-1clmiys-0 jvAZfA">1  room</strong>
                                                             <span style={{ paddingLeft: '2px' }}>per night</span>

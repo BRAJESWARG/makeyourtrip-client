@@ -34,23 +34,28 @@ function InsideMainView({ val }) {
     };
     const formatCurrency = (value) => {
         return new Intl.NumberFormat("en-IN", {
-          style: "currency",
-          currency: "INR",
-          maximumFractionDigits: 0, // Removes decimal values
+            style: "currency",
+            currency: "INR",
+            maximumFractionDigits: 0, // Removes decimal values
         }).format(value);
-      };
-    
-      const getPriceAfterDiscount = (value) => {
+    };
+
+    const getPriceAfterDiscount = (value) => {
         return value * 0.6;
-      };
-    
-      const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);
-    
-      const getTaxValue = (value) => {
+    };
+
+    const PriceAfterDiscount = getPriceAfterDiscount(val.PricePerNight);
+
+    const getTaxValue = (value) => {
         return value * 0.18;
-      };
-    
-      const TaxValue = getTaxValue(PriceAfterDiscount);
+    };
+
+    const TaxValue = getTaxValue(PriceAfterDiscount);
+
+    const Guest = (val) => {
+        return val.Adults + val.Child
+    }
+
     return (
         <div className='InsideMainView'>
             <div className='InsideMainViewChild'>
@@ -440,7 +445,7 @@ function InsideMainView({ val }) {
                                                         <path d="M21.185 3.148a7.333 7.333 0 11-10.37 10.371 7.333 7.333 0 0110.37-10.371zM16 17.667c-6.992.008-12.659 5.674-12.667 12.667 0 .368.298.667.667.667h24a.667.667 0 00.667-.667C28.659 23.342 22.993 17.675 16 17.667z">
                                                         </path>
                                                     </svg>
-                                                    <p className="BookingWidgetstyles__NoOfGuestsAndRoomsTextStyles-sc-bwqud6-8 eAlRyj">2 Guests</p>
+                                                    <p className="BookingWidgetstyles__NoOfGuestsAndRoomsTextStyles-sc-bwqud6-8 eAlRyj">{Guest(val)} Guests</p>
                                                 </div>
                                                 <div style={{ margin: '0px 5px' }} > | </div>
                                                 <div className="dwebCommonstyles__FlexCentered-sc-112ty3f-6 BookingWidgetstyles__NoOfGuestsContainer-sc-bwqud6-7 lfQUri dCeeKI">

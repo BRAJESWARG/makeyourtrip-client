@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 
-const GuestReviews = () => {
+const GuestReviews = ({ val }) => {
 
     return (
         <div className="GuestReviews">
@@ -56,7 +56,7 @@ const GuestReviews = () => {
                                 <div hotelrating="3.9" class="Layouts__Column-sc-1yzlivq-1 GuestRatingstyles__GoRatingBlock-sc-1n5ou7m-0 gANvcd gKPvMO">
                                     <p class="GuestRatingstyles__GoRatingTextWrapper-sc-1n5ou7m-1 ceCnfH">goRating</p>
                                     <p class="GuestRatingstyles__AvgReviewTextWrapperDiv-sc-1n5ou7m-4 gDjAfW">
-                                        <span class="GuestRatingstyles__AvgReviewTextWrapper-sc-1n5ou7m-5 jVbauY">3.9</span>
+                                        <span class="GuestRatingstyles__AvgReviewTextWrapper-sc-1n5ou7m-5 jVbauY">{val.StarRating}</span>
                                         <span class="GuestRatingstyles__TotalReviewTextWrapper-sc-1n5ou7m-6 vKLim">/5</span>
                                     </p>
                                     <p data-testid="d-GuestReview-ratingCount" class="GuestRatingstyles__ReviewCountTextWrapper-sc-1n5ou7m-2 ceoSAg">54 Ratings</p>

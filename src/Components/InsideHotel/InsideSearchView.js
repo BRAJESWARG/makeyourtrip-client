@@ -17,7 +17,7 @@ function InsideSearchView({ val }) {
                                 autocomplete="off" id="downshift-1-input"
                                 placeholder="CITY NAME"
                                 class="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
-                                value={val.City}
+                                value="Bangalore"
                             />
                             <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" class="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                             </ul>
