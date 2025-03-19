@@ -1,65 +1,70 @@
 import React, { useEffect, useState } from "react";
 import "./DisplayPage.css";
 import "./HotelSearch.css";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 import HotelView from "../HotelView/HotelView";
-// import HotelSearchNav from "../HotelSearchNav/HotelSearchNav";
+import HotelSearchNav from "../HotelSearchNav/HotelSearchNav";
 
 function DisplayPage({ result, setResult }) {
 
-  const [yourTrip, setYourTrip] = useState([]);
-  const [formData, setFormData] = useState({
-    ...result,
-    checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
-    checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
-  });
-  const [tempFormData, setTempFormData] = useState({ ...formData });
+  // const [yourTrip, setYourTrip] = useState([]);
+  // const [formData, setFormData] = useState({
+  //   ...result,
+  //   checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
+  //   checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
+  // });
+  // const [tempFormData, setTempFormData] = useState({ ...formData });
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8040/api/v1/VentureVibes")
+  //     .then((data) => setYourTrip(data.data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, [result]);
+
+  // const handleUpdate = () => {
+  //   setFormData({ ...tempFormData });
+  //   if (typeof setResult === "function") {
+  //     setResult({ ...tempFormData });
+  //   } else {
+  //     console.error("setResult is not a function. Ensure it's passed correctly.");
+  //   }
+  // };
+
+  // const {
+  //   adults,
+  //   children,
+  //   city,
+  //   // nights,
+  //   // days,
+  //   // checkIn,
+  //   // checkOut
+  // } = formData;
+  // const filteredData = yourTrip.filter(
+  //   (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels" && value.City === city
+  // );
+
+  const [filteredData, setFilteredData] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8040/api/v1/VentureVibes")
-      .then((data) => setYourTrip(data.data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, [result]);
 
-  const handleUpdate = () => {
-    setFormData({ ...tempFormData });
-    if (typeof setResult === "function") {
-      setResult({ ...tempFormData });
-    } else {
-      console.error("setResult is not a function. Ensure it's passed correctly.");
-    }
+  },[])
+  
+
+  // Function to receive data from child
+  const handleDataFromChild = (data) => {
+    setFilteredData(data);
   };
-
-  const {
-    adults,
-    children,
-    city,
-    // nights,
-    // days,
-    // checkIn,
-    // checkOut
-  } = formData;
-  const filteredData = yourTrip.filter(
-    (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels" && value.City === city
-  );
-
-  // const [message, setMessage] = useState("");
-
-  // // Function to receive data from child
-  // const handleDataFromChild = (data) => {
-  //   setMessage(data);
-  // };
 
   return (
     <>
       <div className="displayHotelsContainer">
 
-          {/* <HotelSearchNav sendDataToParent={handleDataFromChild} result={result} /> */}
+        <HotelSearchNav sendDataToParent={handleDataFromChild} result={result} />
 
-        <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
+        {/* <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
           <div className="dwebCommonstyles__CenteredSpaceWrap-sc-112ty3f-0 SearchWidgetUIstyles__WrapperStyle-sc-1x37qbj-1 buWWlt bFIqAi">
             <div className="dwebCommonstyles__FlexItem-sc-112ty3f-4 gwpVPd">
               <div className="SearchWidgetUIstyles__SearchWrapperArea-sc-1x37qbj-2 gfWNJG">
@@ -144,7 +149,7 @@ function DisplayPage({ result, setResult }) {
               Update Search
             </button>
           </div>
-        </section>
+        </section> */}
 
       </div>
       <section class="SRPstyles__MainSectionWrapper-sc-1uttzk9-0 bOvdea">

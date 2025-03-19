@@ -19,28 +19,28 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
             .catch((error) => console.error("Error fetching data:", error));
     }, [result]);
 
-    const handleUpdate = () => {
-        setFormData({ ...tempFormData });
-        // sendDataToParent(yourTrip)
-        if (typeof setResult === "function") {
-            setResult({ ...tempFormData });
-        } else {
-            console.error("setResult is not a function. Ensure it's passed correctly.");
-        }
-    };
     const {
         adults,
         children,
-        // city,
+        city,
         // nights,
         // days,
         // checkIn,
         // checkOut
     } = formData;
     const filteredData = yourTrip.filter(
-        (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels"
+        (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels" && value.City === city
     );
-    // const [inputValue, setInputValue] = useState("");
+
+    const handleUpdate = () => {
+        setFormData({ ...tempFormData });
+        sendDataToParent(filteredData)
+        if (typeof setResult === "function") {
+            setResult({ ...tempFormData });
+        } else {
+            console.error("setResult is not a function. Ensure it's passed correctly.");
+        }
+    };
 
     return (
         <section className="SearchWidgetUIstyles__OuterWrapDiv-sc-1x37qbj-0 edQnfF">
