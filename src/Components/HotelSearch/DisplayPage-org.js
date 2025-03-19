@@ -13,7 +13,7 @@ function DisplayPage({ result }) {
 
   useEffect(() => {
 
-    axios.get(`http://localhost:8040/api/v1/MakeYourTrip`).then(
+    axios.get(`http://localhost:8040/api/v1/VentureVibes`).then(
       data => setYourTrip(data.data)
     )
 

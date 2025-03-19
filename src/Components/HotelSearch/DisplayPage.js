@@ -19,7 +19,7 @@ function DisplayPage({ result, setResult }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8040/api/v1/MakeYourTrip")
+      .get("http://localhost:8040/api/v1/VentureVibes")
       .then((data) => setYourTrip(data.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, [result]);
@@ -73,7 +73,7 @@ function DisplayPage({ result, setResult }) {
                     placeholder="LOCATION NAME"
                     className="SearchWidgetAutosuggeststyles__SearchInputStyles-sc-1lizu4w-1 cGELZI"
                     value={tempFormData.city}
-                    onChange={(e) => setTempFormData((prev) => ({ ...prev, City: e.target.value }))}
+                    onChange={(e) => setTempFormData((prev) => ({ ...prev, city: e.target.value }))}
                   />
                   <ul id="downshift-1-menu" role="listbox" aria-labelledby="downshift-1-label" top="6rem" left="0" data-testid="autosuggest-suggestions-container" className="HomePageAutosuggeststyles__SearchMenuStyles-sc-tk3iiv-3 dHsxlv">
                   </ul>
