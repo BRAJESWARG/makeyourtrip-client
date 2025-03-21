@@ -102,7 +102,7 @@ function HotelSearch() {
   };
 
   if (showResultPage && result) {
-    return <ResultPage result={result} />;
+    return <ResultPage result={result} setResult={setResult} />;
   }
 
   return (

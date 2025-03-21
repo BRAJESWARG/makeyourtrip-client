@@ -5,11 +5,13 @@ import dayjs from "dayjs";
 
 function HotelSearchNav({ result, setResult, sendDataToParent }) {
     const [yourTrip, setYourTrip] = useState([]);
+
     const [formData, setFormData] = useState({
         ...result,
         checkIn: result.checkIn && dayjs(result.checkIn).isValid() ? dayjs(result.checkIn).format("YYYY-MM-DD") : "",
         checkOut: result.checkOut && dayjs(result.checkOut).isValid() ? dayjs(result.checkOut).format("YYYY-MM-DD") : "",
     });
+
     const [tempFormData, setTempFormData] = useState({ ...formData });
 
     useEffect(() => {
@@ -17,28 +19,46 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
             .get("http://localhost:8040/api/v1/VentureVibes")
             .then((data) => setYourTrip(data.data))
             .catch((error) => console.error("Error fetching data:", error));
-    }, [result]);
+    }, []);
 
-    const {
-        adults,
-        children,
-        city,
-        // nights,
-        // days,
-        // checkIn,
-        // checkOut
-    } = formData;
-    const filteredData = yourTrip.filter(
-        (value) => Number(value.Adults) === Number(adults) && Number(value.Child) === Number(children) && value.Category === "Hotels" && value.City === city
-    );
+    useEffect(() => {
+        if (yourTrip.length > 0) {
+            handleUpdate(); // Automatically trigger update after data is fetched
+        }
+    }, [yourTrip]); // This runs when yourTrip is set
+
+
+    // const filteredData = useMemo(() => {
+    //     return yourTrip.filter(
+    //         (value) =>
+    //             Number(value.Adults) === Number(adults) &&
+    //             Number(value.Child) === Number(children) &&
+    //             value.Category === "Hotels" &&
+    //             value.City === city
+    //     );
+    // }, [yourTrip, adults, children, city]);
 
     const handleUpdate = () => {
+        // 🔥 Use tempFormData directly to filter data
+        const filtered = yourTrip.filter(
+            (value) =>
+                Number(value.Adults) === Number(tempFormData.adults) &&
+                Number(value.Child) === Number(tempFormData.children) &&
+                value.Category === "Hotels" &&
+                value.City === tempFormData.city
+        );
+
+        // Update internal formData state
         setFormData({ ...tempFormData });
-        sendDataToParent(filteredData)
+
+        // Send filtered data to parent
+        sendDataToParent(filtered);
+
+        // Update result in parent if needed
         if (typeof setResult === "function") {
             setResult({ ...tempFormData });
         } else {
-            console.error("setResult is not a function. Ensure it's passed correctly.");
+            console.error("setResult is not a function.");
         }
     };
 
@@ -124,7 +144,11 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
                         </div>
                     </div>
                 </div>
-                <button onClick={handleUpdate} className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 hDRTlP">
+                <button
+                    onClick={handleUpdate}
+                    // onChange={() => sendDataToParent(filteredData)}
+                    className="dwebCommonstyles__ButtonBase-sc-112ty3f-14 SearchWidgetUIstyles__UpdateSearchBtn-sc-1x37qbj-7 hDRTlP"
+                >
                     Update Search
                 </button>
             </div>
