@@ -27,7 +27,16 @@ function HotelSearchNav({ result, setResult, sendDataToParent }) {
         }
     }, [yourTrip]); // This runs when yourTrip is set
 
-
+    // const {
+    //     adults,
+    //     children,
+    //     city,
+    //     // nights,
+    //     // days,
+    //     // checkIn,
+    //     // checkOut
+    // } = formData;
+    
     // const filteredData = useMemo(() => {
     //     return yourTrip.filter(
     //         (value) =>
