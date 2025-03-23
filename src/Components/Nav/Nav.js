@@ -171,23 +171,23 @@ const NavComponent = () => {
               // ))
             }
             <Nav.Link href='/Hotels' className='NavCategory' >
-              <img src={LogoHotel} height="32rem" width='50rem' alt="LogoHotel" />
+              <img src={LogoHotel} className='NavCategoryLogo' alt="LogoHotel" />
               Hotels
             </Nav.Link>
             <Nav.Link href='/Flights' className='NavCategory' >
-              <img src={LogoFlight} height="32rem" width='60rem' alt="LogoFlight" />
+              <img src={LogoFlight} className='NavCategoryLogo' alt="LogoFlight" />
               Flights
             </Nav.Link>
             <Nav.Link href='/Train' className='NavCategory' >
-              <img src={LogoTrain} height="32rem" width='60rem' alt="LogoTrain" />
+              <img src={LogoTrain} className='NavCategoryLogo' alt="LogoTrain" />
               Train
             </Nav.Link>
             <Nav.Link href='/Bus' className='NavCategory' >
-              <img src={LogoBus} height="32rem" width='60rem' alt="LogoBus" />
+              <img src={LogoBus} className='NavCategoryLogo' alt="LogoBus" />
               Bus
             </Nav.Link>
             <Nav.Link href='/Cab' className='NavCategory' >
-              <img src={LogoCab} height="32rem" width='60rem' alt="LogoCab" />
+              <img src={LogoCab} className='NavCategoryLogo' alt="LogoCab" />
               Cab
             </Nav.Link>
           </Nav>
