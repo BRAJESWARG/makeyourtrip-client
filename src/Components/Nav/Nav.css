@@ -97,7 +97,11 @@
   .NavCategoryLogo {
     height: 20px;
     width: 40px;
-}
+  }
+
+  .NavCategory {
+    font-size: 1rem !important;
+  }
 
 }
 
