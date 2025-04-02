@@ -59,7 +59,7 @@ function InsideMainView({ val }) {
     return (
         <div className='InsideMainView'>
             <div className='InsideMainViewChild'>
-                <div style={{ width: '80rem' }}>
+                <div style={{}}>
                     <MDBRow className='g-0'>
                         <div fixedheight="5" className="HotelInfostyles__CenterDiv-sc-138dfbx-0 cSraKB">
                             <div className="HotelInfostyles__RatingOuterWrapper-sc-138dfbx-9 flayJI">
