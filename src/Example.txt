@@ -98,3 +98,21 @@ react-dom.development.js:86 Warning: Invalid DOM property `autocomplete`. Did yo
     at Router (http://localhost:3000/static/js/bundle.js:114393:15)
     at BrowserRouter (http://localhost:3000/static/js/bundle.js:112293:5)
     at App
+
+
+
+
+
+        modified:   src/App.css
+        modified:   src/Components/Home-Section/Intro/Intro.css
+        modified:   src/Components/Home-Section/MultiCarousel/CardCarousel.css
+        modified:   src/Components/Home-Section/Testimonials/Testimonials.css
+        modified:   src/Components/HotelSearch/DisplayPage.css
+        modified:   src/Components/HotelSearch/HotelSearch.css
+        modified:   src/Components/HotelView/HotelView.css
+        modified:   src/Components/InsideHotel/InsideHotel.css
+        modified:   src/Components/InsideHotel/InsideMainView.css
+        modified:   src/Components/InsideHotel/InsideNav.css
+        modified:   src/Components/InsideHotel/SimilarProperties.css
+        modified:   src/Components/InsideHotel/StayOptions.css
+        modified:   src/Components/Nav/Nav.css
